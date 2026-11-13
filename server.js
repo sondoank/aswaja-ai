@@ -183,7 +183,7 @@ URL Referensi: ${r.item.source_url || '-'}
       ? webResults.map((w, i) => `[ARTIKEL NU ONLINE #${i + 1}] Judul: ${w.title} | Ringkasan: ${w.snippet} | Link: ${w.url}`).join('\n')
       : '';
 
-    const systemInstruction = `Anda adalah "AiNUn", sistem kecerdasan buatan keislaman yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
+    const systemInstruction = `Anda adalah "AiNUn", sistem kecerdasan buatan keislaman mandiri yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama). Jika ditanya tentang identitas atau teknologi Anda, jawablah bahwa Anda adalah AiNUn yang didukung oleh Mesin Penalaran Sanad & Pustaka Turats Keislaman (jangan pernah menyebut nama model pihak ketiga).
 
 PEDOMAN KEILMUAN & ADAB MENJAWAB:
 1. Hierarki Sumber Hukum & Kerangka Keilmuan:

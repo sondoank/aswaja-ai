@@ -217,24 +217,13 @@ function updateApiKeyUI() {
   const input = document.getElementById('geminiApiKeyInput');
   if (input) input.value = geminiApiKey;
 
-  if (geminiApiKey) {
-    if (dot) {
-      dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
-      dot.title = 'Gemini API Key Aktif';
-    }
-    if (badge) {
-      badge.innerHTML = '✨ Gemini 2.5 Flash + Hybrid RAG Aswaja';
-      badge.className = 'hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 font-semibold';
-    }
-  } else {
-    if (dot) {
-      dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
-      dot.title = 'Mode RAG Lokal + NU Online';
-    }
-    if (badge) {
-      badge.innerHTML = '⚡ Hybrid RAG Kitab + NU Online';
-      badge.className = 'hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold';
-    }
+  if (dot) {
+    dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
+    dot.title = 'Sistem AiNUn Aktif';
+  }
+  if (badge) {
+    badge.innerHTML = '✨ Mesin Penalaran Sanad AiNUn';
+    badge.className = 'hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold';
   }
 }
 
@@ -357,7 +346,7 @@ async function clientSideChatFallback(message, history = []) {
         ? retrieved.map((r, i) => `[DOKUMEN LOKAL #${i + 1}]\nJudul: ${r.item.title}\nKategori: ${r.item.category}\nKitab Rujukan: ${r.item.kitab_reference}\nLBM NU: ${r.item.bahtsul_masail}\nIbarah Arab: ${r.item.arabic_quote}\nTerjemah: ${r.item.arabic_translation}\nUraian: ${r.item.content}`).join('\n\n---\n\n')
         : 'Pertanyaan ini berada di luar daftar dokumen lokal. Jawablah secara mendalam berdasarkan khazanah Kutubul Mu\'tabarah Mazhab Syafi\'i, Akidah Asy\'ariyah-Maturidiyah, Tasawuf Al-Ghazali, serta keputusan Bahtsul Masail Nahdlatul Ulama.';
 
-      const systemInstruction = `Anda adalah "AiNUn", sistem kecerdasan buatan keislaman yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
+      const systemInstruction = `Anda adalah "AiNUn", sistem kecerdasan buatan keislaman mandiri yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama). Jika ditanya tentang identitas atau teknologi Anda, jawablah bahwa Anda adalah AiNUn yang didukung oleh Mesin Penalaran Sanad & Pustaka Turats Keislaman (jangan pernah menyebut nama model pihak ketiga).
 
 PEDOMAN KEILMUAN & ADAB MENJAWAB:
 1. Hierarki Sumber Hukum & Kerangka Keilmuan:
@@ -644,9 +633,7 @@ function appendMessageToDOM(role, content, sources = [], mode = 'local-rag', fol
     `;
   } else {
     wrapper.className = 'flex items-start gap-3.5 animate-fade-in';
-    const modeLabel = mode === 'gemini-rag'
-      ? '✨ Gemini 2.5 Flash + RAG Aswaja'
-      : '📚 Mesin Sintesis RAG Kitab & Bahtsul Masail';
+    const modeLabel = '✨ Terverifikasi Sanad & Pustaka AiNUn';
 
     const sourcesHtml = sources && sources.length > 0
       ? `

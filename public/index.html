@@ -197,15 +197,15 @@
       </div>
     </div>
 
-    <!-- Bottom Settings -->
-    <div class="p-3 border-t border-emerald-900/90 bg-emerald-950 space-y-2">
-      <button onclick="openSettingsModal()" class="w-full px-3 py-2.5 rounded-xl bg-emerald-900/70 hover:bg-emerald-800 text-xs text-emerald-100 flex items-center justify-between transition border border-emerald-800 cursor-pointer">
+    <!-- Bottom Status Footer -->
+    <div class="p-3 border-t border-emerald-900/90 bg-emerald-950">
+      <div class="w-full px-3 py-2.5 rounded-xl bg-emerald-900/50 text-xs text-emerald-100 flex items-center justify-between border border-emerald-800/80">
         <span class="flex items-center gap-2 font-medium">
-          <span>⚙️</span>
-          <span>Pengaturan AI & API Key</span>
+          <span>🕌</span>
+          <span>AiNUn Engine • Sanad Aktif</span>
         </span>
-        <span id="apiKeyStatusDot" class="w-2.5 h-2.5 rounded-full bg-amber-400" title="Mode RAG Lokal"></span>
-      </button>
+        <span id="apiKeyStatusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400" title="Sistem AiNUn Aktif"></span>
+      </div>
     </div>
   </aside>
 
@@ -221,7 +221,7 @@
           <div class="flex items-center gap-2">
             <span class="text-sm font-bold text-slate-800">Asisten Keislaman, Fikih & Bahtsul Masail</span>
             <span id="activeModeBadge" class="hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
-              ⚡ Hybrid RAG: Al-Qur'an, Hadis & Turats
+              ✨ Mesin Penalaran Sanad AiNUn
             </span>
           </div>
           <p class="text-[11px] text-slate-500 hidden sm:block">Merujuk Al-Qur'an, Hadis Shahih, Ijma', Qiyas, Kitab Ulama Mu'tabarah & Keputusan NU</p>
@@ -381,9 +381,9 @@
           </div>
         </div>
 
-        <!-- 2. Diagram Alur Hybrid RAG -->
+        <!-- 2. Diagram Alur Mesin Penalaran AiNUn -->
         <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
-          <h4 class="font-bold text-sm text-slate-800 text-center">🔄 Cara Kerja Mesin Hybrid RAG (Retrieval-Augmented Generation)</h4>
+          <h4 class="font-bold text-sm text-slate-800 text-center">🔄 Cara Kerja Mesin Penalaran Ber-Sanad AiNUn</h4>
           <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-center">
             <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
               <div class="text-2xl mb-1">💬</div>
@@ -392,8 +392,8 @@
             </div>
             <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
               <div class="text-2xl mb-1">🔍</div>
-              <div class="font-bold text-emerald-900">2. Pencarian Pustaka</div>
-              <p class="text-[11px] text-slate-500 mt-1">Sistem mencari kecocokan di Database Kitab Kuning, Ahkamul Fuqaha & <code>nu.or.id</code>.</p>
+              <div class="font-bold text-emerald-900">2. Penelusuran Dalil</div>
+              <p class="text-[11px] text-slate-500 mt-1">Menelusuri Al-Qur'an, Hadis, Pustaka Kitab Mu'tabarah, Ahkamul Fuqaha & <code>nu.or.id</code>.</p>
             </div>
             <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
               <div class="text-2xl mb-1">⚖️</div>
@@ -413,12 +413,12 @@
           <h4 class="font-bold text-sm text-amber-950">🚀 Roadmap Pengembangan Tahap Selanjutnya</h4>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div class="bg-white p-3.5 rounded-xl border border-amber-200">
-              <div class="font-bold text-amber-900">Tahap 1: Prototipe & Validasi (Saat Ini)</div>
-              <p class="text-[11px] text-slate-600 mt-1">Web Chat interaktif, 23+ topik inti ke-NU-an & fikih kontemporer, fitur tambah kitab, dan integrasi Gemini API.</p>
+              <div class="font-bold text-amber-900">Tahap 1: Fondasi & Validasi (Saat Ini)</div>
+              <p class="text-[11px] text-slate-600 mt-1">Layanan tanya-jawab interaktif berbasis Al-Qur'an, Hadis, Kitab Mu'tabarah & Bahtsul Masail dengan kartu rujukan terverifikasi.</p>
             </div>
             <div class="bg-white p-3.5 rounded-xl border border-amber-200">
               <div class="font-bold text-amber-900">Tahap 2: Digitalisasi Ribuan Kitab & LBM</div>
-              <p class="text-[11px] text-slate-600 mt-1">Integrasi penuh dokumen <em>Ahkamul Fuqaha</em> (Muktamar ke-1 s/d ke-34), <em>Maktabah Syamilah</em> Syafi'iyah, dan Vector DB skala besar.</p>
+              <p class="text-[11px] text-slate-600 mt-1">Integrasi penuh dokumen <em>Ahkamul Fuqaha</em> (Muktamar ke-1 s/d ke-34) dan pustaka digital pesantren Nusantara.</p>
             </div>
             <div class="bg-white p-3.5 rounded-xl border border-amber-200">
               <div class="font-bold text-amber-900">Tahap 3: Ekosistem Multi-Platform</div>
@@ -441,8 +441,8 @@
     <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[86vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
       <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
         <div>
-          <h3 class="font-bold text-base">📚 Pustaka Rujukan Kitab & Keputusan Bahtsul Masail (Database RAG)</h3>
-          <p class="text-xs text-emerald-200">Seluruh materi di bawah ini terindeks di dalam sistem dan dapat langsung diuji coba.</p>
+          <h3 class="font-bold text-base">📚 Pustaka Rujukan Dalil, Kitab & Keputusan Bahtsul Masail</h3>
+          <p class="text-xs text-emerald-200">Seluruh materi di bawah ini terindeks di dalam sistem AiNUn dan dapat langsung diuji coba.</p>
         </div>
         <button onclick="closeKnowledgeModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
       </div>
@@ -544,49 +544,9 @@
 
         <div class="pt-2 flex justify-end gap-2">
           <button type="button" onclick="closeAddReferenceModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium cursor-pointer">Batal</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-sm cursor-pointer">Simpan ke Database RAG</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-sm cursor-pointer">Simpan ke Pustaka AiNUn</button>
         </div>
       </form>
-    </div>
-  </div>
-
-  <!-- MODAL 3: PENGATURAN AI & GEMINI API KEY -->
-  <div id="settingsModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden">
-      <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
-        <div>
-          <h3 class="font-bold text-base">⚙️ Pengaturan Mesin AI (Hybrid RAG)</h3>
-          <p class="text-xs text-emerald-200">Konfigurasi model LLM & metode pencarian rujukan</p>
-        </div>
-        <button onclick="closeSettingsModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
-      </div>
-      <div class="p-6 space-y-4 text-xs">
-        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1.5">
-          <div class="font-bold">💡 Berjalan Otomatis Tanpa API Key (Mode RAG Lokal)</div>
-          <p class="leading-relaxed">
-            Secara bawaan, prototipe ini sudah dilengkapi <strong>Mesin Sintesis RAG Lokal</strong> yang merangkum jawaban langsung dari <em>23+ Database Kitab & LBM NU</em>.
-          </p>
-          <p class="leading-relaxed">
-            Jika Anda memasukkan <strong>Google Gemini API Key</strong> di bawah ini, sistem akan mengaktifkan <strong>Gemini 2.5 Flash</strong> dengan <em>System Prompt Aswaja An-Nahdliyah</em> untuk menjawab pertanyaan bebas apa saja.
-          </p>
-        </div>
-
-        <div>
-          <label class="block font-semibold text-slate-700 mb-1">Google Gemini API Key (Opsional)</label>
-          <input
-            type="password"
-            id="geminiApiKeyInput"
-            placeholder="AIzaSy..."
-            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-emerald-600 font-mono"
-          />
-          <p class="text-[11px] text-slate-400 mt-1">Disimpan secara aman di browser perangkat Anda (LocalStorage).</p>
-        </div>
-
-        <div class="pt-2 flex justify-end gap-2">
-          <button onclick="closeSettingsModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium cursor-pointer">Tutup</button>
-          <button onclick="saveSettings()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer">Simpan Pengaturan</button>
-        </div>
-      </div>
     </div>
   </div>
 
