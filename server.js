@@ -456,12 +456,21 @@ const server = http.createServer(async (req, res) => {
         }))
       ];
 
+      const followUps = retrievedDocs.length > 0 && Array.isArray(retrievedDocs[0].item.follow_ups)
+        ? retrievedDocs[0].item.follow_ups
+        : [
+            'Bagaimana hukum tahlilan dan kirim doa untuk mayit?',
+            'Bagaimana hukum akad nikah online via Video Call / Zoom?',
+            'Apa itu 3 pilar Aswaja An-Nahdliyah?'
+          ];
+
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       return res.end(JSON.stringify({
         status: 'ok',
         mode: modeUsed,
         reply: replyText,
-        sources
+        sources,
+        followUps
       }));
     } catch (err) {
       res.writeHead(500, { 'Content-Type': 'application/json' });

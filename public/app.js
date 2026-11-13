@@ -3,19 +3,201 @@ let conversations = JSON.parse(localStorage.getItem('aswaja_conversations') || '
 let currentChatId = null;
 let knowledgeBaseItems = [];
 let geminiApiKey = localStorage.getItem('aswaja_gemini_api_key') || '';
+let activeCategoryFilter = 'ALL';
+let activeSpeechId = null;
+
+// 12 Curated Starter Cards for Presentation & Testing
+const STARTER_CARDS = [
+  {
+    category: 'Amaliyah NU',
+    badge: '🕌 Amaliyah Populer',
+    icon: '🤲',
+    title: 'Hukum Tahlilan & Kirim Doa Mayit',
+    desc: 'Dalil sampainya pahala bacaan Al-Qur\'an, dzikir & sedekah menurut Mazhab Syafi\'i',
+    kitab: 'Al-Adzkar & I\'anatuth Thalibin',
+    question: 'Bagaimana hukum tahlilan dan kirim doa/pahala bacaan Al-Qur\'an kepada orang yang sudah meninggal dunia menurut ulama NU?'
+  },
+  {
+    category: 'Amaliyah NU',
+    badge: '🕌 Amaliyah Populer',
+    icon: '🕌',
+    title: 'Ziarah Kubur & Tawassul Wali',
+    desc: 'Penjelasan akidah Aswaja tentang ziarah makam Walisongo dan hakikat tawassul',
+    kitab: 'Al-Majmu\' & Mafahim Yajibu An Tushahhah',
+    question: 'Apa dalil dan hukum ziarah kubur serta bertawassul kepada para wali/ulama menurut pandangan Aswaja?'
+  },
+  {
+    category: 'Amaliyah NU',
+    badge: '🕌 Amaliyah Populer',
+    icon: '🌙',
+    title: 'Peringatan Maulid Nabi & Mahallul Qiyam',
+    desc: 'Landasan bid\'ah hasanah peringatan Maulid Nabi dan berdiri saat Mahallul Qiyam',
+    kitab: 'Al-Hawi lil Fatawi (Imam As-Suyuthi)',
+    question: 'Bagaimana hukum memperingati Maulid Nabi Muhammad SAW dan berdiri saat Mahallul Qiyam menurut ulama Aswaja?'
+  },
+  {
+    category: 'Fikih Kontemporer (Bahtsul Masail)',
+    badge: '⚖️ Bahtsul Masail Modern',
+    icon: '📹',
+    title: 'Akad Nikah Online (Video Call / Zoom)',
+    desc: 'Keputusan Bahtsul Masail tentang syarat ittihadul majelis & solusi Tawkil nikah',
+    kitab: 'Tuhfatul Muhtaj & LBM NU',
+    question: 'Bagaimana hukum akad nikah online melalui Video Call atau Zoom menurut Bahtsul Masail NU dan bagaimana solusi sahnya?'
+  },
+  {
+    category: 'Fikih Kontemporer (Bahtsul Masail)',
+    badge: '⚖️ Bahtsul Masail Modern',
+    icon: '💳',
+    title: 'Hukum Paylater & Pinjaman Online',
+    desc: 'Rincian fikih perbedaan riba qardhi dengan jual beli kredit (bai\' bit taqsith)',
+    kitab: 'Fathul Wahhab & Bughyatul Mustarsyidin',
+    question: 'Bagaimana hukum menggunakan fitur Paylater dan Pinjaman Online (Pinjol) dalam fikih muamalah NU?'
+  },
+  {
+    category: 'Fikih Kontemporer (Bahtsul Masail)',
+    badge: '⚖️ Bahtsul Masail Modern',
+    icon: '🪙',
+    title: 'Hukum Cryptocurrency (Bitcoin / Kripto)',
+    desc: 'Dinamika Bahtsul Masail antara spekulasi (gharar) dan komoditas digital (sil\'ah)',
+    kitab: 'Al-Majmu\' Juz 9 & LBM NU',
+    question: 'Bagaimana hukum transaksi Cryptocurrency (Bitcoin / aset kripto) menurut hasil Bahtsul Masail NU?'
+  },
+  {
+    category: 'Fikih Kontemporer (Bahtsul Masail)',
+    badge: '⚖️ Bahtsul Masail Modern',
+    icon: '🛒',
+    title: 'Jual Beli Online Sistem Dropship',
+    desc: 'Cara agar dropshipper & pre-order sah menggunakan akad Salam atau Samsarah',
+    kitab: 'Fathul Qarib & Raudhatuth Thalibin',
+    question: 'Bagaimana hukum jual beli online dengan sistem Dropship dan Pre-Order agar sah menurut fikih Mazhab Syafi\'i?'
+  },
+  {
+    category: 'Fikih Kontemporer (Bahtsul Masail)',
+    badge: '⚖️ Bahtsul Masail Modern',
+    icon: '🤖',
+    title: 'Hukum Meminta Fatwa Agama ke AI',
+    desc: 'Kedudukan AI sebagai alat bantu riset kitab vs syarat Mufti ber-sanad',
+    kitab: 'Adabul \'Alim wal Muta\'allim',
+    question: 'Bagaimana hukum memanfaatkan AI (Artificial Intelligence) untuk kajian keagamaan dan mengapa AI tidak boleh menjadi mufti?'
+  },
+  {
+    category: 'Fikih Ibadah',
+    badge: '📖 Fikih Ibadah Syafi\'iyah',
+    icon: '🌅',
+    title: 'Doa Qunut pada Shalat Subuh',
+    desc: 'Kedudukan sunnah ab\'adh Qunut Subuh, sujud sahwi & adab bermakmum beda mazhab',
+    kitab: 'Al-Majmu\' Juz 3 & Fathul Mu\'in',
+    question: 'Bagaimana hukum membaca doa Qunut pada shalat Subuh dalam Mazhab Syafi\'i dan bagaimana jika lupa?'
+  },
+  {
+    category: 'Fikih Ibadah',
+    badge: '📖 Fikih Ibadah Syafi\'iyah',
+    icon: '🧳',
+    title: 'Shalat Jamak & Qashar Saat Safar',
+    desc: 'Ketentuan jarak minimal 2 marhalah (82 km) dan batas hari musafir',
+    kitab: 'Fathul Mu\'in & Tanwirul Qulub',
+    question: 'Bagaimana syarat dan ketentuan menjamak serta mengqashar shalat saat perjalanan jauh (safar / mudik)?'
+  },
+  {
+    category: 'Ke-NU-an & Khittah',
+    badge: '🌿 Sejarah & Manhaj NU',
+    icon: '📜',
+    title: 'Metode Bahtsul Masail: Qauli, Ilhaqi, Manhaji',
+    desc: 'Sistem pengambilan keputusan hukum Islam di lingkungan Nahdlatul Ulama',
+    kitab: 'Keputusan Munas Alim Ulama Lampung 1992',
+    question: 'Jelaskan 3 metodologi pengambilan hukum (istinbath) dalam Bahtsul Masail NU: Qauli, Ilhaqi, dan Manhaji!'
+  },
+  {
+    category: 'Ke-NU-an & Khittah',
+    badge: '🌿 Sejarah & Manhaj NU',
+    icon: '🇮🇩',
+    title: 'Islam, Pancasila & Fiqih Peradaban NU',
+    desc: 'Pandangan kebangsaan Hubbul Wathan Minal Iman, Resolusi Jihad & Satu Abad NU',
+    kitab: 'Muktamar Situbondo 1984 & Fiqih Peradaban',
+    question: 'Bagaimana pandangan Nahdlatul Ulama mengenai hubungan Islam, Pancasila, NKRI, serta konsep Fiqih Peradaban?'
+  }
+];
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   updateApiKeyUI();
+  renderStarterCards('ALL');
   renderChatHistorySidebar();
   fetchKnowledgeBase();
 
   const textarea = document.getElementById('userInput');
-  textarea.addEventListener('input', () => {
-    textarea.style.height = 'auto';
-    textarea.style.height = Math.min(textarea.scrollHeight, 140) + 'px';
-  });
+  if (textarea) {
+    textarea.addEventListener('input', () => {
+      textarea.style.height = 'auto';
+      textarea.style.height = Math.min(textarea.scrollHeight, 140) + 'px';
+    });
+  }
 });
+
+// Toggle Mobile Sidebar
+function toggleMobileSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebarBackdrop');
+  if (!sidebar || !backdrop) return;
+
+  const isClosed = sidebar.classList.contains('-translate-x-full');
+  if (isClosed) {
+    sidebar.classList.remove('-translate-x-full');
+    backdrop.classList.remove('hidden');
+  } else {
+    sidebar.classList.add('-translate-x-full');
+    backdrop.classList.add('hidden');
+  }
+}
+
+// Render & Filter 12 Starter Cards
+function filterStarterCards(category) {
+  activeCategoryFilter = category;
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    const btnCat = btn.getAttribute('data-cat');
+    if (btnCat === category) {
+      btn.className = 'cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-700 text-white shadow-xs transition cursor-pointer';
+    } else {
+      btn.className = 'cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-500 transition cursor-pointer';
+    }
+  });
+  renderStarterCards(category);
+}
+
+function renderStarterCards(category) {
+  const grid = document.getElementById('starterCardsGrid');
+  if (!grid) return;
+
+  const items = category === 'ALL'
+    ? STARTER_CARDS
+    : STARTER_CARDS.filter(c => c.category === category);
+
+  grid.innerHTML = items.map(card => `
+    <div
+      onclick="askPreset(${ JSON.stringify(card.question).replace(/"/g, '&quot;') })"
+      class="group p-4 rounded-2xl bg-white border border-slate-200/90 hover:border-emerald-500 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between space-y-3 animate-fade-in"
+    >
+      <div class="space-y-2">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/70">
+            ${escapeHtml(card.badge)}
+          </span>
+          <span class="text-lg group-hover:scale-110 transition-transform">${card.icon}</span>
+        </div>
+        <h4 class="font-bold text-sm text-slate-800 group-hover:text-emerald-800 transition-colors leading-snug">
+          ${escapeHtml(card.title)}
+        </h4>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          ${escapeHtml(card.desc)}
+        </p>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-slate-400 truncate max-w-[180px]" title="${escapeHtml(card.kitab)}">📖 ${escapeHtml(card.kitab)}</span>
+        <span class="font-bold text-emerald-700 group-hover:translate-x-0.5 transition-transform">Uji Soal →</span>
+      </div>
+    </div>
+  `).join('');
+}
 
 function updateApiKeyUI() {
   const dot = document.getElementById('apiKeyStatusDot');
@@ -24,15 +206,23 @@ function updateApiKeyUI() {
   if (input) input.value = geminiApiKey;
 
   if (geminiApiKey) {
-    dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
-    dot.title = 'Gemini API Key Aktif';
-    badge.innerHTML = '✨ Mode: Gemini 2.5 Flash + Hybrid RAG Aswaja';
-    badge.className = 'text-xs px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 font-medium';
+    if (dot) {
+      dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-400';
+      dot.title = 'Gemini API Key Aktif';
+    }
+    if (badge) {
+      badge.innerHTML = '✨ Gemini 2.5 Flash + Hybrid RAG Aswaja';
+      badge.className = 'hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 font-semibold';
+    }
   } else {
-    dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
-    dot.title = 'Mode RAG Lokal + NU Online';
-    badge.innerHTML = '⚡ Mode: Hybrid RAG Lokal + NU Online';
-    badge.className = 'text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium';
+    if (dot) {
+      dot.className = 'w-2.5 h-2.5 rounded-full bg-amber-400';
+      dot.title = 'Mode RAG Lokal + NU Online';
+    }
+    if (badge) {
+      badge.innerHTML = '⚡ Hybrid RAG Kitab + NU Online';
+      badge.className = 'hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold';
+    }
   }
 }
 
@@ -43,7 +233,10 @@ async function fetchKnowledgeBase() {
     if (res.ok) {
       const data = await res.json();
       if (data.items) {
-        knowledgeBaseItems = data.items;
+        const customItems = JSON.parse(localStorage.getItem('aswaja_custom_kb') || '[]');
+        // Avoid duplicates if already saved on server
+        const serverIds = new Set(data.items.map(i => i.id));
+        knowledgeBaseItems = [...customItems.filter(c => !serverIds.has(c.id)), ...data.items];
       }
     } else {
       throw new Error('Static mode');
@@ -61,26 +254,47 @@ async function fetchKnowledgeBase() {
   }
   const badge = document.getElementById('kbCountBadge');
   if (badge) badge.textContent = knowledgeBaseItems.length;
+  const heroCount = document.getElementById('heroKbCount');
+  if (heroCount) heroCount.textContent = knowledgeBaseItems.length + '+';
 }
 
 // Client-side RAG fallback when hosted on GitHub Pages (Static Hosting without Node backend)
 function clientSideSearchKB(query, topK = 3) {
-  const stopWords = new Set(['apa','apakah','bagaimana','mengapa','kenapa','siapa','yang','dan','di','ke','dari','untuk','pada','dengan','dalam','atau','ini','itu','adalah','menurut','pandangan','hukum','hukumnya','tentang','mengenai','dalil','dalilnya','jelaskan','tolong','saya','mau','tanya']);
-  const tokens = (query || '').toLowerCase().replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length >= 2 && !stopWords.has(w));
+  const stopWords = new Set([
+    'apa','apakah','bagaimana','mengapa','kenapa','siapa','kapan','dimana',
+    'yang','dan','di','ke','dari','untuk','pada','dengan','dalam','atau',
+    'ini','itu','adalah','yaitu','yakni','jika','kalau','kalo','bila',
+    'menurut','pandangan','hukum','hukumnya','tentang','mengenai','dalil',
+    'dalilnya','jelaskan','tolong','saya','mau','tanya','bertanya','boleh',
+    'bolehkah','sah','sahkah','tidak','bukan','secara','bagi','oleh'
+  ]);
+  const rawTokens = (query || '').toLowerCase().replace(/['’`]/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length >= 2);
+  const filteredTokens = rawTokens.filter(w => !stopWords.has(w));
+  const tokens = filteredTokens.length > 0 ? filteredTokens : rawTokens;
   const lowerQuery = (query || '').toLowerCase();
 
   const scored = knowledgeBaseItems.map(item => {
     let score = 0;
     const tags = (item.tags || []).map(t => t.toLowerCase());
+    const titleLower = (item.title || '').toLowerCase();
+    const categoryLower = (item.category || '').toLowerCase();
+    const summaryLower = (item.summary || '').toLowerCase();
+    const contentLower = (item.content || '').toLowerCase();
+    const kitabLower = (item.kitab_reference || '').toLowerCase();
+    const bmLower = (item.bahtsul_masail || '').toLowerCase();
+
     for (const tag of tags) {
       if (lowerQuery.includes(tag)) score += 18;
     }
     for (const token of tokens) {
-      if (tags.some(t => t.includes(token))) score += 9;
-      if ((item.title || '').toLowerCase().includes(token)) score += 9;
-      if ((item.summary || '').toLowerCase().includes(token)) score += 5;
-      if ((item.content || '').toLowerCase().includes(token)) score += 3;
-      if ((item.kitab_reference || '').toLowerCase().includes(token)) score += 5;
+      if (tags.some(t => t === token)) score += 12;
+      else if (tags.some(t => t.includes(token) || token.includes(t))) score += 7;
+      if (titleLower.includes(token)) score += 9;
+      if (categoryLower.includes(token)) score += 4;
+      if (summaryLower.includes(token)) score += 5;
+      if (kitabLower.includes(token)) score += 5;
+      if (bmLower.includes(token)) score += 4;
+      if (contentLower.includes(token)) score += 3;
     }
     return { item, score };
   });
@@ -101,6 +315,14 @@ async function clientSideChatFallback(message) {
     score: r.score
   }));
 
+  const followUps = retrieved.length > 0 && Array.isArray(retrieved[0].item.follow_ups)
+    ? retrieved[0].item.follow_ups
+    : [
+        'Bagaimana hukum tahlilan dan kirim doa untuk mayit?',
+        'Bagaimana hukum akad nikah online via Video Call / Zoom?',
+        'Apa itu 3 pilar Aswaja An-Nahdliyah?'
+      ];
+
   if (geminiApiKey) {
     try {
       const contextText = retrieved.map((r, i) => `[DOKUMEN #${i + 1}] ${r.item.title}\nKitab: ${r.item.kitab_reference}\nLBM: ${r.item.bahtsul_masail}\nIbarah: ${r.item.arabic_quote}\nTerjemah: ${r.item.arabic_translation}\nIsi: ${r.item.content}`).join('\n\n');
@@ -114,7 +336,7 @@ async function clientSideChatFallback(message) {
       });
       const gData = await gRes.json();
       const text = gData.candidates?.[0]?.content?.parts?.map(p => p.text).join('');
-      if (text) return { reply: text, sources, mode: 'gemini-rag' };
+      if (text) return { reply: text, sources, followUps, mode: 'gemini-rag' };
     } catch (e) {
       console.warn('Client Gemini fallback error:', e);
     }
@@ -122,33 +344,47 @@ async function clientSideChatFallback(message) {
 
   if (retrieved.length > 0) {
     const p = retrieved[0].item;
+    const secondary = retrieved.slice(1).map(d => d.item);
     let reply = `### 📌 Ringkasan Jawaban (${p.category})\n${p.summary}\n\n### 📖 Uraian & Penjelasan Keilmuan\n${p.content}\n\n`;
     if (p.arabic_quote) {
       reply += `### 📜 Ibarah Kitab / Dalil Rujukan\n> **${p.arabic_quote}**\n>\n> *Artinya: "${p.arabic_translation}"*\n> — **(${p.kitab_reference})**\n\n`;
     }
     reply += `### ⚖️ Rujukan Keputusan & Kitab Mu'tabarah\n- **Kitab Rujukan:** ${p.kitab_reference}\n- **Lembaga Bahtsul Masail / Muktamar:** ${p.bahtsul_masail || '-'}`;
-    return { reply, sources, mode: 'local-rag' };
+    if (secondary.length > 0) {
+      reply += `\n\n---\n**Topik Terkait di Pustaka Kami:**\n`;
+      for (const sec of secondary) {
+        reply += `- *${sec.title}*: ${sec.summary.slice(0, 130)}...\n`;
+      }
+    }
+    return { reply, sources, followUps, mode: 'local-rag' };
   }
 
   return {
-    reply: `### Assalamu'alaikum Warahmatullahi Wabarakatuh\n\nPertanyaan mengenai **"${message}"** belum tersedia di basis data lokal. Silakan coba topik populer (Tahlilan, Akad Nikah Online, Qunut Subuh, Paylater/Pinjol, Aswaja, Metodologi Bahtsul Masail) atau masukkan **Gemini API Key** di menu **⚙️ Pengaturan AI**.`,
+    reply: `### Assalamu'alaikum Warahmatullahi Wabarakatuh\n\nTerima kasih atas pertanyaan Anda mengenai **"${message}"**.\n\nSaat ini topik spesifik tersebut **belum tersedia di dalam Basis Data Lokal (*Knowledge Base*)** kami. Sesuai prinsip kehati-hatian (*ihtiyath*) dalam tradisi keilmuan pesantren dan **Nahdlatul Ulama**, sistem AI ini dirancang untuk **tidak mengarang hukum fikih tanpa rujukan kitab (*ibarah*) yang terverifikasi**.\n\n#### Apa yang bisa Anda lakukan?\n1. **Uji Coba 23+ Topik yang Tersedia:** Klik salah satu pertanyaan rekomendasi di bawah ini atau buka menu **📚 Pustaka Kitab & LBM NU**.\n2. **Tambahkan Referensi Kitab Baru:** Klik **➕ Tambah Kitab / Referensi** di panel kiri.\n3. **Aktifkan Gemini AI:** Masukkan *Google Gemini API Key* di menu **⚙️ Pengaturan AI** untuk mengaktifkan penalaran bahasa alami penuh.`,
     sources: [],
+    followUps,
     mode: 'local-rag'
   };
 }
 
 // Start a new conversation
 function startNewChat() {
+  stopSpeech();
   currentChatId = null;
   document.getElementById('welcomeScreen').classList.remove('hidden');
   const stream = document.getElementById('chatStream');
   stream.classList.add('hidden');
   stream.innerHTML = '';
   renderChatHistorySidebar();
+  const sidebar = document.getElementById('sidebar');
+  if (sidebar && !sidebar.classList.contains('-translate-x-full') && window.innerWidth < 768) {
+    toggleMobileSidebar();
+  }
 }
 
 // Load an existing conversation
 function selectConversation(chatId) {
+  stopSpeech();
   const conv = conversations.find(c => c.id === chatId);
   if (!conv) return;
 
@@ -159,11 +395,14 @@ function selectConversation(chatId) {
   stream.innerHTML = '';
 
   conv.messages.forEach(msg => {
-    appendMessageToDOM(msg.role, msg.content, msg.sources, msg.mode);
+    appendMessageToDOM(msg.role, msg.content, msg.sources, msg.mode, msg.followUps);
   });
 
   renderChatHistorySidebar();
   scrollToBottom();
+  if (window.innerWidth < 768) {
+    toggleMobileSidebar();
+  }
 }
 
 // Delete a conversation
@@ -181,6 +420,7 @@ function deleteConversation(e, chatId) {
 // Render Sidebar History
 function renderChatHistorySidebar() {
   const listEl = document.getElementById('chatHistoryList');
+  if (!listEl) return;
   if (!conversations.length) {
     listEl.innerHTML = `<div class="px-3 py-2 text-emerald-400/60 italic">Belum ada riwayat tanya jawab</div>`;
     return;
@@ -189,9 +429,9 @@ function renderChatHistorySidebar() {
   listEl.innerHTML = conversations.map(c => {
     const isActive = c.id === currentChatId;
     return `
-      <div onclick="selectConversation('${c.id}')" class="group flex items-center justify-between px-3 py-2 rounded-lg cursor-pointer transition ${isActive ? 'bg-emerald-800/90 text-white font-medium' : 'hover:bg-emerald-900/60 text-emerald-100/90'}">
+      <div onclick="selectConversation('${c.id}')" class="group flex items-center justify-between px-3 py-2 rounded-xl cursor-pointer transition ${isActive ? 'bg-emerald-800/90 text-white font-semibold border border-emerald-700' : 'hover:bg-emerald-900/60 text-emerald-100/90'}">
         <span class="truncate pr-2">💬 ${escapeHtml(c.title)}</span>
-        <button onclick="deleteConversation(event, '${c.id}')" class="opacity-0 group-hover:opacity-100 text-emerald-300 hover:text-red-300 text-sm px-1" title="Hapus">&times;</button>
+        <button onclick="deleteConversation(event, '${c.id}')" class="opacity-0 group-hover:opacity-100 text-emerald-300 hover:text-red-300 text-sm px-1 cursor-pointer" title="Hapus">&times;</button>
       </div>
     `;
   }).join('');
@@ -245,7 +485,7 @@ async function handleSendMessage(e) {
   sendBtn.disabled = true;
 
   try {
-    const enableWebSearch = document.getElementById('webSearchToggle').checked;
+    const enableWebSearch = document.getElementById('webSearchToggle')?.checked !== false;
     let data;
     try {
       const res = await fetch('/api/chat', {
@@ -270,39 +510,42 @@ async function handleSendMessage(e) {
     const reply = data.reply || data.error || 'Terjadi kesalahan saat memproses jawaban.';
     const sources = data.sources || [];
     const mode = data.mode || 'local-rag';
+    const followUps = data.followUps || [];
 
     conv.messages.push({
       role: 'assistant',
       content: reply,
       sources,
-      mode
+      mode,
+      followUps
     });
     localStorage.setItem('aswaja_conversations', JSON.stringify(conversations));
 
-    appendMessageToDOM('assistant', reply, sources, mode);
+    appendMessageToDOM('assistant', reply, sources, mode, followUps);
     scrollToBottom();
   } catch (err) {
     removeLoadingIndicator(loadingId);
-    appendMessageToDOM('assistant', `Maaf, terjadi gangguan koneksi ke server: ${err.message}`, [], 'error');
+    appendMessageToDOM('assistant', `Maaf, terjadi gangguan saat memproses jawaban: ${err.message}`, [], 'error', []);
   } finally {
     sendBtn.disabled = false;
   }
 }
 
 // Render User or Assistant Message Bubble
-function appendMessageToDOM(role, content, sources = [], mode = 'local-rag') {
+function appendMessageToDOM(role, content, sources = [], mode = 'local-rag', followUps = []) {
   const stream = document.getElementById('chatStream');
   const wrapper = document.createElement('div');
+  const msgUid = 'msg-' + Date.now() + '-' + Math.random().toString(36).slice(2, 7);
 
   if (role === 'user') {
-    wrapper.className = 'flex justify-end';
+    wrapper.className = 'flex justify-end animate-fade-in';
     wrapper.innerHTML = `
-      <div class="max-w-xl bg-emerald-700 text-white px-4 py-3 rounded-2xl rounded-tr-xs shadow-xs text-sm leading-relaxed">
+      <div class="max-w-xl bg-gradient-to-r from-emerald-700 to-teal-700 text-white px-4 py-3 rounded-2xl rounded-tr-xs shadow-sm text-sm leading-relaxed">
         ${escapeHtml(content)}
       </div>
     `;
   } else {
-    wrapper.className = 'flex items-start gap-3.5';
+    wrapper.className = 'flex items-start gap-3.5 animate-fade-in';
     const modeLabel = mode === 'gemini-rag'
       ? '✨ Gemini 2.5 Flash + RAG Aswaja'
       : '📚 Mesin Sintesis RAG Kitab & Bahtsul Masail';
@@ -312,19 +555,22 @@ function appendMessageToDOM(role, content, sources = [], mode = 'local-rag') {
         <div class="mt-4 pt-3.5 border-t border-slate-200/80">
           <div class="text-[11px] font-bold uppercase tracking-wider text-emerald-800 mb-2 flex items-center gap-1.5">
             <span>📜</span>
-            <span>Kartu Rujukan Terverifikasi (${sources.length} Sumber):</span>
+            <span>Kartu Rujukan & Sanad Keilmuan Terverifikasi (${sources.length} Sumber):</span>
           </div>
           <div class="grid grid-cols-1 gap-2">
             ${sources.map(s => `
-              <div class="p-2.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-200/80 text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <div class="font-semibold text-emerald-950">${escapeHtml(s.title)}</div>
-                  <div class="text-[11px] text-emerald-800 mt-0.5">
+                  <div class="font-bold text-emerald-950 flex items-center gap-1.5">
+                    <span>${escapeHtml(s.title)}</span>
+                    ${s.category ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/70 text-emerald-900 font-semibold">${escapeHtml(s.category)}</span>` : ''}
+                  </div>
+                  <div class="text-[11px] text-emerald-800 mt-1">
                     📖 <strong>Kitab / Sumber:</strong> ${escapeHtml(s.kitab || '-')}
                     ${s.bahtsul_masail && s.bahtsul_masail !== '-' ? ` • ⚖️ <strong>LBM:</strong> ${escapeHtml(s.bahtsul_masail)}` : ''}
                   </div>
                 </div>
-                ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded-lg bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 border border-emerald-300 text-[11px] font-semibold shrink-0 transition self-start sm:self-center">Buka Rujukan ↗</a>` : ''}
+                ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 border border-emerald-300 text-[11px] font-bold shrink-0 transition self-start sm:self-center shadow-2xs">Buka Rujukan ↗</a>` : ''}
               </div>
             `).join('')}
           </div>
@@ -332,24 +578,127 @@ function appendMessageToDOM(role, content, sources = [], mode = 'local-rag') {
       `
       : '';
 
+    const followUpsHtml = followUps && followUps.length > 0
+      ? `
+        <div class="mt-4 pt-3 border-t border-slate-100">
+          <div class="text-[11px] font-bold text-slate-500 mb-2">💡 Pertanyaan Lanjutan yang Sering Ditanyakan:</div>
+          <div class="flex flex-wrap gap-1.5">
+            ${followUps.map(q => `
+              <button
+                onclick="askPreset(${JSON.stringify(q).replace(/"/g, '&quot;')})"
+                class="text-left text-xs px-3 py-1.5 rounded-xl bg-slate-50 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-300 transition font-medium cursor-pointer"
+              >
+                💬 ${escapeHtml(q)}
+              </button>
+            `).join('')}
+          </div>
+        </div>
+      `
+      : '';
+
+    const encodedRaw = encodeURIComponent(content);
+
     wrapper.innerHTML = `
-      <div class="w-9 h-9 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-base shrink-0 shadow-xs mt-0.5">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-amber-300 flex items-center justify-center font-bold text-base shrink-0 shadow-sm mt-0.5">
         ۞
       </div>
       <div class="flex-1 bg-white border border-slate-200 rounded-2xl rounded-tl-xs p-5 shadow-xs">
-        <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-100">
-          <span class="text-xs font-bold text-emerald-900">AswajaAI • Majelis Ilmiah Nahdlatul Ulama</span>
-          <span class="text-[10px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 font-medium">${modeLabel}</span>
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-100">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-extrabold text-emerald-950">AswajaAI • Majelis Ilmiah Nahdlatul Ulama</span>
+            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">${modeLabel}</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button onclick="speakMessage('${msgUid}', '${encodedRaw}')" id="tts-${msgUid}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 text-[11px] font-semibold transition cursor-pointer" title="Bacakan Jawaban dengan Suara">
+              🔊 Bacakan
+            </button>
+            <button onclick="copyMessageText('${msgUid}', '${encodedRaw}')" id="copy-${msgUid}" class="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-emerald-50 text-slate-600 hover:text-emerald-700 text-[11px] font-semibold transition cursor-pointer" title="Salin Teks Jawaban">
+              📋 Salin
+            </button>
+            <button onclick="shareToWhatsApp('${encodedRaw}')" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-[11px] font-semibold transition cursor-pointer" title="Bagikan ke WhatsApp">
+              📲 WA
+            </button>
+          </div>
         </div>
         <div class="prose-chat text-sm text-slate-700">
           ${renderMarkdown(content)}
         </div>
         ${sourcesHtml}
+        ${followUpsHtml}
       </div>
     `;
   }
 
   stream.appendChild(wrapper);
+}
+
+// Copy, TTS & Share Actions for Presentation Demo
+function copyMessageText(uid, encodedText) {
+  const raw = decodeURIComponent(encodedText).replace(/[#*>]/g, '').trim();
+  navigator.clipboard.writeText(raw).then(() => {
+    const btn = document.getElementById('copy-' + uid);
+    if (btn) {
+      const old = btn.innerHTML;
+      btn.innerHTML = '✅ Tersalin';
+      setTimeout(() => { btn.innerHTML = old; }, 2000);
+    }
+  });
+}
+
+function speakMessage(uid, encodedText) {
+  if (!('speechSynthesis' in window)) {
+    alert('Browser Anda tidak mendukung fitur pembaca suara (Text-to-Speech).');
+    return;
+  }
+  const btn = document.getElementById('tts-' + uid);
+  if (activeSpeechId === uid && window.speechSynthesis.speaking) {
+    stopSpeech();
+    return;
+  }
+  stopSpeech();
+
+  // Strip Markdown and Arabic characters so Indonesian TTS reads smoothly
+  const cleanText = decodeURIComponent(encodedText)
+    .replace(/[\u0600-\u06FF]+/g, '')
+    .replace(/[#*>_`~-]/g, ' ')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const utterance = new SpeechSynthesisUtterance(cleanText);
+  utterance.lang = 'id-ID';
+  utterance.rate = 1.02;
+
+  activeSpeechId = uid;
+  if (btn) btn.innerHTML = '⏹️ Berhenti';
+
+  utterance.onend = () => {
+    activeSpeechId = null;
+    if (btn) btn.innerHTML = '🔊 Bacakan';
+  };
+  utterance.onerror = () => {
+    activeSpeechId = null;
+    if (btn) btn.innerHTML = '🔊 Bacakan';
+  };
+
+  window.speechSynthesis.speak(utterance);
+}
+
+function stopSpeech() {
+  if ('speechSynthesis' in window) {
+    window.speechSynthesis.cancel();
+  }
+  if (activeSpeechId) {
+    const prevBtn = document.getElementById('tts-' + activeSpeechId);
+    if (prevBtn) prevBtn.innerHTML = '🔊 Bacakan';
+    activeSpeechId = null;
+  }
+}
+
+function shareToWhatsApp(encodedText) {
+  const raw = decodeURIComponent(encodedText).trim();
+  const shareText = `🕌 *Kajian AswajaAI (Bahtsul Masail & Keilmuan NU)*\n\n${raw.slice(0, 1200)}${raw.length > 1200 ? '...\n\n' : '\n\n'}🌐 _Diakses melalui AswajaAI_`;
+  window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
 }
 
 function appendLoadingIndicator(id) {
@@ -358,7 +707,7 @@ function appendLoadingIndicator(id) {
   el.id = id;
   el.className = 'flex items-start gap-3.5';
   el.innerHTML = `
-    <div class="w-9 h-9 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-base shrink-0 animate-pulse">
+    <div class="w-9 h-9 rounded-xl bg-emerald-700 text-amber-300 flex items-center justify-center font-bold text-base shrink-0 animate-pulse">
       ۞
     </div>
     <div class="bg-white border border-slate-200 rounded-2xl rounded-tl-xs px-5 py-4 shadow-xs text-xs text-slate-500 flex items-center gap-2.5">
@@ -376,7 +725,7 @@ function removeLoadingIndicator(id) {
 
 function scrollToBottom() {
   const container = document.getElementById('messagesContainer');
-  container.scrollTop = container.scrollHeight;
+  if (container) container.scrollTop = container.scrollHeight;
 }
 
 // Lightweight Markdown + Arabic text formatter
@@ -387,7 +736,6 @@ function renderMarkdown(md) {
   // Blockquotes (with automatic detection of Arabic characters for Amiri font)
   html = html.replace(/(?:^&gt; ?.*(?:\n|$))+/gm, (match) => {
     const inner = match.replace(/^&gt; ?/gm, '').trim();
-    const hasArabic = /[\u0600-\u06FF]/.test(inner);
     const lines = inner.split('\n').map(line => {
       if (/[\u0600-\u06FF]/.test(line)) {
         return `<div class="font-arabic text-emerald-950 font-bold mb-2 text-right">${formatInline(line)}</div>`;
@@ -453,8 +801,22 @@ function escapeHtml(str) {
 }
 
 // ==========================================
-// MODAL HANDLERS (PUSTAKA, TAMBAH KITAB, SETTINGS)
+// MODAL HANDLERS (PRESENTASI, PUSTAKA, TAMBAH KITAB, SETTINGS)
 // ==========================================
+
+function openPresentationModal() {
+  const modal = document.getElementById('presentationModal');
+  if (!modal) return;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+}
+
+function closePresentationModal() {
+  const modal = document.getElementById('presentationModal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+}
 
 async function openKnowledgeModal() {
   await fetchKnowledgeBase();
@@ -491,19 +853,19 @@ function renderKnowledgeList() {
   }
 
   container.innerHTML = filtered.map(item => `
-    <div class="p-4 rounded-xl border border-slate-200 bg-white hover:border-emerald-400 transition space-y-2 shadow-2xs">
+    <div class="p-4 rounded-2xl border border-slate-200 bg-white hover:border-emerald-400 transition space-y-2 shadow-2xs">
       <div class="flex items-start justify-between gap-2">
         <div>
-          <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">${escapeHtml(item.category)}</span>
+          <span class="text-[10px] font-bold uppercase px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800">${escapeHtml(item.category)}</span>
           <h4 class="font-bold text-sm text-slate-800 mt-1">${escapeHtml(item.title)}</h4>
         </div>
-        <button onclick="askFromKnowledge('${escapeHtml(item.title)}')" class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-600 hover:text-white text-emerald-700 text-xs font-semibold border border-emerald-200 transition shrink-0">
+        <button onclick="askFromKnowledge(${JSON.stringify(item.title).replace(/"/g, '&quot;')})" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-600 hover:text-white text-emerald-700 text-xs font-bold border border-emerald-200 transition shrink-0 cursor-pointer">
           Tanyakan di Chat →
         </button>
       </div>
-      ${item.arabic_quote ? `<div class="font-arabic text-emerald-950 bg-emerald-50/60 px-3 py-2 rounded-lg border-r-4 border-emerald-600 text-right">${escapeHtml(item.arabic_quote)}</div>` : ''}
+      ${item.arabic_quote ? `<div class="font-arabic text-emerald-950 bg-emerald-50/60 px-3.5 py-2 rounded-xl border-r-4 border-emerald-600 text-right">${escapeHtml(item.arabic_quote)}</div>` : ''}
       <p class="text-xs text-slate-600 leading-relaxed">${escapeHtml(item.summary)}</p>
-      <div class="text-[11px] text-slate-500 pt-1 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+      <div class="text-[11px] text-slate-500 pt-1.5 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
         <span>📖 <strong>Kitab:</strong> ${escapeHtml(item.kitab_reference)}</span>
         <span>⚖️ <strong>LBM:</strong> ${escapeHtml(item.bahtsul_masail || '-')}</span>
       </div>
@@ -547,16 +909,17 @@ function handleFileImport(e) {
 async function handleAddReference(e) {
   e.preventDefault();
   const payload = {
-    title: document.getElementById('refTitle').value,
-    category: document.getElementById('refCategory').value,
-    kitab_reference: document.getElementById('refKitab').value,
-    bahtsul_masail: document.getElementById('refBM').value,
-    tags: document.getElementById('refTags').value,
-    arabic_quote: document.getElementById('refArabic').value,
-    arabic_translation: document.getElementById('refTranslation').value,
-    summary: document.getElementById('refSummary').value,
-    content: document.getElementById('refContent').value,
-    source_url: document.getElementById('refUrl').value
+    id: 'kb-' + Date.now(),
+    title: document.getElementById('refTitle').value.trim(),
+    category: document.getElementById('refCategory').value.trim(),
+    kitab_reference: document.getElementById('refKitab').value.trim(),
+    bahtsul_masail: (document.getElementById('refBM').value || '-').trim(),
+    tags: document.getElementById('refTags').value.split(',').map(t => t.trim().toLowerCase()).filter(Boolean),
+    arabic_quote: document.getElementById('refArabic').value.trim(),
+    arabic_translation: document.getElementById('refTranslation').value.trim(),
+    summary: document.getElementById('refSummary').value.trim(),
+    content: document.getElementById('refContent').value.trim(),
+    source_url: document.getElementById('refUrl').value.trim()
   };
 
   try {
@@ -565,17 +928,23 @@ async function handleAddReference(e) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
+    if (!res.ok) throw new Error('Static mode fallback');
     const data = await res.json();
     if (data.status === 'ok') {
       document.getElementById('addRefForm').reset();
       closeAddReferenceModal();
       await fetchKnowledgeBase();
       alert(`Alhamdulillah! Referensi "${data.item.title}" berhasil ditambahkan ke Database RAG dan siap ditanyakan.`);
-    } else {
-      alert('Gagal menyimpan: ' + (data.error || 'Unknown error'));
     }
   } catch (err) {
-    alert('Gagal menghubungi server: ' + err.message);
+    // Save to localStorage when hosted on GitHub Pages (Static Mode)
+    const customItems = JSON.parse(localStorage.getItem('aswaja_custom_kb') || '[]');
+    customItems.unshift(payload);
+    localStorage.setItem('aswaja_custom_kb', JSON.stringify(customItems));
+    document.getElementById('addRefForm').reset();
+    closeAddReferenceModal();
+    await fetchKnowledgeBase();
+    alert(`Alhamdulillah! Referensi "${payload.title}" berhasil disimpan ke Database RAG dan siap diuji coba.`);
   }
 }
 
@@ -598,4 +967,3 @@ function saveSettings() {
   updateApiKeyUI();
   closeSettingsModal();
 }
-

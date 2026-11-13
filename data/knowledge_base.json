@@ -3,131 +3,414 @@
     "id": "kb-001",
     "title": "Hukum Tahlilan dan Kirim Pahala Bacaan Al-Qur'an / Dzikir kepada Mayit",
     "category": "Amaliyah NU",
-    "tags": ["tahlil", "tahlilan", "yasinan", "kirim doa", "pahala mayit", "kematian", "7 hari", "40 hari", "haul"],
+    "tags": ["tahlil", "tahlilan", "yasinan", "kirim doa", "pahala mayit", "kematian", "7 hari", "40 hari", "100 hari", "haul", "kenduri", "selamatan"],
     "kitab_reference": "Kitab Al-Adzkar karya Imam An-Nawawi, Kitab Ar-Ruh karya Ibnul Qayyim, & Kitab I'anatuth Thalibin Juz 3",
     "bahtsul_masail": "Keputusan Muktamar NU ke-1 di Surabaya (1926) dalam Ahkamul Fuqaha No. 3",
     "arabic_quote": "وَفِي الدُّعَاءِ وَالصَّدَقَةِ نَفْعٌ لِلْمَيِّتِ وَيَصِلُ إِلَيْهِ ثَوَابُهُمَا بِالْإِجْمَاعِ",
     "arabic_translation": "Di dalam doa dan sedekah terdapat kemanfaatan bagi mayit, dan pahala keduanya sampai kepada mayit berdasarkan ijma' (kesepakatan) ulama.",
     "summary": "Tradisi tahlilan (berkumpul membaca kalimat thayyibah, surat Yasin, dzikir, dan doa bersama serta bersedekah makanan untuk dihadiahkan pahalanya kepada orang yang telah wafat) hukumnya boleh (ja'iz) bahkan dianjurkan (sunnah/mustahab) selama tidak memberatkan keluarga duka dan tidak menggunakan harta anak yatim secara tidak sah.",
-    "content": "Dalam tradisi Ahlussunnah wal Jama'ah An-Nahdliyah, pengiriman pahala bacaan Al-Qur'an, dzikir (tahlil, tahmid, tasbih), shalawat, dan sedekah kepada orang yang telah meninggal dunia dinyatakan sampai dan bermanfaat bagi ahli kubur.\n\n1. **Pandangan Mazhab Syafi'i dan Jumhur Ulama:**\nImam An-Nawawi dalam *Al-Adzkar* dan *Syarah Shahih Muslim* menjelaskan bahwa doa dan sedekah disepakati (ijma') sampai pahalanya kepada mayit. Adapun bacaan Al-Qur'an, pendapat masyhur yang dipilih oleh ulama muta'akhirin Mazhab Syafi'i (seperti Imam Ibnu Shalah, Imam Subki, dan Syaikh Abu Bakar Syatha dalam *I'anatuth Thalibin*) menyatakan bahwa pahalanya sampai kepada mayit, terlebih bila disertai doa setelah membaca: *'Allahummaj'al tsawaba ma qara'nahu li fulan...'* (Ya Allah, jadikanlah pahala bacaan kami ini untuk Fulan).\n\n2. **Hukum Jamuan Makanan di Rumah Duka:**\nDalam *I'anatuth Thalibin* dijelaskan bahwa apabila jamuan makan diniatkan sebagai sedekah atas nama mayit dan tidak bertujuan untuk *niyahah* (meratapi kematian), maka hukumnya boleh dan berpahala sedekah. Namun dilarang apabila diambil dari harta warisan yang di dalamnya terdapat hak ahli waris yang belum dewasa (anak yatim) atau memberatkan keluarga yang sedang berduka.",
-    "source_url": "https://islam.nu.or.id/bahtsul-masail/dalil-dan-hukum-tahlilan-menurut-ulama-aswaja"
+    "content": "Dalam tradisi Ahlussunnah wal Jama'ah An-Nahdliyah, pengiriman pahala bacaan Al-Qur'an, dzikir (tahlil, tahmid, tasbih), shalawat, dan sedekah kepada orang yang telah meninggal dunia dinyatakan sampai dan bermanfaat bagi ahli kubur.\n\n1. **Pandangan Mazhab Syafi'i dan Jumhur Ulama:**\nImam An-Nawawi dalam *Al-Adzkar* dan *Syarah Shahih Muslim* menjelaskan bahwa doa dan sedekah disepakati (*ijma'*) sampai pahalanya kepada mayit. Adapun bacaan Al-Qur'an, pendapat masyhur yang dipilih oleh ulama muta'akhirin Mazhab Syafi'i (seperti Imam Ibnu Shalah, Imam Subki, dan Syaikh Abu Bakar Syatha dalam *I'anatuth Thalibin*) menyatakan bahwa pahalanya sampai kepada mayit, terlebih bila disertai doa setelah membaca: *'Allahummaj'al tsawaba ma qara'nahu li fulan...'* (Ya Allah, jadikanlah pahala bacaan kami ini untuk Fulan).\n\n2. **Hukum Jamuan Makanan di Rumah Duka:**\nDalam *I'anatuth Thalibin* dijelaskan bahwa apabila jamuan makan diniatkan sebagai sedekah atas nama mayit dan tidak bertujuan untuk *niyahah* (meratapi kematian), maka hukumnya boleh dan berpahala sedekah. Namun dilarang apabila diambil dari harta warisan yang di dalamnya terdapat hak ahli waris yang belum dewasa (anak yatim) atau memaksakan diri hingga berutang.",
+    "source_url": "https://islam.nu.or.id/bahtsul-masail/dalil-dan-hukum-tahlilan-menurut-ulama-aswaja",
+    "follow_ups": [
+      "Bagaimana hukum mentalqin mayit dan adzan saat pemakaman?",
+      "Apa dalil ziarah kubur dan tawassul kepada para wali?",
+      "Bagaimana hukum membaca Yasin pada malam Jumat?"
+    ]
   },
   {
     "id": "kb-002",
     "title": "Hukum Membaca Doa Qunut pada Shalat Subuh",
     "category": "Fikih Ibadah",
-    "tags": ["qunut", "subuh", "shalat subuh", "sujud sahwi", "sunnah ab'adh", "mazhab syafii"],
+    "tags": ["qunut", "subuh", "shalat subuh", "sujud sahwi", "sunnah ab'adh", "mazhab syafii", "imam tidak qunut"],
     "kitab_reference": "Kitab Al-Majmu' Syarah Al-Muhadzdzab Juz 3 hlm. 504 (Imam An-Nawawi) & Kitab Fathul Mu'in",
     "bahtsul_masail": "Pedoman Fikih Ibadah Mazhab Syafi'i LBM NU",
     "arabic_quote": "مَذْهَبُنَا أَنَّهُ يُسْتَحَبُّ الْقُنُوتُ فِي الصُّبْحِ سَوَاءٌ نَزَلَتْ نَازِلَةٌ أَمْ لَمْ تَنْزِلْ، وَبِهِ قَالَ أَكْثَرُ السَّلَفِ",
     "arabic_translation": "Mazhab kami (Syafi'iyah) berpendapat bahwa disunnahkan membaca qunut pada shalat Subuh, baik ketika terjadi bencana (nazilah) maupun tidak. Pendapat ini juga dipegang oleh mayoritas ulama salaf.",
     "summary": "Membaca doa Qunut setelah rukuk (i'tidal) pada rakaat kedua shalat Subuh hukumnya adalah Sunnah Ab'adh menurut Mazhab Syafi'i dan Mazhab Maliki. Apabila ditinggalkan (baik sengaja maupun lupa), shalatnya tetap sah namun disunnahkan melakukan sujud sahwi sebelum salam.",
-    "content": "Dalam fikih Mazhab Syafi'i yang menjadi pegangan utama warga Nahdlatul Ulama, doa Qunut pada rakaat kedua shalat Subuh berstatus **Sunnah Ab'adh**.\n\n1. **Landasan Hadis:**\nDiriwayatkan dari Anas bin Malik RA: *'Ma zala Rasulullahi shallallahu alaihi wasallam yaqnutu fil fajri hatta faraqad dunya'* (Rasulullah SAW senantiasa membaca qunut pada shalat Subuh hingga beliau wafat) — HR. Ahmad, Abdurrazzaq, dan Ad-Daruquthni (dishahihkan oleh Imam An-Nawawi dan Al-Hafizh Al-Balkhi).\n\n2. **Ketentuan Praktis & Sikap Bermazhab:**\n- Apabila shalat sendiri atau menjadi imam, membaca lafal *Allahummahdini* (atau *Allahummahdina* bagi imam dengan suara jahr/terdengar, lalu makmum mengamini).\n- Jika lupa atau sengaja tidak membaca qunut Subuh, shalat tetap sah dan disunnahkan menutupnya dengan **sujud sahwi** dua kali sebelum salam.\n- Jika seorang pengikut Mazhab Syafi'i bermakmum kepada imam yang tidak membaca qunut (misal menganut mazhab lain), makmum mengikuti imam dan disunnahkan sujud sahwi sendiri sebelum salam jika memungkinkan, atau tetap sah tanpa sujud sahwi demi menjaga kebersamaan jamaah.",
-    "source_url": "https://islam.nu.or.id/shalat/hukum-dan-dalil-qunut-subuh-dalam-mazhab-syafii"
+    "content": "Dalam fikih Mazhab Syafi'i yang menjadi pegangan utama warga Nahdlatul Ulama, doa Qunut pada rakaat kedua shalat Subuh berstatus **Sunnah Ab'adh**.\n\n1. **Landasan Hadis:**\nDiriwayatkan dari Anas bin Malik RA: *'Ma zala Rasulullahi shallallahu alaihi wasallam yaqnutu fil fajri hatta faraqad dunya'* (Rasulullah SAW senantiasa membaca qunut pada shalat Subuh hingga beliau wafat) — HR. Ahmad, Abdurrazzaq, dan Ad-Daruquthni (dishahihkan oleh Imam An-Nawawi dan Al-Hafizh Al-Balkhi).\n\n2. **Ketentuan Praktis & Sikap Bermazhab:**\n- Apabila shalat sendiri (*munfarid*), membaca lafal *Allahummahdini*, sedangkan bagi imam membaca *Allahummahdina* dengan suara *jahr* (terdengar) dan makmum mengamini.\n- Jika lupa atau sengaja tidak membaca qunut Subuh, shalat tetap sah dan disunnahkan menutupnya dengan **sujud sahwi** dua kali sebelum salam.\n- Jika bermakmum kepada imam yang tidak membaca qunut, makmum mengikuti imam dan tidak perlu memisahkan diri demi menjaga ukhuwah jamaah.",
+    "source_url": "https://islam.nu.or.id/shalat/hukum-dan-dalil-qunut-subuh-dalam-mazhab-syafii",
+    "follow_ups": [
+      "Bagaimana hukum bersalaman dan dzikir suara keras setelah shalat?",
+      "Apakah bersentuhan kulit suami istri membatalkan wudhu?",
+      "Bagaimana ketentuan jamak dan qashar shalat saat perjalanan?"
+    ]
   },
   {
     "id": "kb-003",
-    "title": "Prinsip Dasar Ahlussunnah wal Jama'ah (Aswaja) An-Nahdliyah & Mabadi' Khaira Ummah",
+    "title": "Prinsip Dasar Ahlussunnah wal Jama'ah (Aswaja) An-Nahdliyah & Fikrah Nahdliyah",
     "category": "Ke-NU-an & Khittah",
-    "tags": ["aswaja", "ahlussunnah wal jamaah", "khittah", "tawassuth", "tasamuh", "tawazun", "itidal", "nu", "akidah", "fikih", "tasawuf"],
+    "tags": ["aswaja", "ahlussunnah wal jamaah", "khittah", "tawassuth", "tasamuh", "tawazun", "itidal", "nu", "akidah", "fikih", "tasawuf", "mabadi khaira ummah"],
     "kitab_reference": "Risalah Ahlussunnah wal Jama'ah karya Hadratussyaikh KH. Hasyim Asy'ari & Dokumen Khittah NU 1926 (Muktamar ke-27 Situbondo 1984)",
     "bahtsul_masail": "Keputusan Muktamar NU ke-27 di Situbondo (1984) & Munas Lampung (1992)",
     "arabic_quote": "وَكَذَٰلِكَ جَعَلْنَاكُمْ أُمَّةً وَسَطًا لِّتَكُونُوا شُهَدَاءَ عَلَى النَّاسِ",
     "arabic_translation": "Dan demikian pula Kami telah menjadikan kamu (umat Islam) umat pertengahan (moderat) agar kamu menjadi saksi atas perbuatan manusia. (QS. Al-Baqarah: 143)",
     "summary": "Ahlussunnah wal Jama'ah An-Nahdliyah adalah metodologi pemahaman dan pengamalan Islam yang bersanad kepada Rasulullah SAW, sahabat, dan ulama salaf melalui tiga pilar: Akidah (Imam Abu Hasan Al-Asy'ari & Imam Abu Manshur Al-Maturidi), Fikih (Empat Mazhab: Hanafi, Maliki, Syafi'i, Hanbali), dan Tasawuf (Imam Junaid Al-Baghdadi & Imam Al-Ghazali).",
     "content": "Nahdlatul Ulama (NU) didirikan pada 16 Rajab 1344 H / 31 Januari 1926 M di Surabaya oleh Hadratussyaikh KH. Hasyim Asy'ari, KH. Abdul Wahab Hasbullah, KH. Bisri Syansuri, dan para ulama pesantren untuk melestarikan ajaran Islam Ahlussunnah wal Jama'ah (Aswaja).\n\n### Tiga Pilar Keilmuan Aswaja NU:\n1. **Bidang Akidah (Tauhid):** Mengikuti manhaj Imam Abu Hasan Al-Asy'ari dan Imam Abu Manshur Al-Maturidi (menyeimbangkan dalil naqli/wahyu dan dalil aqli/akal).\n2. **Bidang Fikih (Syariah):** Mengikuti salah satu dari empat mazhab fikih yang mu'tabar (Hanafi, Maliki, Syafi'i, dan Hanbali), yang dalam praktiknya di Indonesia mayoritas mengamalkan **Mazhab Syafi'i**.\n3. **Bidang Tasawuf (Akhlak):** Mengikuti manhaj Imam Junaid Al-Baghdadi dan Hujjatul Islam Imam Al-Ghazali yang memadukan syariat dan hakikat.\n\n### Empat Sikap Kemasyarakatan NU (Fikrah Nahdliyah):\n- **Tawassuth dan I'tidal (Moderat & Tegak Lurus/Adil):** Bersikap tengah, tidak ekstrem kanan (tekstual-kaku/takfiri) maupun ekstrem kiri (liberal-mengabaikan nash).\n- **Tasamuh (Toleran):** Menghargai perbedaan pendapat dalam masalah *furu'iyah* (cabang fikih) serta hidup rukun berdampingan dengan sesama warga bangsa (*ukhuwah islamiyah, ukhuwah wathaniyah, dan ukhuwah basyariyah*).\n- **Tawazun (Seimbang):** Menyeimbangkan pengabdian kepada Allah (*hablum minallah*), sesama manusia (*hablum minannas*), serta keseimbangan urusan dunia dan akhirat.\n- **Amar Ma'ruf Nahi Munkar:** Mengajak kebaikan dan mencegah kemungkaran dengan cara yang bijaksana (*bil hikmah wal mau'izhatil hasanah*).",
-    "source_url": "https://nu.or.id/tentang-nu/paham-keagamaan-dan-sikap-kemasyarakatan-nu"
+    "source_url": "https://nu.or.id/tentang-nu/paham-keagamaan-dan-sikap-kemasyarakatan-nu",
+    "follow_ups": [
+      "Siapa saja tokoh pendiri dan ulama besar Nahdlatul Ulama?",
+      "Bagaimana pandangan NU tentang hubungan Islam, Pancasila, dan NKRI?",
+      "Bagaimana metodologi pengambilan hukum di Bahtsul Masail NU?"
+    ]
   },
   {
     "id": "kb-004",
     "title": "Hukum Ziarah Kubur dan Tawassul kepada Para Wali / Ulama",
     "category": "Amaliyah NU",
-    "tags": ["ziarah kubur", "ziarah wali", "walisongo", "tawassul", "tabarruk", "kuburan"],
+    "tags": ["ziarah kubur", "ziarah wali", "walisongo", "tawassul", "tabarruk", "kuburan", "makam"],
     "kitab_reference": "Kitab Al-Majmu' Syarah Al-Muhadzdzab Juz 5, Kitab Mafahim Yajibu An Tushahhah (Sayyid Muhammad bin Alawi Al-Maliki)",
     "bahtsul_masail": "Keputusan Muktamar NU & Risalah Aswaja KH. Hasyim Asy'ari",
     "arabic_quote": "كُنْتُ نَهَيْتُكُمْ عَنْ زِيَارَةِ الْقُبُورِ أَلَا فَزُورُوهَا فَإِنَّهَا تُذَكِّرُ الْآخِرَةَ",
     "arabic_translation": "Dahulu aku melarang kalian berziarah kubur. Ingatlah, sekarang berziarahlah ke kubur, karena sesungguhnya ziarah kubur itu mengingatkan pada akhirat. (HR. Muslim & Tirmidzi)",
     "summary": "Ziarah kubur (termasuk ziarah ke makam orang tua, ulama, dan para wali seperti Walisongo) hukumnya sunnah guna mengingatkan diri pada kematian serta mendoakan ahli kubur. Adapun bertawassul dengan menyebut kedudukan mulia para Nabi dan orang-orang shalih di sisi Allah hukumnya boleh, karena hakikat yang mengabulkan doa tetaplah Allah SWT semata.",
-    "content": "Ziarah kubur dan tawassul merupakan amaliyah yang memiliki landasan kuat dalam Al-Qur'an, Hadis, dan amalan ulama salaf.\n\n1. **Hukum Ziarah Kubur:**\nDisunnahkan bagi laki-laki, dan diperbolehkan pula bagi perempuan selama aman dari fitnah dan tidak melakukan *niyahah* (meratap berlebihan). Saat berziarah, peziarah mengucapkan salam ahli kubur, membaca ayat-ayat Al-Qur'an (seperti Yasin, Al-Ikhlas, Al-Falaq, An-Nas), dzikir, serta mendoakan ampunan bagi penghuni makam.\n\n2. **Hakikat Tawassul dalam Aswaja:**\nTawassul bukanlah meminta kepada penghuni kubur atau menyembah makam, melainkan memohon kepada Allah SWT dengan perantara kecintaan dan kemuliaan hamba-hamba pilihan-Nya (Nabi, Syuhada, Auliya/Wali, dan Ulama). Sebagaimana hadis shahih riwayat Bukhari tentang Umar bin Khattab RA yang bertawassul melalui paman Nabi, Sayyidina Abbas bin Abdul Muthalib RA saat kemarau panjang, serta hadis Utsman bin Hunaif RA (HR. Tirmidzi & Hakim) tentang seorang sahabat tunanetra yang diajarkan Rasulullah SAW berdoa dengan bertawassul kepada Nabi.",
-    "source_url": "https://islam.nu.or.id/akidah/pengertian-dan-dalil-tawassul-dalam-islam"
+    "content": "Ziarah kubur dan tawassul merupakan amaliyah yang memiliki landasan kuat dalam Al-Qur'an, Hadis, dan amalan ulama salaf.\n\n1. **Hukum Ziarah Kubur:**\nDisunnahkan bagi laki-laki, dan diperbolehkan pula bagi perempuan selama aman dari fitnah dan tidak melakukan *niyahah* (meratap berlebihan). Saat berziarah, peziarah mengucapkan salam ahli kubur, membaca ayat-ayat Al-Qur'an (seperti Yasin, Al-Ikhlas, Al-Falaq, An-Nas), dzikir, serta mendoakan ampunan bagi penghuni makam.\n\n2. **Hakikat Tawassul dalam Aswaja:**\nTawassul bukanlah meminta kepada penghuni kubur atau menyembah makam, melainkan memohon kepada Allah SWT dengan perantara kecintaan dan kemuliaan hamba-hamba pilihan-Nya (Nabi, Syuhada, Auliya/Wali, dan Ulama). Sebagaimana hadis shahih riwayat Bukhari tentang Umar bin Khattab RA yang bertawassul melalui paman Nabi, Sayyidina Abbas bin Abdul Muthalib RA saat kemarau panjang, serta hadis Utsman bin Hunaif RA (HR. Tirmidzi & Hakim).",
+    "source_url": "https://islam.nu.or.id/akidah/pengertian-dan-dalil-tawassul-dalam-islam",
+    "follow_ups": [
+      "Bagaimana hukum membaca Manaqib Syaikh Abdul Qadir Al-Jailani?",
+      "Bagaimana hukum tahlilan dan kirim doa untuk mayit?",
+      "Apa hukum peringatan Maulid Nabi Muhammad SAW?"
+    ]
   },
   {
     "id": "kb-005",
     "title": "Hukum Akad Nikah secara Online (Melalui Video Call / Zoom)",
     "category": "Fikih Kontemporer (Bahtsul Masail)",
-    "tags": ["nikah online", "akad nikah", "video call", "zoom", "pernikahan", "ittihadul majelis", "ijab kabul"],
+    "tags": ["nikah online", "akad nikah", "video call", "zoom", "pernikahan", "ittihadul majelis", "ijab kabul", "tawkil", "wakalah"],
     "kitab_reference": "Kitab Tuhfatul Muhtaj Juz 7, Kitab Hasyiyah Al-Bajuri, & Kitab Al-Fiqhul Islami wa Adillatuhu",
     "bahtsul_masail": "Hasil Bahtsul Masail LBM PWNU / Muktamar NU tentang Transaksi & Akad via Media Elektronik",
     "arabic_quote": "وَيُشْتَرَطُ فِي صِحَّةِ النِّكَاحِ حُضُورُ أَرْبَعَةٍ: وَلِيٍّ وَزَوْجٍ وَشَاهِدَيْ عَدْلٍ",
     "arabic_translation": "Disyaratkan dalam keabsahan akad nikah hadirnya empat pihak: wali, mempelai pria (atau wakilnya), dan dua orang saksi yang adil.",
-    "summary": "Dalam fikih Mazhab Syafi'i, akad nikah secara langsung antara wali dan calon mempelai pria melalui video call (tanpa berada di satu tempat fisik yang sama) dinilai TIDAK SAH oleh mayoritas ulama LBM NU karena syarat saksi nikah harus melihat dan mendengar langsung (*mu'ayanah*) di majelis yang sama. Solusi sahnya adalah menggunakan **Tawkil (mewakilkan)** ijab atau kabul kepada orang yang hadir secara fisik di satu majelis.",
+    "summary": "Dalam fikih Mazhab Syafi'i, akad nikah secara langsung antara wali dan calon mempelai pria melalui video call (tanpa berada di satu tempat fisik yang sama) dinilai TIDAK SAH oleh mayoritas ulama LBM NU karena syarat saksi nikah harus melihat dan mendengar langsung (mu'ayanah) di majelis yang sama. Solusi sahnya adalah menggunakan Tawkil (mewakilkan) ijab atau kabul kepada orang yang hadir secara fisik di satu majelis.",
     "content": "Lembaga Bahtsul Masail (LBM) NU membedakan antara akad jual beli (*mu'amalah maliyah*) dengan akad pernikahan (*munakahah*) yang memiliki kehati-hatian sangat tinggi (*ihtiyath*).\n\n1. **Mengapa Akad Nikah Langsung via Video Call Bermasalah?**\nDalam Mazhab Syafi'i (seperti dalam *Tuhfatul Muhtaj* dan *Al-Muhadzdzab*), dua orang saksi nikah wajib hadir secara langsung (*hudhur*) serta memastikan pendengaran (*sama'*) dan penglihatan (*ibshar*) secara meyakinkan tanpa perantara layar yang masih menyimpan potensi jeda waktu (*delay*) atau manipulasi teknis.\n\n2. **Solusi Fikih yang Sah (Wakalah / Tawkil):**\nAgar pernikahan jarak jauh tetap **100% sah menurut seluruh ulama Mazhab Syafi'i**, caranya adalah:\n- Mempelai pria memberikan kuasa (**tawkil kabul**) — boleh lewat telepon, video call, atau surat — kepada seseorang yang berada satu ruangan fisik dengan wali nikah dan dua saksi.\n- Di dalam satu majelis fisik tersebut, Wali mengucapkan *ijab* secara langsung di hadapan Wakil mempelai pria dan dua saksi, lalu Wakil mengucapkan *kabul* (*'Saya terima nikahnya Fulanah binti Bapak untuk Fulan bin Bapak dengan mahar tersebut'*).\n- Mempelai pria yang berada di lokasi lain dapat menyaksikan prosesi tersebut secara langsung melalui *live streaming* / Zoom.",
-    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-akad-nikah-via-telepon-atau-video-call"
+    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-akad-nikah-via-telepon-atau-video-call",
+    "follow_ups": [
+      "Bagaimana hukum jual beli online sistem Dropship dan Pre-Order?",
+      "Bagaimana hukum menggunakan Paylater dan Pinjaman Online?",
+      "Bagaimana hukum pemanfaatan AI untuk kajian keagamaan?"
+    ]
   },
   {
     "id": "kb-006",
     "title": "Hukum Paylater dan Pinjaman Online (Pinjol) dalam Fikih Muamalah",
     "category": "Fikih Kontemporer (Bahtsul Masail)",
-    "tags": ["paylater", "pinjol", "pinjaman online", "riba", "kredit", "jual beli kredit", "taqsith", "muamalah"],
+    "tags": ["paylater", "pinjol", "pinjaman online", "riba", "kredit", "jual beli kredit", "taqsith", "muamalah", "bunga"],
     "kitab_reference": "Kitab Fathul Wahhab, Kitab Hasyiyah Al-Qalyubi wa Umairah, & Kitab Bughyatul Mustarsyidin",
     "bahtsul_masail": "Hasil Bahtsul Masail LBM PBNU / PWNU Jawa Timur tentang Layanan Paylater & Pinjaman Berbunga",
     "arabic_quote": "كُلُّ قَرْضٍ جَرَّ نَفْعًا فَهُوَ رِبًا",
     "arabic_translation": "Setiap utang-piutang (qardh) yang mensyaratkan tambahan manfaat bagi pemberi utang di awal akad, maka itu adalah riba.",
-    "summary": "Hukum Paylater dan Pinjaman Online bergantung pada skema akadnya: (1) Jika akadnya murni pinjam-meminjam uang (qardh) dari pihak ketiga yang mensyaratkan bunga/tambahan di awal akad, maka hukumnya haram karena termasuk riba qardhi. (2) Namun jika skemanya adalah jual beli tidak tunai/kredit (bai' bit taqsith) langsung dengan penjual di mana harga kredit lebih mahal dari harga tunai namun disepakati di awal, atau menggunakan akad Ijarah (jasa keanggotaan/administrasi riil), maka hukumnya sah/boleh.",
+    "summary": "Hukum Paylater dan Pinjaman Online bergantung pada skema akadnya: (1) Jika akadnya murni pinjam-meminjam uang (qardh) dari pihak ketiga yang mensyaratkan bunga/tambahan di awal akad, maka hukumnya haram karena termasuk riba qardhi. (2) Namun jika skemanya adalah jual beli tidak tunai/kredit (bai' bit taqsith) langsung dengan penjual di mana harga kredit lebih mahal dari harga tunai namun disepakati di awal, atau menggunakan akad Ijarah (jasa administrasi riil), maka hukumnya sah/boleh.",
     "content": "Dalam kajian Bahtsul Masail NU, transaksi *Paylater* dan *Pinjaman Online* dirinci berdasarkan struktur akadnya:\n\n1. **Skema Utang-Piutang Berbunga (Qardh ber-manfaat):**\nApabila pihak penyedia dana menalangi pembayaran kepada penjual, lalu menagih kepada pengguna dengan syarat tambahan bunga sekian persen yang disepakati dalam akad utang (*qardh*), maka tambahan tersebut termasuk **riba qardhi** yang diharamkan.\n\n2. **Skema Jual Beli Kredit / Angsuran (Bai' bit Taqsith):**\nDalam Mazhab Syafi'i (lihat *Syarah Al-Mahalli* & *Fathul Wahhab*), penjual boleh menjual barang secara tempo/cicilan dengan harga yang lebih tinggi daripada harga tunai, asalkan saat ijab-kabul telah ditentukan satu harga pasti (misal: *'Saya jual barang ini secara cicilan 6 bulan seharga Rp 1.200.000'*), dan tidak ada denda keterlambatan yang bersifat melipatgandakan utang (*riba jahiliyah*).\n\n3. **Skema Akad Ju'alah / Ijarah (Biaya Jasa Aplikasi):**\nSebagian forum Bahtsul Masail memberikan jalan keluar (*makhraj fiqhi*) apabila tambahan biaya yang dikenakan jelas merujuk pada biaya jasa administrasi/pemeliharaan sistem (*ujrah*) yang nominalnya tetap (tidak bertambah berdasarkan persentase pokok utang).",
-    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-penggunaan-fitur-paylater-dalam-fikih-islam"
+    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-penggunaan-fitur-paylater-dalam-fikih-islam",
+    "follow_ups": [
+      "Bagaimana hukum Cryptocurrency (Bitcoin/Kripto) menurut Bahtsul Masail NU?",
+      "Bagaimana hukum jual beli online sistem Dropship?",
+      "Bagaimana ketentuan zakat profesi / penghasilan bulanan?"
+    ]
   },
   {
     "id": "kb-007",
-    "title": "Peringatan Maulid Nabi Muhammad SAW Menurut Ulama Aswaja",
+    "title": "Peringatan Maulid Nabi Muhammad SAW & Mahallul Qiyam Menurut Ulama Aswaja",
     "category": "Amaliyah NU",
-    "tags": ["maulid", "maulid nabi", "bid'ah", "bidah hasanah", "barzanji", "diba", "simtudduror", "mahallul qiyam"],
+    "tags": ["maulid", "maulid nabi", "bid'ah", "bidah hasanah", "barzanji", "diba", "simtudduror", "mahallul qiyam", "shalawat"],
     "kitab_reference": "Kitab Al-Hawi lil Fatawi karya Imam Jalaluddin As-Suyuthi & Kitab I'anatuth Thalibin Juz 3 hlm. 363",
     "bahtsul_masail": "Risalah Aswaja & Amaliyah Nahdliyah LBM NU",
     "arabic_quote": "أَصْلُ عَمَلِ الْمَوْلِدِ الَّذِي هُوَ اجْتِمَاعُ النَّاسِ وَقِرَاءَةُ مَا تَيَسَّرَ مِنَ الْقُرْآنِ وَرِوَايَةُ الْأَخْبَارِ الْوَارِدَةِ فِي مَبْدَأِ أَمْرِ النَّبِيِّ ﷺ هُوَ مِنَ الْبِدَعِ الْحَسَنَةِ الَّتِي يُثَابُ عَلَيْهَا صَاحِبُهَا",
     "arabic_translation": "Hukum asal peringatan Maulid Nabi—yaitu berkumpulnya masyarakat, membaca ayat Al-Qur'an, membaca riwayat sejarah kelahiran Nabi SAW, lalu menyajikan hidangan—termasuk bid'ah hasanah (inovasi yang baik) yang pelakunya mendapatkan pahala atas pengagungannya terhadap derajat Nabi SAW. (Imam As-Suyuthi dalam Al-Hawi lil Fatawi)",
     "summary": "Peringatan Maulid Nabi Muhammad SAW (membaca sejarah/sirah Nabi seperti Maulid Al-Barzanji, Ad-Diba'i, Simthud Durar, memperbanyak shalawat, sedekah, dan tausiyah) hukumnya adalah Sunnah / Bid'ah Hasanah yang berpahala karena merupakan wujud syukur atas kelahiran Rasulullah SAW.",
-    "content": "Para ulama Ahlussunnah wal Jama'ah membagi perkara baru yang belum pernah dilakukan secara persis pada zaman Nabi (*muhdatsat*) menjadi dua sebagaimana penjelasan Imam Asy-Syafi'i dan Imam Izzuddin bin Abdissalam:\n\n1. **Bid'ah Mahmudah / Hasanah:** Hal baru yang selaras dengan dalil-dalil umum Al-Qur'an dan Sunnah.\n2. **Bid'ah Madzmumah / Dhalalah:** Hal baru yang bertentangan dengan Al-Qur'an dan Sunnah.\n\n**Dalil-dalil Peringatan Maulid Nabi:**\n- Rasulullah SAW sendiri mensyukuri hari kelahirannya dengan berpuasa setiap hari Senin. Ketika ditanya mengenai puasa hari Senin, beliau menjawab: *'Dzaka yaumun wulidtu fihi wa yaumun bu'itstu au unzila alayya fihi'* (Itu adalah hari aku dilahirkan dan hari aku diutus/diturunkan wahyu kepadaku) — HR. Muslim.\n- Al-Hafizh Ibnu Hajar Al-Asqalani dan Imam Jalaluddin As-Suyuthi menegaskan bahwa substansi peringatan Maulid berisi ibadah-ibadah yang disyariatkan: membaca Al-Qur'an, membaca shalawat (QS. Al-Ahzab: 56), mengenang sirah Nabi, serta bersedekah makanan.\n- Adapun berdiri saat *Mahallul Qiyam* merupakan bentuk penghormatan (*ta'zhim*) dan kegembiraan mengenang hadirnya Rasulullah SAW di dunia.",
-    "source_url": "https://islam.nu.or.id/maulid/hukum-dan-dalil-peringatan-maulid-nabi-menurut-ulama-aswaja"
+    "content": "Para ulama Ahlussunnah wal Jama'ah membagi perkara baru yang belum pernah dilakukan secara persis pada zaman Nabi (*muhdatsat*) menjadi dua sebagaimana penjelasan Imam Asy-Syafi'i dan Imam Izzuddin bin Abdissalam:\n\n1. **Bid'ah Mahmudah / Hasanah:** Hal baru yang selaras dengan dalil-dalil umum Al-Qur'an dan Sunnah.\n2. **Bid'ah Madzmumah / Dhalalah:** Hal baru yang bertentangan dengan Al-Qur'an dan Sunnah.\n\n**Dalil-dalil Peringatan Maulid Nabi & Berdiri Saat Mahallul Qiyam:**\n- Rasulullah SAW sendiri mensyukuri hari kelahirannya dengan berpuasa setiap hari Senin: *'Itu adalah hari aku dilahirkan dan hari aku diutus/diturunkan wahyu kepadaku'* (HR. Muslim).\n- Al-Hafizh Ibnu Hajar Al-Asqalani dan Imam Jalaluddin As-Suyuthi menegaskan bahwa substansi peringatan Maulid berisi ibadah-ibadah yang disyariatkan: membaca Al-Qur'an, membaca shalawat (QS. Al-Ahzab: 56), mengenang sirah Nabi, serta bersedekah makanan.\n- Adapun berdiri saat *Mahallul Qiyam* hukumnya sunnah/boleh sebagai bentuk penghormatan (*ta'zhim*) dan ekspresi cinta (*mahabbah*) mengenang hadirnya Rasulullah SAW, sebagaimana disebutkan dalam *I'anatuth Thalibin* Juz 3 hlm. 363.",
+    "source_url": "https://islam.nu.or.id/maulid/hukum-dan-dalil-peringatan-maulid-nabi-menurut-ulama-aswaja",
+    "follow_ups": [
+      "Bagaimana pandangan ulama NU tentang musik, hadrah, dan seni budaya?",
+      "Apa dalil tahlilan dan kirim doa kepada orang yang sudah wafat?",
+      "Bagaimana hukum membaca Manaqib dan Istighotsah?"
+    ]
   },
   {
     "id": "kb-008",
-    "title": "Metodologi Pengambilan Hukum (Istinbath) di Bahtsul Masail NU",
+    "title": "Metodologi Pengambilan Hukum (Istinbath) di Bahtsul Masail NU: Qauli, Ilhaqi, Manhaji",
     "category": "Ke-NU-an & Khittah",
-    "tags": ["bahtsul masail", "istinbath", "qauli", "ilhaqi", "manhaji", "kitab kuning", "mu'tabarah", "munas lampung"],
+    "tags": ["bahtsul masail", "istinbath", "qauli", "ilhaqi", "manhaji", "kitab kuning", "mu'tabarah", "munas lampung", "metodologi"],
     "kitab_reference": "Keputusan Munas Alim Ulama NU di Bandar Lampung (21-25 Januari 1992) tentang Sistem Pengambilan Keputusan Hukum dalam Bahtsul Masail",
     "bahtsul_masail": "Munas Alim Ulama NU Bandar Lampung 1992",
     "arabic_quote": "الْمُحَافَظَةُ عَلَى الْقَدِيمِ الصَّالِحِ وَالْأَخْذُ بِالْجَدِيدِ الْأَصْلَحِ",
     "arabic_translation": "Memelihara tradisi/warisan lama yang baik dan mengambil hal baru yang lebih baik (kaidah masyhur di kalangan ulama NU).",
     "summary": "Dalam menyelesaikan persoalan keagamaan dan kemasyarakatan di forum Bahtsul Masail, Nahdlatul Ulama menggunakan tiga tingkatan metode secara berurutan: (1) Metode Qauli (merujuk teks langsung kitab mu'tabarah), (2) Metode Ilhaqi (menyamakan kasus baru dengan kasus serupa di kitab), dan (3) Metode Manhaji (berijtihad kolektif menggunakan kaidah ushul fikih dan qawa'id fiqhiyyah para imam mazhab).",
     "content": "Berdasarkan **Keputusan Munas Alim Ulama NU di Bandar Lampung tahun 1992**, prosedur menjawab masalah fikih di lingkungan NU dilakukan melalui kerangka bermazhab kepada salah satu dari empat Mazhab secara berjenjang:\n\n1. **Metode Qauli (Pendekatan Teks Kitab):**\nApabila suatu masalah sudah memiliki jawaban tegas (*sharih*) di dalam *Kutubul Mu'tabarah* (Kitab Kuning standar mazhab), maka langsung diambil pendapat yang telah disepakati oleh Syaikhani (Imam An-Nawawi dan Imam Ar-Rafi'i), atau pendapat tunggal yang ada.\n\n2. **Metode Ilhaqi (Analogi Antar-Kasus Kitab):**\nApabila belum ditemukan teks jawaban langsung di dalam kitab, maka dilakukan *ilhaqul masa'il bi nazhairiha* (menyamakan masalah baru tersebut dengan masalah serupa yang sudah ada jawabannya di dalam kitab kuning) oleh para ulama/kiai yang ahli (*mulhiq*).\n\n3. **Metode Manhaji (Bermazhab Secara Metodologis):**\nApabila tidak mungkin dilakukan secara *qauli* maupun *ilhaqi*, maka dilakukan *istinbath jama'i* (penggalian hukum secara kolektif) dengan mengikuti prosedur *ushul fiqh* dan *qawa'id fiqhiyyah* (kaidah-kaidah fikih) yang telah dirumuskan oleh para Imam Mazhab.",
-    "source_url": "https://nu.or.id/bahtsul-masail/sistem-pengambilan-keputusan-hukum-dalam-bahtsul-masail-nu"
+    "source_url": "https://nu.or.id/bahtsul-masail/sistem-pengambilan-keputusan-hukum-dalam-bahtsul-masail-nu",
+    "follow_ups": [
+      "Apa yang dimaksud konsep Fiqih Peradaban (Fiqhul Hadharah) di NU?",
+      "Bagaimana hukum pemanfaatan AI untuk kajian keagamaan?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?"
+    ]
   },
   {
     "id": "kb-009",
     "title": "Jumlah Rakaat Shalat Tarawih 20 Rakaat dan Witir 3 Rakaat",
     "category": "Amaliyah NU",
-    "tags": ["tarawih", "ramadhan", "20 rakaat", "8 rakaat", "witir", "umar bin khattab"],
+    "tags": ["tarawih", "ramadhan", "20 rakaat", "8 rakaat", "witir", "umar bin khattab", "puasa"],
     "kitab_reference": "Kitab Al-Majmu' Syarah Al-Muhadzdzab Juz 4 & Kitab Fathul Qarib",
     "bahtsul_masail": "Pedoman Ibadah Ramadhan LBM PBNU",
     "arabic_quote": "فَإِنَّ التَّرَاوِيحَ عِشْرُونَ رَكْعَةً بِعَشْرِ تَسْلِيمَاتٍ فِي كُلِّ لَيْلَةٍ مِنْ رَمَضَانَ",
     "arabic_translation": "Sesungguhnya shalat Tarawih itu 20 rakaat dengan 10 kali salam pada setiap malam bulan Ramadhan. (Kitab Fathul Qarib)",
     "summary": "Dalam amaliyah Nahdlatul Ulama yang mengikuti Mazhab Syafi'i (serta kesepakatan Mazhab Hanafi dan Hanbali), shalat sunnah Tarawih dilaksanakan sebanyak 20 rakaat (10 kali salam, setiap 2 rakaat salam) ditambah 3 rakaat shalat Witir. Meski demikian, NU menghormati umat Islam yang melaksanakannya 8 rakaat karena Tarawih adalah shalat sunnah.",
     "content": "Pelaksanaan shalat Tarawih 20 rakaat merupakan *ijma'* (konsensus) para sahabat Nabi sejak masa Khalifah Umar bin Khattab RA, Utsman bin Affan RA, hingga Ali bin Abi Thalib RA, dan terus diamalkan di Masjidil Haram (Makkah) dan Masjid Nabawi (Madinah) hingga hari ini.\n\n1. **Dalil Atsar Sahabat:**\nDiriwayatkan oleh Imam Al-Baihaqi dengan sanad shahih dari Sa'ib bin Yazid RA: *'Mereka (para sahabat) di masa Umar bin Khattab RA melaksanakan qiyamul lail di bulan Ramadhan sebanyak 20 rakaat.'*\n\n2. **Sikap Toleransi (Tasamuh) Ulama NU:**\nDalam Mazhab Syafi'i, hukum shalat Tarawih adalah *sunnah mu'akkadah*. Seseorang yang melaksanakan kurang dari 20 rakaat (misalnya 8 rakaat karena uzur atau keterbatasan) tetap sah dan mendapatkan pahala shalat sunnah Tarawih sesuai kadar yang dikerjakan. Oleh sebab itu, perbedaan jumlah rakaat tidak boleh memecah belah ukhuwah umat Islam.",
-    "source_url": "https://islam.nu.or.id/ramadhan/dalil-shalat-tarawih-20-rakaat"
+    "source_url": "https://islam.nu.or.id/ramadhan/dalil-shalat-tarawih-20-rakaat",
+    "follow_ups": [
+      "Bagaimana hukum membayar zakat fitrah dengan uang tunai?",
+      "Bagaimana ketentuan qadha shalat dan fidyah puasa?",
+      "Bagaimana hukum doa Qunut pada shalat Subuh?"
+    ]
   },
   {
     "id": "kb-010",
-    "title": "Hubungan Islam dan Negara Bangsa (NKRI & Hubbul Wathan Minal Iman)",
+    "title": "Hubungan Islam, Pancasila, dan Negara Bangsa (NKRI & Hubbul Wathan Minal Iman)",
     "category": "Ke-NU-an & Khittah",
-    "tags": ["nkri", "pancasila", "hubbul wathan", "nasionalisme", "resolusi jihad", "khilafah", "negara", "darul ahdi"],
+    "tags": ["nkri", "pancasila", "hubbul wathan", "nasionalisme", "resolusi jihad", "khilafah", "negara", "darul ahdi", "kebangsaan", "22 oktober", "hari santri"],
     "kitab_reference": "Deklarasi Hubungan Pancasila dengan Islam (Munas Alim Ulama NU 1983 & Muktamar Situbondo 1984) & Resolusi Jihad 22 Oktober 1945",
     "bahtsul_masail": "Munas Alim Ulama NU 1983 Situbondo & Muktamar NU ke-33 Jombang",
     "arabic_quote": "حُبُّ الْوَطَنِ مِنَ الْإِيمَانِ",
     "arabic_translation": "Cinta tanah air adalah bagian dari iman. (Semboyan Hadratussyaikh KH. Hasyim Asy'ari & KH. Abdul Wahab Hasbullah)",
     "summary": "Menurut Nahdlatul Ulama, Negara Kesatuan Republik Indonesia (NKRI) yang berdasarkan Pancasila dan UUD 1945 adalah bentuk final kesepakatan kebangsaan (Darul 'Ahdi was Syahadah) yang sah secara syar'i. Umat Islam wajib menjaga keutuhan negara dan tidak dibenarkan memberontak (bughat) terhadap pemerintahan yang sah.",
-    "content": "Nahdlatul Ulama memiliki pandangan keagamaan yang kokoh mengenai relasi agama dan negara (*din wa daulah*):\n\n1. **Pancasila Selaras dengan Syariat Islam:**\nPada Munas Alim Ulama NU 1983 dan Muktamar ke-27 di Situbondo (1984) yang dirumuskan oleh KH. Ahmad Siddiq dan KH. Abdurrahman Wahid (Gus Dur), NU menegaskan bahwa Pancasila sebagai dasar dan falsafah negara bukanlah agama, tidak dapat menggantikan agama, namun tidak bertentangan dengan ajaran Islam — bahkan Sila Pertama (*Ketuhanan Yang Maha Esa*) mencerminkan tauhid.\n\n2. **Resolusi Jihad 22 Oktober 1945:**\nHadratussyaikh KH. Hasyim Asy'ari mengeluarkan fatwa *Resolusi Jihad* bahwa membela tanah air Indonesia dari penjajahan adalah **Fardhu 'Ain** bagi setiap muslim yang berada dalam radius 94 km (jarak qashar shalat).\n\n3. **Konsep Три Ukhuwah (KH. Ahmad Siddiq):**\nNU merajut harmoni melalui tiga persaudaraan:\n- *Ukhuwah Islamiyah* (persaudaraan sesama umat Islam)\n- *Ukhuwah Wathaniyah* (persaudaraan sesama warga bangsa/tanah air)\n- *Ukhuwah Basyariyah / Insaniyah* (persaudaraan sesama umat manusia).",
-    "source_url": "https://nu.or.id/nasional/hubungan-islam-dan-pancasila-menurut-nahdlatul-ulama"
+    "content": "Nahdlatul Ulama memiliki pandangan keagamaan yang kokoh mengenai relasi agama dan negara (*din wa daulah*):\n\n1. **Pancasila Selaras dengan Syariat Islam:**\nPada Munas Alim Ulama NU 1983 dan Muktamar ke-27 di Situbondo (1984) yang dirumuskan oleh KH. Ahmad Siddiq dan KH. Abdurrahman Wahid (Gus Dur), NU menegaskan bahwa Pancasila sebagai dasar dan falsafah negara bukanlah agama, tidak dapat menggantikan agama, namun tidak bertentangan dengan ajaran Islam — bahkan Sila Pertama (*Ketuhanan Yang Maha Esa*) mencerminkan tauhid.\n\n2. **Resolusi Jihad 22 Oktober 1945:**\nHadratussyaikh KH. Hasyim Asy'ari mengeluarkan fatwa *Resolusi Jihad* bahwa membela tanah air Indonesia dari penjajahan adalah **Fardhu 'Ain** bagi setiap muslim yang berada dalam radius 94 km (jarak qashar shalat).\n\n3. **Konsep Tri Ukhuwah (KH. Ahmad Siddiq):**\nNU merajut harmoni melalui tiga persaudaraan: *Ukhuwah Islamiyah* (sesama umat Islam), *Ukhuwah Wathaniyah* (sesama warga bangsa), dan *Ukhuwah Basyariyah / Insaniyah* (sesama umat manusia).",
+    "source_url": "https://nu.or.id/nasional/hubungan-islam-dan-pancasila-menurut-nahdlatul-ulama",
+    "follow_ups": [
+      "Siapa saja tokoh pendiri dan ulama besar Nahdlatul Ulama?",
+      "Apa yang dimaksud konsep Fiqih Peradaban di NU?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?"
+    ]
+  },
+  {
+    "id": "kb-011",
+    "title": "Hukum Bersalaman Setelah Shalat dan Dzikir Berjamaah dengan Suara Jahr (Keras)",
+    "category": "Amaliyah NU",
+    "tags": ["salaman", "مشافحة", "mushafahah", "dzikir", "wirid", "dzikir keras", "dzikir jahr", "setelah shalat", "bakda shalat"],
+    "kitab_reference": "Kitab Al-Adzkar karya Imam An-Nawawi, Kitab Al-Umm karya Imam Asy-Syafi'i, & Fatawa Ar-Ramli",
+    "bahtsul_masail": "Amaliyah Shalat Berjamaah LBM NU",
+    "arabic_quote": "كُنْتُ أَعْرِفُ انْقِضَاءَ صَلَاةِ النَّبِيِّ ﷺ بِالتَّكْبِيرِ",
+    "arabic_translation": "Aku mengetahui selesainya shalat Nabi SAW melalui suara takbir (dzikir yang dikeraskan). (HR. Bukhari & Muslim dari Ibnu Abbas RA)",
+    "summary": "Membaca dzikir/wirid secara berjamaah dengan suara terdengar (jahr) setelah shalat fardhu serta bersalaman (mushafahah) dengan sesama jamaah setelah berdoa hukumnya adalah sunnah dan memiliki dasar kuat dalam hadis shahih serta penjelasan ulama Mazhab Syafi'i.",
+    "content": "Tradisi wirid bersama dan bersalaman usai shalat berjamaah di masjid/mushalla memiliki landasan keilmuan yang jelas:\n\n1. **Dalil Dzikir Jahr Setelah Shalat:**\nDalam *Shahih Bukhari* dan *Shahih Muslim*, sahabat Abdullah bin Abbas RA meriwayatkan bahwa mengeraskan suara dzikir ketika orang-orang selesai melaksanakan shalat fardhu telah dilakukan sejak masa Rasulullah SAW. Imam Asy-Syafi'i dalam *Kitab Al-Umm* menjelaskan bahwa mengeraskan dzikir bagi imam dan makmum sangat baik sebagai sarana pembelajaran (*ta'lim*) bagi jamaah.\n\n2. **Hukum Bersalaman (Mushafahah) Usai Shalat:**\nImam An-Nawawi dalam *Al-Adzkar* dan *Al-Majmu'* menyatakan bahwa berjabat tangan setiap kali bertemu adalah sunnah yang disepakati, sedangkan berjabat tangan setelah shalat Subuh dan Ashar (maupun shalat lainnya) hukumnya **mubah yang bernilai sunnah (bid'ah mubahah/hasanah)** karena mempererat kasih sayang dan menggugurkan dosa sebagaimana sabda Nabi SAW: *'Tidaklah dua orang muslim bertemu lalu berjabat tangan melainkan keduanya diampuni sebelum berpisah'* (HR. Abu Dawud & Tirmidzi).",
+    "source_url": "https://islam.nu.or.id/shalat/dalil-dzikir-keras-dan-bersalaman-setelah-shalat",
+    "follow_ups": [
+      "Bagaimana hukum membaca doa Qunut pada shalat Subuh?",
+      "Apakah bersentuhan kulit laki-laki dan perempuan membatalkan wudhu?",
+      "Bagaimana hukum shalat Tarawih 20 rakaat?"
+    ]
+  },
+  {
+    "id": "kb-012",
+    "title": "Hukum Mentalqin Mayit dan Mengadzani Jenazah Saat Pemakaman",
+    "category": "Amaliyah NU",
+    "tags": ["talqin", "mentalqin", "mayit", "jenazah", "adzan kubur", "iqamah", "pemakaman", "kubur"],
+    "kitab_reference": "Kitab Al-Majmu' Syarah Al-Muhadzdzab Juz 5 hlm. 304 (Imam An-Nawawi) & Kitab I'anatuth Thalibin Juz 2",
+    "bahtsul_masail": "Keputusan Muktamar NU dalam Ahkamul Fuqaha tentang Rawatibul Jana'iz",
+    "arabic_quote": "قَالَ جَمَاعَاتٌ مِنْ أَصْحَابِنَا يُسْتَحَبُّ تَلْقِينُ الْمَيِّتِ عَقِبَ دَفْنِهِ",
+    "arabic_translation": "Sejumlah besar ulama mazhab kami (Syafi'iyah) menyatakan disunnahkan mentalqin mayit sesaat setelah selesai pemakamannya. (Imam An-Nawawi dalam Al-Majmu')",
+    "summary": "Mentalqin jenazah yang telah dewasa setelah liang lahat ditutup tanah hukumnya adalah Sunnah menurut kesepakatan ulama Mazhab Syafi'i. Demikian pula mengumandangkan adzan atau iqamah saat jenazah diturunkan ke liang kubur diperbolehkan (mubah/hasan) sebagai pengingat kalimat tauhid.",
+    "content": "Dalam tradisi pemulasaraan jenazah warga NU:\n\n1. **Kesunnahan Talqin Mayit:**\nImam An-Nawawi dalam *Al-Majmu' Syarah Al-Muhadzdzab* (Juz 5 hlm. 304) menegaskan bahwa mentalqin mayit seusai pemakaman hukumnya **sunnah (mustahab)** berdasarkan hadis riwayat Thabrani dari Abu Umamah Al-Bahili RA serta amalan penduduk Syam sejak masa sahabat. Talqin bermanfaat mengingatkan ruh mayit yang dikembalikan ke jasadnya saat akan ditanya oleh Malaikat Munkar dan Nakir, sekaligus menjadi nasihat (*mau'izhah*) bagi para pelayat yang masih hidup.\n\n2. **Adzan dan Iqamah di Liang Kubur:**\nDalam *I'anatuth Thalibin* dijelaskan bahwa mengumandangkan adzan saat menurunkan jenazah ke liang kubur adalah perkara yang baik guna memohon rahmat dan ketenangan di tempat baru.",
+    "source_url": "https://islam.nu.or.id/jenazah/hukum-dan-dalil-talqin-mayit-setelah-dikuburkan",
+    "follow_ups": [
+      "Bagaimana hukum tahlilan dan kirim doa untuk mayit?",
+      "Apa dalil ziarah kubur dan tawassul kepada para wali?",
+      "Bagaimana hukum membaca Yasin untuk orang yang sedang sakaratul maut?"
+    ]
+  },
+  {
+    "id": "kb-013",
+    "title": "Hukum Membaca Manaqib (Kisah Wali) dan Istighotsah Berjamaah",
+    "category": "Amaliyah NU",
+    "tags": ["manaqib", "syaikh abdul qadir", "jailani", "istighotsah", "istighosah", "doa bersama", "wali"],
+    "kitab_reference": "Kitab Bughyatul Mustarsyidin hlm. 97 & Kitab Jala'ul Zhalam karya Syaikh Abdul Hamid Kudus",
+    "bahtsul_masail": "Keputusan Muktamar NU ke-3 di Surabaya (1928) dalam Ahkamul Fuqaha",
+    "arabic_quote": "وَقَدْ وَرَدَ فِي الْأَثَرِ عَنْ سَيِّدِنَا سُفْيَانَ بْنِ عُيَيْنَةَ: عِنْدَ ذِكْرِ الصَّالِحِينَ تَنْزِلُ الرَّحْمَةُ",
+    "arabic_translation": "Telah diriwayatkan dalam atsar dari Sayyidina Sufyan bin 'Uyainah: 'Ketika disebut nama dan kisah orang-orang shalih, maka turunlah rahmat Allah.'",
+    "summary": "Membaca manaqib (riwayat hidup dan keteladanan para wali seperti Syaikh Abdul Qadir Al-Jailani) serta melaksanakan Istighotsah (memohon pertolongan kepada Allah SWT secara berjamaah dengan wirid-wirid ma'tsur) hukumnya boleh dan dianjurkan karena mendatangkan rahmat serta menumbuhkan kecintaan kepada orang-orang shalih.",
+    "content": "Muktamar NU ke-3 di Surabaya tahun 1928 telah menetapkan kebolehan dan kebaikan membaca *Manaqib* (seperti kitab *Lujjainud Dani* tentang biografi Syaikh Abdul Qadir Al-Jailani).\n\n1. **Manfaat Membaca Manaqib:**\nAl-Qur'an sendiri banyak memuat kisah para Nabi dan hamba-hamba shalih (seperti Luqmanul Hakim, Ashabul Kahfi, Maryam) untuk meneguhkan hati orang beriman (QS. Hud: 120).\n\n2. **Hakikat Istighotsah:**\n*Istighotsah* adalah memohon pertolongan (*thalabul ghauts*) kepada Allah SWT di saat menghadapi kesulitan besar, sebagaimana Rasulullah SAW beristighotsah pada Perang Badar (QS. Al-Anfal: 9). Dalam tradisi NU, istighotsah diawali dengan istighfar, *La haula wala quwwata illa billah*, shalawat, dan asmaul husna.",
+    "source_url": "https://islam.nu.or.id/tasawuf-akhlak/pengertian-dan-dalil-membaca-manaqib-serta-istighotsah",
+    "follow_ups": [
+      "Apa dalil ziarah kubur dan tawassul kepada para wali?",
+      "Bagaimana hukum peringatan Maulid Nabi Muhammad SAW?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?"
+    ]
+  },
+  {
+    "id": "kb-014",
+    "title": "Hukum Bersentuhan Kulit Laki-laki & Perempuan (Suami-Istri) terhadap Wudhu",
+    "category": "Fikih Ibadah",
+    "tags": ["wudhu", "batal wudhu", "sentuhan kulit", "suami istri", "mahram", "thaharah", "haji", "thawaf"],
+    "kitab_reference": "Kitab Fathul Qarib (Taqrib), Kitab Kifayatul Akhyar, & Kitab Al-Majmu' Juz 2",
+    "bahtsul_masail": "Pedoman Thaharah & Solusi Thawaf Haji LBM NU",
+    "arabic_quote": "وَالرَّابِعُ لَمْسُ الرَّجُلِ الْمَرْأَةَ الْأَجْنَبِيَّةَ مِنْ غَيْرِ حَائِلٍ",
+    "arabic_translation": "Perkara keempat yang membatalkan wudhu adalah bersentuhannya kulit laki-laki dan perempuan ajnabiyah (bukan mahram, termasuk istri) secara langsung tanpa penghalang. (Kitab Fathul Qarib)",
+    "summary": "Menurut pendapat mu'tamad (utama) dalam Mazhab Syafi'i, bersentuhan kulit secara langsung (tanpa kain penghalang) antara laki-laki dan perempuan dewasa yang bukan mahram—termasuk antara suami dan istri—membatalkan wudhu keduanya, baik disertai syahwat maupun tidak. Namun dalam kondisi darurat/masyaqqah seperti saat Thawaf di Masjidil Haram, ulama NU memperbolehkan mengikuti (taqlid) pendapat kedua dalam Mazhab Syafi'i (qaul muqabil al-ashah) atau Mazhab Maliki/Hanafi yang menyatakan tidak batal jika tanpa syahwat.",
+    "content": "Dalam fikih thaharah Mazhab Syafi'i (merujuk QS. An-Nisa: 43 *'au lamastumun nisa'*):\n\n1. **Ketentuan Dasar Mazhab Syafi'i:**\nWudhu batal apabila kulit laki-laki dan perempuan dewasa bertemu tanpa penghalang (*ha'il*) dan keduanya bukan mahram. Suami-istri termasuk kategori yang membatalkan wudhu karena hubungan pernikahan bukanlah hubungan kemahraman nasab/persusuan/mertua. Adapun menyentuh rambut, kuku, atau gigi tidak membatalkan wudhu.\n\n2. **Solusi Fikih Saat Ibadah Haji / Umrah (Thawaf):**\nKetika berdesakan di area Thawaf yang sangat sulit menghindari sentuhan kulit, jamaah diperbolehkan mengambil pendapat Imam Ibnu Suraij dan Imam Ar-Rafi'i (sebagaimana dikutip dalam *Al-Majmu'*) atau berpindah sementara (*intiqalul mazhab*) ke Mazhab Maliki bahwa sentuhan kulit yang tidak disengaja dan tanpa syahwat **tidak membatalkan wudhu**.",
+    "source_url": "https://islam.nu.or.id/thaharah/hukum-bersentuhan-kulit-suami-istri-dalam-mazhab-syafii",
+    "follow_ups": [
+      "Bagaimana ketentuan jamak dan qashar shalat saat perjalanan?",
+      "Bagaimana hukum doa Qunut pada shalat Subuh?",
+      "Bagaimana cara mengqadha shalat fardhu yang pernah tertinggal?"
+    ]
+  },
+  {
+    "id": "kb-015",
+    "title": "Ketentuan Jamak dan Qashar Shalat Saat Perjalanan (Safar / Mudik)",
+    "category": "Fikih Ibadah",
+    "tags": ["jamak", "qashar", "safar", "musafir", "mudik", "perjalanan", "shalat jamak", "jarak qashar", "82 km"],
+    "kitab_reference": "Kitab Fathul Mu'in, Kitab Al-Iqna', & Kitab Tanwirul Qulub",
+    "bahtsul_masail": "Pedoman Fikih Safar LBM PBNU",
+    "arabic_quote": "يَجُوزُ قَصْرُ الصَّلَاةِ الرُّبَاعِيَّةِ فِي السَّفَرِ الطَّوِيلِ الْمُبَاحِ وَهُوَ مَسَافَةُ مَرْحَلَتَيْنِ",
+    "arabic_translation": "Diperbolehkan mengqashar shalat empat rakaat (Dzuhur, Ashar, Isya) dalam perjalanan jauh yang mubah, yaitu sejarak dua marhalah (sekitar 82–89 km).",
+    "summary": "Seorang musafir yang melakukan perjalanan mubah (bukan untuk maksiat) dengan jarak tempuh minimal dua marhalah (sekitar 82 km hingga 89 km) mendapatkan rukhshah (keringanan) untuk menjamak (menggabungkan Dzuhur-Ashar atau Maghrib-Isya) serta mengqashar (meringkas shalat 4 rakaat menjadi 2 rakaat) setelah keluar dari batas desa/kota tempat tinggalnya.",
+    "content": "Keringanan (*rukhshah*) shalat bagi musafir merupakan sedekah dari Allah SWT (HR. Muslim). Berikut rinciannya dalam Mazhab Syafi'i:\n\n1. **Syarat Jarak & Tujuan:**\n- Tujuan perjalanan jelas dan bukan untuk kemaksiatan.\n- Jarak tempuh mencapai **2 marhalah** (16 farsakh). Menurut ulama kontemporer (seperti dalam *Tanwirul Qulub* dan *Al-Fiqhul Islami*), konversinya adalah sekitar **81–89 kilometer**.\n\n2. **Batas Waktu Musafir di Tempat Tujuan:**\n- Apabila musafir berniat tinggal di tempat tujuan selama **4 hari penuh atau lebih** (di luar hari datang dan hari pulang), maka begitu sampai di tempat tujuan status musafirnya gugur (tidak boleh lagi jamak-qashar), namun selama di perjalanan pergi dan pulang tetap boleh.\n- Jika berniat tinggal kurang dari 4 hari, maka selama di tempat tujuan tetap boleh menjamak dan mengqashar shalat.",
+    "source_url": "https://islam.nu.or.id/shalat/syarat-dan-ketentuan-shalat-jamak-serta-qashar",
+    "follow_ups": [
+      "Apakah bersentuhan kulit suami istri membatalkan wudhu?",
+      "Bagaimana cara mengqadha shalat fardhu yang pernah tertinggal?",
+      "Bagaimana hukum doa Qunut pada shalat Subuh?"
+    ]
+  },
+  {
+    "id": "kb-016",
+    "title": "Hukum Zakat Profesi (Penghasilan) & Zakat Fitrah dengan Uang Tunai",
+    "category": "Fikih Ibadah",
+    "tags": ["zakat", "zakat profesi", "zakat penghasilan", "zakat fitrah", "uang", "beras", "nisab", "lazisnu"],
+    "kitab_reference": "Kitab Al-Majmu' Juz 5, Kitab Al-Fiqhul Islami wa Adillatuhu, & Keputusan Bahtsul Masail LAZISNU",
+    "bahtsul_masail": "Hasil Bahtsul Masail Muktamar NU & Pedoman NU Care-LAZISNU",
+    "arabic_quote": "يَا أَيُّهَا الَّذِينَ آمَنُوا أَنْفِقُوا مِنْ طَيِّبَاتِ مَا كَسَبْتُمْ",
+    "arabic_translation": "Wahai orang-orang yang beriman! Infakkanlah sebagian dari hasil usahamu yang baik-baik. (QS. Al-Baqarah: 267)",
+    "summary": "Zakat profesi/penghasilan dikeluarkan sebesar 2,5% apabila total pendapatan bersih mencapai nisab setara 85 gram emas per tahun (dapat dibayarkan langsung setiap bulan sebagai ta'jiluz zakat). Adapun Zakat Fitrah menurut Mazhab Syafi'i wajib berupa makanan pokok (beras 2,5 kg / 2,7–3 kg untuk kehati-hatian), namun LBM NU memperbolehkan membayar dengan uang tunai senilai beras dengan mengikuti (taqlid) Mazhab Hanafi atau melalui akad jual beli beras dengan amil.",
+    "content": "Dalam pengelolaan zakat di lingkungan NU (NU Care-LAZISNU):\n\n1. **Zakat Penghasilan / Profesi:**\nUlama Bahtsul Masail mengqiyaskan penghasilan profesi modern kepada *zakat maal* (emas/perak) dengan nisab **85 gram emas** dan kadar **2,5%**. Dalam Mazhab Syafi'i, seorang muzakki boleh menyegerakan pembayaran zakatnya sebelum genap satu tahun (*ta'jiluz zakat*), sehingga sangat praktis dipotong setiap bulan saat menerima gaji.\n\n2. **Zakat Fitrah dengan Uang Tunai:**\n- **Mazhab Syafi'i:** Wajib menggunakan makanan pokok daerah setempat (beras) seberat 1 *sha'* (sekitar 2,5 kg hingga 2,75 kg).\n- **Solusi Uang Tunai (Mazhab Hanafi):** Apabila masyarakat lebih terbantu dengan uang atau muzakki ingin praktis, LBM NU memperbolehkan membayar zakat fitrah dengan uang tunai seharga beras yang dikonsumsi (atau mengikuti ketentuan Mazhab Hanafi seharga 3,8 kg gandum/beras kualitas baik).",
+    "source_url": "https://islam.nu.or.id/zakat/ketentuan-zakat-profesi-dan-zakat-fitrah-dengan-uang",
+    "follow_ups": [
+      "Bagaimana hukum menggunakan Paylater dan Pinjaman Online?",
+      "Bagaimana ketentuan qadha shalat dan fidyah puasa?",
+      "Bagaimana hukum shalat Tarawih 20 rakaat?"
+    ]
+  },
+  {
+    "id": "kb-017",
+    "title": "Hukum Qadha Shalat Fardhu yang Tertinggal & Ketentuan Membayar Fidyah Puasa",
+    "category": "Fikih Ibadah",
+    "tags": ["qadha", "qadha shalat", "fidyah", "puasa", "ibu hamil", "menyusui", "lansia", "utang puasa"],
+    "kitab_reference": "Kitab Fathul Mu'in & Kitab I'anatuth Thalibin Juz 1 & Juz 2",
+    "bahtsul_masail": "Pedoman Fikih Shalat & Puasa LBM NU",
+    "arabic_quote": "مَنْ نَسِيَ صَلَاةً أَوْ نَامَ عَنْهَا فَلْيُصَلِّهَا إِذَا ذَكَرَهَا لَا كَفَّارَةَ لَهَا إِلَّا ذَلِكَ",
+    "arabic_translation": "Barangsiapa lupa melaksanakan suatu shalat atau tertidur darinya, maka hendaklah ia mengerjakannya ketika mengingatnya; tidak ada tebusan baginya selain itu. (HR. Bukhari & Muslim)",
+    "summary": "Shalat fardhu yang pernah ditinggalkan (baik karena lupa/ketiduran maupun sengaja di masa lalu) wajib diqadha (diganti). Jika ditinggalkan tanpa uzur, wajib segera diqadha dengan memperbanyak shalat qadha di setiap waktu luang. Adapun fidyah puasa (1 mud / sekitar 6,75 ons–7,5 ons beras per hari) berlaku bagi lansia/sakit menahun yang tidak mampu lagi berpuasa, serta bagi ibu hamil/menyusui yang tidak berpuasa karena mengkhawatirkan bayinya saja (wajib qadha + fidyah).",
+    "content": "Dalam fikih Mazhab Syafi'i (*Fathul Mu'in* & *I'anatuth Thalibin*):\n\n1. **Ketentuan Qadha Shalat:**\n- Apabila meninggalkan shalat karena **uzur syar'i** (ketiduran atau lupa), maka disunnahkan segera mengqadha namun kewajibannya bersifat *tarakhi* (longgar).\n- Apabila meninggalkan shalat **tanpa uzur (sengaja)** di masa lalu lalu bertaubat, maka wajib menggunakan waktu luangnya di luar waktu bekerja dan istirahat pokok untuk mencicil qadha shalat fardhu (misalnya setiap selesai shalat fardhu tunai, langsung menambah satu shalat qadha).\n\n2. **Rincian Qadha & Fidyah bagi Ibu Hamil / Menyusui:**\n- Jika khawatir terhadap **keselamatan dirinya sendiri** (atau dirinya dan anaknya): Wajib **Qadha saja** (tanpa fidyah).\n- Jika khawatir terhadap **keselamatan anak/janinnya saja**: Wajib **Qadha + membayar Fidyah** 1 mud beras per hari.",
+    "source_url": "https://islam.nu.or.id/puasa/ketentuan-qadha-dan-fidyah-puasa-serta-qadha-shalat",
+    "follow_ups": [
+      "Bagaimana hukum membayar zakat fitrah dengan uang tunai?",
+      "Bagaimana ketentuan jamak dan qashar shalat saat perjalanan?",
+      "Apakah bersentuhan kulit suami istri membatalkan wudhu?"
+    ]
+  },
+  {
+    "id": "kb-018",
+    "title": "Hukum Cryptocurrency (Bitcoin / Aset Kripto) & Forex Menurut Bahtsul Masail NU",
+    "category": "Fikih Kontemporer (Bahtsul Masail)",
+    "tags": ["crypto", "cryptocurrency", "bitcoin", "kripto", "forex", "trading", "investasi", "gharar", "sil'ah"],
+    "kitab_reference": "Kitab Al-Majmu' Juz 9, Kitab Al-Bajuri, & Keputusan Bahtsul Masail PWNU Jatim / LBM PBNU (2021)",
+    "bahtsul_masail": "Bahtsul Masail PWNU Jawa Timur & Diskusi LBM PBNU 2021 tentang Aset Kripto",
+    "arabic_quote": "ضَابِطُ الْمَالِ الْمُتَقَوِّمِ مَا يَتَمَوَّلُهُ النَّاسُ وَيُبَاحُ الِانْتِفَاعُ بِهِ شَرْعًا",
+    "arabic_translation": "Standar harta yang bernilai (mal mutaqawwim) adalah segala sesuatu yang dipandang berharga oleh masyarakat dan boleh dimanfaatkan secara syar'i.",
+    "summary": "Dalam Bahtsul Masail di lingkungan NU terdapat dinamika pembahasan mengenai aset kripto: (1) PWNU Jawa Timur (Oktober 2021) memutuskan kripto sebagai instrumen spekulasi murni yang tidak memiliki underlying asset (gharar/maysir) hukumnya haram. (2) Namun forum kajian LBM PBNU dan PWNU DIY merinci bahwa apabila kripto telah diakui oleh regulasi negara (Bappebti/OJK) sebagai komoditas digital (sil'ah) yang memiliki manfaat sistem teknologi (blockchain) dan ditransaksikan secara spot (tanpa leverage ribawi/judi), maka hukumnya sah sebagai komoditas.",
+    "content": "Perbedaan hasil Bahtsul Masail mengenai *Cryptocurrency* terjadi bukan pada kaidah fikihnya, melainkan pada *tashawwur* (identifikasi fakta lapangan) apakah kripto termasuk harta bernilai (*mal mutaqawwim*) atau spekulasi semata:\n\n1. **Kapan Transaksi Kripto / Trading Diharamkan?**\nSemua ulama NU sepakat mengharamkan apabila transaksi dilakukan dengan skema *margin/futures leverage* yang mengandung bunga menginap (*riba*) serta spekulasi tebak harga tanpa serah terima aset (*maysir/gharar*).\n\n2. **Kapan Aset Digital Diperbolehkan?**\nMengacu pada pendapat Imam Ar-Rafi'i dan Imam An-Nawawi tentang definisi *mal* (harta yang diakui nilainya oleh *'urf* / kebiasaan masyarakat dan otoritas resmi), aset kripto yang terdaftar resmi sebagai komoditas digital dan memiliki fungsi utilitas pada jaringan *blockchain* serta dibeli secara tunai (*spot market*) dinilai memenuhi syarat objek jual beli.",
+    "source_url": "https://nu.or.id/nasional/perbedaan-pandangan-bahtsul-masail-nu-soal-hukum-cryptocurrency",
+    "follow_ups": [
+      "Bagaimana hukum menggunakan Paylater dan Pinjaman Online?",
+      "Bagaimana hukum jual beli online sistem Dropship dan Pre-Order?",
+      "Bagaimana metodologi pengambilan hukum di Bahtsul Masail NU?"
+    ]
+  },
+  {
+    "id": "kb-019",
+    "title": "Hukum Jual Beli Online Sistem Dropship & Pre-Order (Akad Salam / Samsarah)",
+    "category": "Fikih Kontemporer (Bahtsul Masail)",
+    "tags": ["jual beli online", "dropship", "dropshipper", "reseller", "pre order", "ecommerce", "shopee", "tokopedia", "akad salam"],
+    "kitab_reference": "Kitab Fathul Qarib, Kitab Raudhatuth Thalibin Juz 4, & Kitab Bughyatul Mustarsyidin",
+    "bahtsul_masail": "Hasil Bahtsul Masail LBM NU tentang E-Commerce & Dropshipping",
+    "arabic_quote": "لَا تَبِعْ مَا لَيْسَ عِنْدَكَ",
+    "arabic_translation": "Janganlah engkau menjual barang yang belum berada dalam kepemilikanmu. (HR. Abu Dawud, Tirmidzi, & Nasa'i)",
+    "summary": "Jual beli online dengan sistem Dropship hukumnya TIDAK SAH apabila dropshipper menjual barang secara tunai seolah-olah barang miliknya sendiri padahal belum ia miliki dan tanpa izin pemilik barang (bai'ul fudhuli). Agar menjadi SAH menurut fikih Mazhab Syafi'i, dropshipper harus menggunakan salah satu dari 3 akad: (1) Akad Samsarah / Wakalah bil Ujrah (makelar/agen resmi atas izin supplier), (2) Akad Salam (pesanan dengan spesifikasi jelas dan pembayaran di muka), atau (3) Akad Bai' Maushuf fiz Dzimmah.",
+    "content": "Dalam fikih muamalah Mazhab Syafi'i, menjual barang tertentu (*'ain*) yang belum dimiliki penjual dilarang berdasarkan hadis Hakim bin Hizam RA. Namun bisnis *Dropship* dan *Pre-Order* menjadi **halal dan sah** bila mengikuti panduan LBM NU berikut:\n\n1. **Skema Makelar / Agen Resmi (Samsarah / Wakalah):**\nDropshipper telah mendapat izin atau kerja sama dari *supplier* (pemilik barang) untuk memasarkan produknya. Keuntungan dari selisih harga yang disepakati berstatus sebagai *ujrah* (komisi jasa pemasaran).\n\n2. **Skema Akad Salam (Pesanan Pre-Order):**\nDropshipper tidak menjual barang fisik spesifik yang ada di tangan orang lain, melainkan mengikat akad pesanan (*salam*) dengan spesifikasi barang yang rinci (ukuran, bahan, warna, merek), pembayaran lunas di awal majelis akad, lalu dropshipper membelikan dan mengirimkan barang sesuai spesifikasi tersebut kepada pembeli.",
+    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-jual-beli-sistem-dropship-dalam-fikih-islam",
+    "follow_ups": [
+      "Bagaimana hukum menggunakan Paylater dan Pinjaman Online?",
+      "Bagaimana hukum akad nikah online lewat Video Call / Zoom?",
+      "Bagaimana hukum Cryptocurrency (Bitcoin) menurut Bahtsul Masail NU?"
+    ]
+  },
+  {
+    "id": "kb-020",
+    "title": "Hukum Musik, Nyanyian, Hadrah, dan Seni Budaya dalam Pandangan Ulama NU",
+    "category": "Fikih Kontemporer (Bahtsul Masail)",
+    "tags": ["musik", "nyanyi", "lagu", "hadrah", "rebana", "wayang", "budaya", "seni", "al-ghazali"],
+    "kitab_reference": "Kitab Ihya' Ulumiddin Juz 2 (Bab As-Sama' karya Hujjatul Islam Imam Al-Ghazali) & Kitab Kaffur Ra'a' (Imam Ibnu Hajar Al-Haitami)",
+    "bahtsul_masail": "Keputusan Muktamar NU & Dakwah Kultural Walisongo (Lesbumi NU)",
+    "arabic_quote": "مَنْ لَمْ يُحَرِّكْهُ الرَّبِيعُ وَأَزْهَارُهُ، وَالْعُودُ وَأَوْتَارُهُ، فَهُوَ فَاسِدُ الْمِزَاجِ لَيْسَ لَهُ عِلَاجٌ",
+    "arabic_translation": "Barangsiapa yang hatinya tidak tergerak oleh indahnya musim semi beserta bunga-bunganya, atau alunan dawai beserta nadanya, maka tabiatnya sedang rusak (kaku). (Imam Al-Ghazali dalam Ihya' Ulumiddin)",
+    "summary": "Menurut Hujjatul Islam Imam Al-Ghazali dan ulama Ahlussunnah wal Jama'ah yang diikuti NU, hukum asal suara yang indah, senandung/nyanyian, dan musik adalah mubah (boleh). Musik dan kesenian menjadi haram hanya apabila disertai perkara yang diharamkan (seperti lirik cabul/maksiat, minuman keras, atau melalaikan kewajiban shalat), dan menjadi sunnah/berpahala apabila digunakan untuk syiar dakwah, shalawat, cinta tanah air, dan menggugah ketakwaan.",
+    "content": "Nahdlatul Ulama melestarikan metode dakwah *Walisongo* (seperti Sunan Kalijaga dan Sunan Bonang) yang merangkul seni dan budaya Nusantara sebagai media syiar Islam:\n\n1. **Penjelasan Imam Al-Ghazali dalam *Ihya' Ulumiddin*:**\nImam Al-Ghazali mengupas secara mendalam dalam *Kitab Adab As-Sama' wal Wajd* bahwa suara merdu dan irama tidak haram karena zatnya, melainkan bergantung pada konteks dan dampaknya (*'awaridh*). Alat musik atau tabuhan seperti *duff* (rebana/hadrah) saat hari raya, pernikahan, dan penyambutan telah dilakukan pada masa Rasulullah SAW (HR. Bukhari).\n\n2. **Kaidah Budaya Nusantara:**\nUlama NU memegang kaidah fikih: *Al-'Adatu Muhakkamah* (adat/budaya lokal yang baik dan tidak bertentangan dengan akidah/syariat dapat dijadikan pijakan hukum).",
+    "source_url": "https://islam.nu.or.id/syariah/hukum-musik-dan-nyanyian-menurut-imam-al-ghazali",
+    "follow_ups": [
+      "Bagaimana hukum peringatan Maulid Nabi Muhammad SAW?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?",
+      "Siapa saja tokoh pendiri dan ulama besar Nahdlatul Ulama?"
+    ]
+  },
+  {
+    "id": "kb-021",
+    "title": "Hukum Pemanfaatan AI (Kecerdasan Buatan) untuk Kajian Agama & Fatwa",
+    "category": "Fikih Kontemporer (Bahtsul Masail)",
+    "tags": ["ai", "artificial intelligence", "kecerdasan buatan", "chatgpt", "teknologi", "fatwa ai", "sanad", "robot"],
+    "kitab_reference": "Kitab Adabul 'Alim wal Muta'allim (KH. Hasyim Asy'ari), Al-Majmu' Juz 1, & Hasil Kajian LBM PBNU tentang AI",
+    "bahtsul_masail": "Kajian Fikih Kontemporer LBM NU tentang Kecerdasan Buatan (Artificial Intelligence)",
+    "arabic_quote": "إِنَّ هَذَا الْعِلْمَ دِينٌ فَانْظُرُوا عَمَّنْ تَأْخُذُونَ دِينَكُمْ",
+    "arabic_translation": "Sesungguhnya ilmu ini adalah bagian dari agama, maka perhatikanlah dari siapa kalian mengambil agama kalian. (Atsar Imam Muhammad bin Sirin dalam Muqaddimah Shahih Muslim)",
+    "summary": "Menurut kajian ulama NU, teknologi AI (Artificial Intelligence) hukumnya boleh dan sangat dianjurkan sebagai alat bantu riset (wasilah), pencarian referensi kitab kuning (maktabah), dan edukasi awal keislaman. Namun AI TIDAK BOLEH dijadikan sebagai Mufti (pemberi fatwa independen) karena syarat mufti/hakim dalam Islam wajib berakal mukallaf, memiliki sanad keilmuan, ketakwaan ('adalah), dan memahami konteks sosial penanya.",
+    "content": "Dalam merespons perkembangan *Artificial Intelligence (AI)*, ulama Nahdlatul Ulama menempatkan teknologi sesuai kaidah *Al-Wasa'il laha Ahkamul Maqashid* (hukum sarana mengikuti tujuannya):\n\n1. **AI sebagai Alat Bantu Riset & Dakwah (Mubah / Mustahab):**\nSebagaimana perpustakaan digital (*Maktabah Syamilah*), AI berbasis **RAG (Retrieval-Augmented Generation)** yang dikunci pada kitab-kitab mu'tabarah dan hasil Bahtsul Masail sangat bermanfaat untuk memudahkan masyarakat dan santri menemukan rujukan *ibarah* dengan cepat.\n\n2. **Mengapa AI Tidak Bisa Menggantikan Kiai / Mufti?**\n- Dalam *Kitab Adabul 'Alim wal Muta'allim* karya Hadratussyaikh KH. Hasyim Asy'ari, belajar agama membutuhkan **sanad** dan bimbingan guru agar terhindar dari salah paham (*tashhif*).\n- Fatwa fikih untuk kasus spesifik individu sering kali memerlukan pertimbangan *maslahah*, kondisi psikologis, dan *'urf* lokal yang hanya bisa ditimbang oleh ulama/kiai yang hidup di tengah masyarakat.",
+    "source_url": "https://islam.nu.or.id/bahtsul-masail/hukum-meminta-fatwa-agama-kepada-ai-atau-chatgpt",
+    "follow_ups": [
+      "Bagaimana metodologi pengambilan hukum di Bahtsul Masail NU?",
+      "Apa yang dimaksud konsep Fiqih Peradaban di NU?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?"
+    ]
+  },
+  {
+    "id": "kb-022",
+    "title": "Biografi & Pemikiran Pendiri serta Tokoh Besar Nahdlatul Ulama",
+    "category": "Ke-NU-an & Khittah",
+    "tags": ["tokoh nu", "pendiri nu", "hasyim asyari", "wahab hasbullah", "bisri syansuri", "gus dur", "abdurrahman wahid", "ahmad siddiq", "sahal mahfudz", "kiai", "sejarah nu"],
+    "kitab_reference": "Qanun Asasi & Risalah Aswaja (KH. Hasyim Asy'ari), Khittah Nahdliyah (KH. Ahmad Siddiq), & Fikih Sosial (KH. Sahal Mahfudz)",
+    "bahtsul_masail": "Sejarah Berdirinya Nahdlatul Ulama (16 Rajab 1344 H / 31 Januari 1926 M)",
+    "arabic_quote": "يَا أَيُّهَا الْعُلَمَاءُ وَالسَّادَةُ الْأَتْقِيَاءُ مِنْ أَهْلِ السُّنَّةِ وَالْجَمَاعَةِ أَهْلِ الْمَذَاهِبِ الْأَرْبَعَةِ الْأَئِمَّةِ",
+    "arabic_translation": "Wahai para ulama dan pemimpin yang bertakwa dari kalangan Ahlussunnah wal Jama'ah pengikut Imam Empat Mazhab... (Pembuka Muqaddimah Qanun Asasi Hadratussyaikh KH. Hasyim Asy'ari)",
+    "summary": "Nahdlatul Ulama didirikan pada 31 Januari 1926 di Surabaya oleh tiga serangkai ulama besar: Hadratussyaikh KH. M. Hasyim Asy'ari (Rais Akbar, perumus ideologi Aswaja), KH. Abdul Wahab Hasbullah (penggerak & inisiator Komite Hijaz), dan KH. Bisri Syansuri (ahli fikih & pelopor pendidikan pesantren putri), dengan restu spiritual Syaikhona Muhammad Kholil Bangkalan.",
+    "content": "Perjalanan satu abad lebih Nahdlatul Ulama ditopang oleh sanad keilmuan dan keteladanan para ulama besar:\n\n1. **Syaikhona Kholil Bangkalan (1820–1925):** Guru para kiai tanah Jawa yang memberikan isyarat restu pendirian NU melalui tongkat (QS. Thaha: 17-23) dan tasbih (*Ya Jabbar Ya Qahhar*) yang diantarkan oleh Kiai As'ad Syamsul Arifin kepada KH. Hasyim Asy'ari.\n2. **Hadratussyaikh KH. M. Hasyim Asy'ari (1871–1947):** Pendiri Pesantren Tebuireng Jombang, Rais Akbar NU, penulis *Muqaddimah Qanun Asasi*, *Risalah Aswaja*, dan pencetus *Resolusi Jihad 22 Oktober 1945*.\n3. **KH. Abdul Wahab Hasbullah (1888–1971):** Pendiri Taswirul Afkar, Nahdlatul Wathan, pencipta syair *Ya Lal Wathan*, dan диплоmat Komite Hijaz.\n4. **KH. Bisri Syansuri (1886–1980):** Pendiri Pesantren Denanyar Jombang, tokoh yang teguh dalam fikih dan pelopor pesantren khusus putri.\n5. **KH. Ahmad Siddiq (1926–1991) & KH. Abdurrahman Wahid / Gus Dur (1940–2009):** Duet Rais Aam dan Ketua Umum PBNU pada Muktamar Situbondo 1984 yang mengembalikan NU ke *Khittah 1926*, merumuskan *Tri Ukhuwah*, serta memajukan nilai kemanusiaan dan demokrasi.\n6. **KH. M.A. Sahal Mahfudz (1937–2014):** Rais Aam PBNU penggagas **Fikih Sosial** yang menjembatani teks kitab kuning dengan pemberdayaan ekonomi dan kemaslahatan umat.",
+    "source_url": "https://nu.or.id/tokoh/mengenal-para-pendiri-dan-tokoh-besar-nahdlatul-ulama",
+    "follow_ups": [
+      "Bagaimana pandangan NU tentang hubungan Islam, Pancasila, dan NKRI?",
+      "Apa yang dimaksud konsep Fiqih Peradaban di NU?",
+      "Apa itu 3 pilar Aswaja An-Nahdliyah?"
+    ]
+  },
+  {
+    "id": "kb-023",
+    "title": "Konsep Fiqih Peradaban (Fiqhul Hadharah) & Peran Global Satu Abad NU",
+    "category": "Ke-NU-an & Khittah",
+    "tags": ["fiqih peradaban", "fikih peradaban", "satu abad nu", "pbnu", "gus yahya", "perdamaian dunia", "piagam pbb", "r20"],
+    "kitab_reference": "Rekomendasi Muktamar Internasional Fiqih Peradaban I di Surabaya (6 Februari 2023 / 15 Rajab 1444 H)",
+    "bahtsul_masail": "Muktamar Internasional Fiqih Peradaban I PBNU dalam rangka Puncak Satu Abad NU (1344–1444 H)",
+    "arabic_quote": "وَمَا أَرْسَلْنَاكَ إِلَّا رَحْمَةً لِّلْعَالَمِينَ",
+    "arabic_translation": "Dan tidaklah Kami mengutus engkau (Muhammad) melainkan untuk menjadi rahmat bagi seluruh alam. (QS. Al-Anbiya: 107)",
+    "summary": "Fiqih Peradaban (Fiqhul Hadharah) adalah gagasan strategis PBNU memasuki abad kedua Nahdlatul Ulama yang merekontekstualisasi pandangan fikih klasik mengenai relasi Muslim dan non-Muslim serta tata dunia modern, dengan menegaskan legitimasi syar'i terhadap Piagam PBB (United Nations Charter) dan konsep negara-bangsa guna mewujudkan perdamaian dan kemaslahatan kemanusiaan global.",
+    "content": "Dalam peringatan **Satu Abad Nahdlatul Ulama (1344–1444 H)**, PBNU menyelenggarakan lebih dari 250 halaqah kiai dan ulama internasional yang bermuara pada **Muktamar Internasional Fiqih Peradaban I**:\n\n1. **Menjawab Tantangan Tata Dunia Modern:**\nSebagian literatur fikih politik klasik (*fiqh siyasah*) ditulis pada era kekaisaran abad pertengahan yang membagi dunia menjadi *Darul Islam* dan *Darul Harb*. Melalui *Fiqih Peradaban*, ulama NU menegaskan bahwa dalam realitas dunia modern yang terikat perjanjian internasional, kategori dikotomis tersebut tidak lagi relevan diterapkan untuk memicu konflik.\n\n2. **Piagam PBB sebagai Kesepakatan Luhur (Al-Mithaq Al-Am):**\nPara ulama peserta Muktamar Fiqih Peradaban menyepakati bahwa **Piagam PBB** memiliki dasar legitimasi syar'i sebagai perjanjian perdamaian antarbangsa yang wajib dihormati untuk melindungi martabat manusia (*hifzhun nafs* dan *karamatul insan*) tanpa memandang suku maupun agama.",
+    "source_url": "https://nu.or.id/internasional/rekomendasi-lengkap-muktamar-internasional-fiqih-peradaban-i-nu",
+    "follow_ups": [
+      "Bagaimana pandangan NU tentang hubungan Islam, Pancasila, dan NKRI?",
+      "Bagaimana metodologi pengambilan hukum di Bahtsul Masail NU?",
+      "Siapa saja tokoh pendiri dan ulama besar Nahdlatul Ulama?"
+    ]
   }
 ]
-

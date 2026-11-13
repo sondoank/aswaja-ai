@@ -3,22 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AswajaAI — Sistem AI Keislaman & Nahdlatul Ulama</title>
+  <title>AswajaAI — Sistem Kecerdasan Buatan Keislaman & Nahdlatul Ulama</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
     .font-arabic {
       font-family: 'Amiri', serif;
-      line-height: 2.1;
-      font-size: 1.3rem;
+      line-height: 2.2;
+      font-size: 1.35rem;
       direction: rtl;
     }
-    /* Custom scrollbar */
+    .islamic-pattern {
+      background-color: #022c22;
+      background-image: radial-gradient(#059669 0.75px, transparent 0.75px), radial-gradient(#d97706 0.75px, #022c22 0.75px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+    .hero-pattern {
+      background: linear-gradient(135deg, #064e3b 0%, #022c22 65%, #115e59 100%);
+    }
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -27,33 +35,36 @@
       background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background: rgba(16, 185, 129, 0.25);
+      background: rgba(16, 185, 129, 0.28);
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: rgba(16, 185, 129, 0.45);
+      background: rgba(16, 185, 129, 0.5);
     }
     .prose-chat h3 {
       font-weight: 700;
       font-size: 1.05rem;
       color: #065f46;
-      margin-top: 1rem;
-      margin-bottom: 0.4rem;
+      margin-top: 1.1rem;
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
     }
     .prose-chat h4 {
       font-weight: 600;
       font-size: 0.95rem;
       color: #047857;
-      margin-top: 0.75rem;
-      margin-bottom: 0.25rem;
+      margin-top: 0.8rem;
+      margin-bottom: 0.3rem;
     }
     .prose-chat p {
-      margin-bottom: 0.65rem;
-      line-height: 1.65;
+      margin-bottom: 0.7rem;
+      line-height: 1.7;
     }
     .prose-chat ul, .prose-chat ol {
-      padding-left: 1.25rem;
-      margin-bottom: 0.75rem;
+      padding-left: 1.35rem;
+      margin-bottom: 0.8rem;
     }
     .prose-chat ul {
       list-style-type: disc;
@@ -62,211 +73,385 @@
       list-style-type: decimal;
     }
     .prose-chat li {
-      margin-bottom: 0.3rem;
-      line-height: 1.6;
+      margin-bottom: 0.35rem;
+      line-height: 1.65;
     }
     .prose-chat blockquote {
-      border-left: 4px solid #059669;
-      background-color: #ecfdf5;
-      padding: 0.85rem 1rem;
-      border-radius: 0.5rem;
-      margin: 0.85rem 0;
+      border-right: 4px solid #059669;
+      border-left: 4px solid #d97706;
+      background: linear-gradient(to left, #ecfdf5, #fffbeb);
+      padding: 1rem 1.25rem;
+      border-radius: 0.75rem;
+      margin: 1rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.25s ease-out forwards;
     }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 h-screen flex overflow-hidden">
 
-  <!-- SIDEBAR (ChatGPT Style) -->
-  <aside id="sidebar" class="w-72 bg-emerald-950 text-emerald-50 flex flex-col justify-between shrink-0 border-r border-emerald-900 transition-all duration-200">
+  <!-- MOBILE SIDEBAR BACKDROP -->
+  <div id="sidebarBackdrop" onclick="toggleMobileSidebar()" class="fixed inset-0 bg-slate-900/60 z-30 hidden md:hidden"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="fixed md:static inset-y-0 left-0 z-40 w-72 islamic-pattern text-emerald-50 flex flex-col justify-between shrink-0 border-r border-emerald-800/80 transform -translate-x-full md:translate-x-0 transition-transform duration-200">
     <!-- Top Brand & New Chat -->
-    <div class="p-4 space-y-4">
-      <div class="flex items-center gap-3 px-1">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow-md border border-emerald-400/30 font-bold text-lg text-white">
-          ۞
-        </div>
-        <div>
-          <div class="flex items-center gap-1.5">
-            <h1 class="font-bold text-base tracking-tight text-white">AswajaAI</h1>
-            <span class="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-400/30">NU RAG</span>
+    <div class="p-4 space-y-4 bg-emerald-950/85 backdrop-blur-xs border-b border-emerald-900/80">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-500 via-emerald-600 to-amber-500 p-0.5 shadow-lg shadow-emerald-950/60">
+            <div class="w-full h-full bg-emerald-950 rounded-[14px] flex items-center justify-center font-bold text-xl text-amber-400">
+              ۞
+            </div>
           </div>
-          <p class="text-xs text-emerald-300/80">Bahtsul Masail & Keislaman</p>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h1 class="font-extrabold text-base tracking-tight text-white">Aswaja<span class="text-amber-400">AI</span></h1>
+              <span class="text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">v2.0</span>
+            </div>
+            <p class="text-[11px] text-emerald-300/90 font-medium">Bahtsul Masail & Keislaman NU</p>
+          </div>
         </div>
+        <button onclick="toggleMobileSidebar()" class="md:hidden text-emerald-300 hover:text-white p-1">
+          ✕
+        </button>
       </div>
 
-      <button onclick="startNewChat()" class="w-full py-2.5 px-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-medium text-sm flex items-center justify-center gap-2 shadow-sm transition">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
-        Percakapan Baru
+      <button onclick="startNewChat()" class="w-full py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-semibold text-xs flex items-center justify-center gap-2 shadow-md border border-emerald-400/20 transition cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        <span>Mulai Tanya Jawab Baru</span>
       </button>
     </div>
 
-    <!-- Middle: Chat History & Knowledge Base Actions -->
-    <div class="flex-1 overflow-y-auto px-3 space-y-5">
+    <!-- Middle Navigation -->
+    <div class="flex-1 overflow-y-auto px-3 py-4 space-y-5 bg-emerald-950/75">
+      <!-- Presentation & Knowledge Tools -->
       <div>
-        <div class="px-2 mb-2 text-[11px] font-semibold uppercase tracking-wider text-emerald-400/80">Basis Pengetahuan (RAG)</div>
-        <div class="space-y-1">
-          <button onclick="openKnowledgeModal()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-emerald-900/70 text-emerald-100 text-xs flex items-center justify-between transition">
+        <div class="px-2 mb-2 text-[10px] font-bold uppercase tracking-wider text-amber-400/90">Menu Presentasi & Pustaka</div>
+        <div class="space-y-1.5">
+          <button onclick="openPresentationModal()" class="w-full text-left px-3 py-2.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-400/30 text-amber-200 text-xs flex items-center justify-between transition font-semibold cursor-pointer">
+            <span class="flex items-center gap-2">
+              <span>📊</span>
+              <span>Arsitektur & Konsep AI</span>
+            </span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-400/20 text-amber-300">Slide</span>
+          </button>
+
+          <button onclick="openKnowledgeModal()" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-emerald-900/70 text-emerald-100 text-xs flex items-center justify-between transition cursor-pointer">
             <span class="flex items-center gap-2">
               <span>📚</span>
               <span>Pustaka Kitab & LBM NU</span>
             </span>
-            <span id="kbCountBadge" class="px-1.5 py-0.5 rounded-full bg-emerald-800 text-emerald-200 text-[10px] font-semibold">10</span>
+            <span id="kbCountBadge" class="px-2 py-0.5 rounded-full bg-emerald-800 text-amber-300 text-[10px] font-bold border border-emerald-700">23</span>
           </button>
-          <button onclick="openAddReferenceModal()" class="w-full text-left px-3 py-2 rounded-lg hover:bg-emerald-900/70 text-amber-300 text-xs flex items-center gap-2 transition font-medium">
+
+          <button onclick="openAddReferenceModal()" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-emerald-900/70 text-emerald-200 text-xs flex items-center gap-2 transition font-medium cursor-pointer">
             <span>➕</span>
-            <span>Tambah Kitab / Referensi Baru</span>
+            <span>Tambah Kitab / Referensi</span>
           </button>
         </div>
       </div>
 
+      <!-- Manhaj Pillars Card -->
+      <div class="mx-1 p-3 rounded-xl bg-emerald-900/50 border border-emerald-800/80 space-y-2">
+        <div class="text-[10px] font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+          <span>🛡️</span>
+          <span>Guardrail Sanad & Manhaj</span>
+        </div>
+        <div class="grid grid-cols-2 gap-1.5 text-[10px]">
+          <div class="bg-emerald-950/70 px-2 py-1.5 rounded-lg text-emerald-200 border border-emerald-800/60">
+            <strong class="text-white block">Akidah</strong>
+            Asy'ariyah & Maturidiyah
+          </div>
+          <div class="bg-emerald-950/70 px-2 py-1.5 rounded-lg text-emerald-200 border border-emerald-800/60">
+            <strong class="text-white block">Fikih</strong>
+            4 Mazhab (Syafi'iyah)
+          </div>
+          <div class="bg-emerald-950/70 px-2 py-1.5 rounded-lg text-emerald-200 border border-emerald-800/60">
+            <strong class="text-white block">Tasawuf</strong>
+            Al-Ghazali & Al-Baghdadi
+          </div>
+          <div class="bg-emerald-950/70 px-2 py-1.5 rounded-lg text-emerald-200 border border-emerald-800/60">
+            <strong class="text-white block">Sikap</strong>
+            Tawassuth & Tasamuh
+          </div>
+        </div>
+      </div>
+
+      <!-- History -->
       <div>
-        <div class="px-2 mb-2 text-[11px] font-semibold uppercase tracking-wider text-emerald-400/80">Riwayat Tanya Jawab</div>
+        <div class="px-2 mb-2 text-[10px] font-bold uppercase tracking-wider text-emerald-400/80">Riwayat Percakapan</div>
         <div id="chatHistoryList" class="space-y-1 text-xs">
           <!-- Populated by JS -->
         </div>
       </div>
     </div>
 
-    <!-- Bottom: Settings & Manhaj Info -->
-    <div class="p-3 border-t border-emerald-900/80 bg-emerald-950/90 space-y-2">
-      <button onclick="openSettingsModal()" class="w-full px-3 py-2.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-900 text-xs text-emerald-100 flex items-center justify-between transition">
-        <span class="flex items-center gap-2">
+    <!-- Bottom Settings -->
+    <div class="p-3 border-t border-emerald-900/90 bg-emerald-950 space-y-2">
+      <button onclick="openSettingsModal()" class="w-full px-3 py-2.5 rounded-xl bg-emerald-900/70 hover:bg-emerald-800 text-xs text-emerald-100 flex items-center justify-between transition border border-emerald-800 cursor-pointer">
+        <span class="flex items-center gap-2 font-medium">
           <span>⚙️</span>
           <span>Pengaturan AI & API Key</span>
         </span>
-        <span id="apiKeyStatusDot" class="w-2 h-2 rounded-full bg-amber-400" title="Mode RAG Lokal"></span>
+        <span id="apiKeyStatusDot" class="w-2.5 h-2.5 rounded-full bg-amber-400" title="Mode RAG Lokal"></span>
       </button>
-      <div class="px-2 py-1 text-[11px] text-emerald-400/70 leading-tight">
-        Manhaj: Asy'ariyah-Maturidiyah • 4 Mazhab (Syafi'i) • Tasawuf Al-Ghazali
-      </div>
     </div>
   </aside>
 
   <!-- MAIN CHAT AREA -->
-  <main class="flex-1 flex flex-col h-full bg-slate-50 relative">
+  <main class="flex-1 flex flex-col h-full bg-slate-50 relative overflow-hidden">
     <!-- Top Header -->
-    <header class="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shrink-0">
+    <header class="h-15 bg-white/95 backdrop-blur-xs border-b border-slate-200 px-4 md:px-6 flex items-center justify-between shrink-0 z-10">
       <div class="flex items-center gap-3">
-        <span class="text-sm font-semibold text-slate-700">Majelis Tanya Jawab Keislaman & Ke-NU-an</span>
-        <span id="activeModeBadge" class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-medium">
-          ⚡ Hybrid RAG Lokal + NU Online
-        </span>
+        <button onclick="toggleMobileSidebar()" class="md:hidden p-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200">
+          ☰
+        </button>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-bold text-slate-800">Majelis Bahtsul Masail & Edukasi Islam</span>
+            <span id="activeModeBadge" class="hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
+              ⚡ Hybrid RAG Kitab + NU Online
+            </span>
+          </div>
+          <p class="text-[11px] text-slate-500 hidden sm:block">Berbasis Kutubul Mu'tabarah, Keputusan Muktamar NU, dan Fikrah Nahdliyah</p>
+        </div>
       </div>
+
       <div class="flex items-center gap-2">
-        <label class="flex items-center gap-1.5 text-xs text-slate-600 cursor-pointer select-none bg-slate-100 px-2.5 py-1.5 rounded-lg hover:bg-slate-200/70 transition">
+        <button onclick="openPresentationModal()" class="px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer">
+          <span>📊</span>
+          <span class="hidden sm:inline">Slide Konsep AI</span>
+        </button>
+
+        <button onclick="openKnowledgeModal()" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer">
+          <span>📚</span>
+          <span class="hidden sm:inline">Daftar Kitab</span>
+        </button>
+
+        <label class="hidden lg:flex items-center gap-1.5 text-xs text-slate-600 cursor-pointer select-none bg-slate-100 px-2.5 py-1.5 rounded-xl hover:bg-slate-200/70 transition">
           <input type="checkbox" id="webSearchToggle" checked class="accent-emerald-600 rounded" />
-          <span>Cari juga di <code>nu.or.id</code></span>
+          <span>Sinkron <code>nu.or.id</code></span>
         </label>
       </div>
     </header>
 
     <!-- Scrollable Messages Container -->
     <div id="messagesContainer" class="flex-1 overflow-y-auto px-4 md:px-8 py-6">
-      <!-- Welcome / Empty State -->
-      <div id="welcomeScreen" class="max-w-3xl mx-auto my-6 text-center space-y-6">
-        <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-emerald-600 text-white text-3xl shadow-lg shadow-emerald-600/20">
-          ۞
+      <!-- Welcome / Presentation Dashboard -->
+      <div id="welcomeScreen" class="max-w-4xl mx-auto space-y-6 pb-8">
+
+        <!-- Hero Banner -->
+        <div class="hero-pattern rounded-3xl p-6 md:p-8 text-white shadow-xl border border-emerald-800/60 relative overflow-hidden">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-2.5 max-w-2xl">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 border border-amber-400/40 text-amber-300 text-xs font-semibold">
+                <span>۞</span>
+                <span>Sistem AI Keislaman Ber-Sanad • Ahlussunnah wal Jama'ah An-Nahdliyah</span>
+              </div>
+              <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
+                Tanya Jawab Fikih, Amaliyah & Ke-NU-an Berbasis Rujukan Kitab Kuning
+              </h2>
+              <p class="text-xs md:text-sm text-emerald-100/90 leading-relaxed">
+                Berbeda dengan AI umum yang sering mencampuradukkan mazhab atau mengarang dalil, <strong>AswajaAI</strong> menjawab setiap persoalan menggunakan arsitektur <strong>Hybrid RAG</strong> yang merujuk langsung pada <em>Kutubul Mu'tabarah</em>, hasil <em>Bahtsul Masail NU</em>, dan portal resmi <em>NU Online</em>.
+              </p>
+            </div>
+
+            <!-- Live Stats Box -->
+            <div class="grid grid-cols-2 gap-2.5 shrink-0">
+              <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3.5 text-center">
+                <div id="heroKbCount" class="text-2xl font-extrabold text-amber-400">23+</div>
+                <div class="text-[11px] text-emerald-100 font-medium">Topik & Ibarah Kitab</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3.5 text-center">
+                <div class="text-2xl font-extrabold text-emerald-300">100%</div>
+                <div class="text-[11px] text-emerald-100 font-medium">Wajib Sitasi Rujukan</div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3 text-center col-span-2">
+                <div class="text-xs font-bold text-amber-300">Metode Qauli • Ilhaqi • Manhaji</div>
+                <div class="text-[10px] text-emerald-200">Sesuai Munas Alim Ulama NU 1992</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="space-y-2">
-          <h2 class="text-2xl font-bold text-slate-800">Assalamu'alaikum Warahmatullahi Wabarakatuh</h2>
-          <p class="text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-            Selamat datang di prototipe <strong>AswajaAI</strong>. Sistem ini menjawab pertanyaan fikih harian, amaliyah, akidah, dan ke-NU-an berdasarkan rujukan <strong>Kitab Kuning Mu'tabarah</strong>, <strong>Hasil Bahtsul Masail NU</strong>, dan portal resmi <strong>NU Online</strong>.
-          </p>
-        </div>
 
-        <!-- Quick Starter Prompts -->
-        <div class="text-left">
-          <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3 text-center">Contoh Pertanyaan Populer (Klik untuk Mencoba)</div>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <button onclick="askPreset('Bagaimana hukum tahlilan dan kirim doa/pahala bacaan Al-Quran kepada orang yang sudah meninggal beserta dalil kitabnya?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">🕌 Amaliyah Nahdliyin</div>
-              <div class="text-sm font-medium text-slate-800">Hukum & Dalil Tahlilan / Kirim Doa untuk Mayit</div>
-              <div class="text-xs text-slate-500 mt-0.5">Rujukan Kitab Al-Adzkar, I'anatuth Thalibin & Muktamar NU</div>
-            </button>
+        <!-- Category Filter Pills -->
+        <div class="space-y-3">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-500">
+              🧪 Silakan Uji Coba Pertanyaan di Bawah Ini (Klik Kategori atau Kartu Soal):
+            </h3>
+            <div id="categoryFilterBar" class="flex flex-wrap gap-1.5">
+              <button onclick="filterStarterCards('ALL')" data-cat="ALL" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-700 text-white shadow-xs transition cursor-pointer">
+                Semua Topik (12)
+              </button>
+              <button onclick="filterStarterCards('Amaliyah NU')" data-cat="Amaliyah NU" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-500 transition cursor-pointer">
+                🕌 Amaliyah NU
+              </button>
+              <button onclick="filterStarterCards('Fikih Kontemporer (Bahtsul Masail)')" data-cat="Fikih Kontemporer (Bahtsul Masail)" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-500 transition cursor-pointer">
+                ⚖️ Bahtsul Masail Modern
+              </button>
+              <button onclick="filterStarterCards('Fikih Ibadah')" data-cat="Fikih Ibadah" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-500 transition cursor-pointer">
+                📖 Fikih Ibadah
+              </button>
+              <button onclick="filterStarterCards('Ke-NU-an & Khittah')" data-cat="Ke-NU-an & Khittah" class="cat-btn px-3 py-1.5 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:border-emerald-500 transition cursor-pointer">
+                🌿 Sejarah & Khittah NU
+              </button>
+            </div>
+          </div>
 
-            <button onclick="askPreset('Bagaimana hukum akad nikah secara online lewat Video Call atau Zoom menurut Bahtsul Masail NU?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">📱 Fikih Kontemporer (LBM NU)</div>
-              <div class="text-sm font-medium text-slate-800">Hukum Akad Nikah Online via Video Call / Zoom</div>
-              <div class="text-xs text-slate-500 mt-0.5">Syarat saksi & solusi sah dengan Tawkil (Wakalah)</div>
-            </button>
-
-            <button onclick="askPreset('Bagaimana hukum membaca doa Qunut pada shalat Subuh dan bagaimana jika lupa atau bermakmum pada yang tidak qunut?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">📖 Fikih Ibadah Mazhab Syafi'i</div>
-              <div class="text-sm font-medium text-slate-800">Hukum & Dalil Doa Qunut Shalat Subuh</div>
-              <div class="text-xs text-slate-500 mt-0.5">Kitab Al-Majmu' Imam Nawawi & ketentuan sujud sahwi</div>
-            </button>
-
-            <button onclick="askPreset('Bagaimana hukum menggunakan fitur Paylater dan Pinjaman Online (Pinjol) dalam fikih muamalah NU?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">💳 Fikih Muamalah</div>
-              <div class="text-sm font-medium text-slate-800">Hukum Paylater & Pinjaman Online (Pinjol)</div>
-              <div class="text-xs text-slate-500 mt-0.5">Perbedaan utang ribawi vs jual beli kredit (Bai' bit Taqsith)</div>
-            </button>
-
-            <button onclick="askPreset('Apa itu Ahlussunnah wal Jamaah An-Nahdliyah dan bagaimana prinsip Tawassuth, Tasamuh, Tawazun, dan Itidal?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">🌿 Khittah & Ke-NU-an</div>
-              <div class="text-sm font-medium text-slate-800">3 Pilar Aswaja & 4 Sikap Kemasyarakatan NU</div>
-              <div class="text-xs text-slate-500 mt-0.5">Risalah Aswaja KH. Hasyim Asy'ari & Khittah 1926</div>
-            </button>
-
-            <button onclick="askPreset('Bagaimana metodologi pengambilan hukum (istinbath) di Bahtsul Masail NU: Qauli, Ilhaqi, dan Manhaji?')" class="p-3.5 rounded-xl bg-white border border-slate-200 hover:border-emerald-500 hover:shadow-md text-left transition group">
-              <div class="text-xs font-semibold text-emerald-700 mb-1 group-hover:text-emerald-600">⚖️ Metodologi Ushul Fikih</div>
-              <div class="text-sm font-medium text-slate-800">Metode Qauli, Ilhaqi, dan Manhaji di LBM NU</div>
-              <div class="text-xs text-slate-500 mt-0.5">Keputusan Munas Alim Ulama NU Bandar Lampung 1992</div>
-            </button>
+          <!-- 12 Starter Cards Grid -->
+          <div id="starterCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <!-- Populated dynamically by JS -->
           </div>
         </div>
       </div>
 
       <!-- Active Chat Stream -->
-      <div id="chatStream" class="max-w-3xl mx-auto space-y-6 hidden"></div>
+      <div id="chatStream" class="max-w-4xl mx-auto space-y-6 hidden pb-6"></div>
     </div>
 
     <!-- Bottom Input Area -->
-    <div class="bg-white border-t border-slate-200 px-4 md:px-8 py-3.5 shrink-0">
-      <div class="max-w-3xl mx-auto">
-        <form id="chatForm" onsubmit="handleSendMessage(event)" class="relative flex items-end gap-2 bg-slate-50 border border-slate-300 focus-within:border-emerald-600 focus-within:ring-2 focus-within:ring-emerald-500/20 rounded-2xl p-2 transition">
+    <div class="bg-white border-t border-slate-200 px-4 md:px-8 py-3.5 shrink-0 shadow-lg">
+      <div class="max-w-4xl mx-auto">
+        <form id="chatForm" onsubmit="handleSendMessage(event)" class="relative flex items-end gap-2 bg-slate-50 border-2 border-slate-200 focus-within:border-emerald-600 focus-within:bg-white rounded-2xl p-2 transition shadow-2xs">
           <textarea
             id="userInput"
             rows="1"
-            placeholder="Tanyakan hukum fikih, dalil amaliyah, sejarah NU, atau hasil Bahtsul Masail..."
+            placeholder="Ketik pertanyaan fikih, amaliyah, Bahtsul Masail, atau sejarah NU di sini..."
             class="w-full bg-transparent px-3 py-2 text-sm text-slate-800 placeholder-slate-400 focus:outline-none resize-none max-h-36"
             onkeydown="if(event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); handleSendMessage(event); }"
           ></textarea>
           <button
             type="submit"
             id="sendBtn"
-            class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white text-sm font-semibold flex items-center gap-1.5 shrink-0 transition shadow-sm"
+            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 disabled:opacity-50 text-white text-sm font-bold flex items-center gap-2 shrink-0 transition shadow-md cursor-pointer"
           >
             <span>Tanyakan</span>
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
         </form>
         <div class="text-[11px] text-slate-400 text-center mt-2">
-          ⚖️ <strong>Catatan Adab & Keilmuan:</strong> Jawaban AI bersumber dari rujukan kitab & Bahtsul Masail sebagai edukasi awal. Untuk persoalan spesifik/krusial, tetaplah berkonsultasi dengan Kiai/Ulama atau LBM NU setempat.
+          ⚖️ <strong>Adab Keilmuan:</strong> Jawaban AI dilengkapi kutipan <em>Kutubul Mu'tabarah</em> & keputusan <em>Bahtsul Masail</em> sebagai rujukan edukasi. Untuk fatwa kasus khusus, tetaplah bermusyawarah dengan Kiai / LBM NU setempat.
         </div>
       </div>
     </div>
   </main>
 
+  <!-- MODAL 0: SLIDE PRESENTASI & ARSITEKTUR SISTEM AI -->
+  <div id="presentationModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[88vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
+        <div>
+          <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-400/20 text-amber-300 border border-amber-400/30">Materi Presentasi Tim</span>
+          <h3 class="font-extrabold text-lg mt-0.5">📊 Arsitektur & Keunggulan Sistem AswajaAI</h3>
+        </div>
+        <button onclick="closePresentationModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-6 space-y-6 text-xs leading-relaxed">
+        <!-- 1. Masalah vs Solusi -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-2xl bg-red-50 border border-red-200 space-y-2">
+            <div class="font-bold text-sm text-red-900 flex items-center gap-2">⚠️ Kelemahan AI Umum (ChatGPT Standar)</div>
+            <ul class="list-disc pl-4 text-red-800 space-y-1">
+              <li><strong>Mencampuradukkan Mazhab:</strong> Sering menjawab fikih tanpa kejelasan mazhab sehingga membingungkan masyarakat awam di Indonesia.</li>
+              <li><strong>Risiko Halusinasi Dalil:</strong> Berpotensi mengarang teks Arab atau mencantumkan nama kitab yang tidak pernah ada.</li>
+              <li><strong>Kurang Memahami Amaliyah Lokal:</strong> Sering gagal memahami konteks tradisi pesantren dan keputusan <em>Bahtsul Masail NU</em>.</li>
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+            <div class="font-bold text-sm text-emerald-900 flex items-center gap-2">✅ Solusi Arsitektur AswajaAI (NU RAG)</div>
+            <ul class="list-disc pl-4 text-emerald-800 space-y-1">
+              <li><strong>Terkunci pada Kutubul Mu'tabarah:</strong> Jawaban diambil dari database kitab Mazhab Syafi'i & keputusan Muktamar/LBM NU.</li>
+              <li><strong>Wajib Menampilkan Ibarah & Kartu Sumber:</strong> Setiap jawaban menyertakan kutipan teks Arab, terjemah, nama kitab, dan tautan <code>nu.or.id</code>.</li>
+              <li><strong>Karakter Tawassuth & Tasamuh:</strong> Bahasa yang sejuk, moderat, dan menghargai perbedaan pendapat (*ikhtilaf*).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. Diagram Alur Hybrid RAG -->
+        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <h4 class="font-bold text-sm text-slate-800 text-center">🔄 Cara Kerja Mesin Hybrid RAG (Retrieval-Augmented Generation)</h4>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-center">
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+              <div class="text-2xl mb-1">💬</div>
+              <div class="font-bold text-emerald-900">1. Pertanyaan Jamaah</div>
+              <p class="text-[11px] text-slate-500 mt-1">Pengguna menanyakan hukum fikih harian, amaliyah, atau isu modern.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+              <div class="text-2xl mb-1">🔍</div>
+              <div class="font-bold text-emerald-900">2. Pencarian Pustaka</div>
+              <p class="text-[11px] text-slate-500 mt-1">Sistem mencari kecocokan di Database Kitab Kuning, Ahkamul Fuqaha & <code>nu.or.id</code>.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+              <div class="text-2xl mb-1">⚖️</div>
+              <div class="font-bold text-emerald-900">3. Filter Manhaj Aswaja</div>
+              <p class="text-[11px] text-slate-500 mt-1">Menyusun jawaban sesuai kerangka Asy'ariyah, Mazhab Syafi'i & Tasawuf Al-Ghazali.</p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-2xs">
+              <div class="text-2xl mb-1">📜</div>
+              <div class="font-bold text-emerald-900">4. Jawaban Ber-Sanad</div>
+              <p class="text-[11px] text-slate-500 mt-1">Menampilkan penjelasan, kutipan Arab (*ibarah*), serta Kartu Rujukan Terverifikasi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Roadmap Pengembangan -->
+        <div class="p-5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-3">
+          <h4 class="font-bold text-sm text-amber-950">🚀 Roadmap Pengembangan Tahap Selanjutnya</h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <div class="bg-white p-3.5 rounded-xl border border-amber-200">
+              <div class="font-bold text-amber-900">Tahap 1: Prototipe & Validasi (Saat Ini)</div>
+              <p class="text-[11px] text-slate-600 mt-1">Web Chat interaktif, 23+ topik inti ke-NU-an & fikih kontemporer, fitur tambah kitab, dan integrasi Gemini API.</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-amber-200">
+              <div class="font-bold text-amber-900">Tahap 2: Digitalisasi Ribuan Kitab & LBM</div>
+              <p class="text-[11px] text-slate-600 mt-1">Integrasi penuh dokumen <em>Ahkamul Fuqaha</em> (Muktamar ke-1 s/d ke-34), <em>Maktabah Syamilah</em> Syafi'iyah, dan Vector DB skala besar.</p>
+            </div>
+            <div class="bg-white p-3.5 rounded-xl border border-amber-200">
+              <div class="font-bold text-amber-900">Tahap 3: Ekosistem Multi-Platform</div>
+              <p class="text-[11px] text-slate-600 mt-1">Bot WhatsApp resmi untuk jamaah, asisten tim perumus Bahtsul Masail, dan verifikasi Dewan Mushahhih/Kiai.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex justify-end">
+        <button onclick="closePresentationModal()" class="px-5 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold cursor-pointer">
+          Tutup & Mulai Demo Tanya Jawab
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL 1: PUSTAKA KITAB & LBM (KNOWLEDGE BASE EXPLORER) -->
   <div id="knowledgeModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
-      <div class="px-6 py-4 bg-emerald-900 text-white flex items-center justify-between">
+    <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[86vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
         <div>
           <h3 class="font-bold text-base">📚 Pustaka Rujukan Kitab & Keputusan Bahtsul Masail (Database RAG)</h3>
-          <p class="text-xs text-emerald-200">Data di bawah ini digunakan oleh AI untuk menjawab pertanyaan secara akurat tanpa halusinasi.</p>
+          <p class="text-xs text-emerald-200">Seluruh materi di bawah ini terindeks di dalam sistem dan dapat langsung diuji coba.</p>
         </div>
-        <button onclick="closeKnowledgeModal()" class="text-emerald-200 hover:text-white text-xl font-bold px-2">&times;</button>
+        <button onclick="closeKnowledgeModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
       </div>
-      <div class="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
+      <div class="p-4 border-b border-slate-200 bg-slate-50 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         <input
           type="text"
           id="kbFilterInput"
           oninput="renderKnowledgeList()"
-          placeholder="Cari judul materi, nama kitab (misal: Fathul Mu'in, Al-Majmu'), atau topik..."
+          placeholder="Cari judul masalah, nama kitab (Fathul Mu'in, Al-Majmu', Ihya), atau kata kunci..."
           class="flex-1 px-3.5 py-2 text-xs rounded-xl border border-slate-300 bg-white focus:outline-none focus:border-emerald-600"
         />
-        <button onclick="closeKnowledgeModal(); openAddReferenceModal();" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold shrink-0">
-          + Tambah Referensi Baru
+        <button onclick="closeKnowledgeModal(); openAddReferenceModal();" class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shrink-0 cursor-pointer">
+          + Tambah Kitab / Referensi Baru
         </button>
       </div>
       <div id="knowledgeListContainer" class="flex-1 overflow-y-auto p-6 space-y-4">
@@ -275,20 +460,19 @@
     </div>
   </div>
 
-  <!-- MODAL 2: TAMBAH KITAB / REFERENSI BARU (ADMIN RAG UPLOADER) -->
+  <!-- MODAL 2: TAMBAH KITAB / REFERENSI BARU -->
   <div id="addReferenceModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
-      <div class="px-6 py-4 bg-emerald-900 text-white flex items-center justify-between">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
         <div>
           <h3 class="font-bold text-base">➕ Tambah Referensi Kitab / Hasil Bahtsul Masail</h3>
-          <p class="text-xs text-emerald-200">Masukkan materi baru atau unggah file teks (.txt / .md) agar langsung dipelajari oleh AI.</p>
+          <p class="text-xs text-emerald-200">Tambahkan materi baru atau impor file teks (.txt / .md) agar langsung dipelajari oleh AI.</p>
         </div>
-        <button onclick="closeAddReferenceModal()" class="text-emerald-200 hover:text-white text-xl font-bold px-2">&times;</button>
+        <button onclick="closeAddReferenceModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
       </div>
 
       <form id="addRefForm" onsubmit="handleAddReference(event)" class="flex-1 overflow-y-auto p-6 space-y-4 text-xs">
-        <!-- Quick file import -->
-        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between gap-3">
+        <div class="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <div class="font-semibold text-emerald-900">📂 Impor Cepat dari File Dokumen (.txt / .md)</div>
             <div class="text-emerald-700 text-[11px]">Pilih file teks terjemah kitab atau artikel untuk mengisi otomatis kolom di bawah.</div>
@@ -299,16 +483,15 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Judul Pembahasan / Masalah *</label>
-            <input type="text" id="refTitle" required placeholder="Contoh: Hukum Zakat Profesi / Penghasilan" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600" />
+            <input type="text" id="refTitle" required placeholder="Contoh: Hukum Wakaf Tunai / Uang" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600" />
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Kategori</label>
             <select id="refCategory" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600 bg-white">
-              <option value="Fikih Ibadah">Fikih Ibadah</option>
-              <option value="Fikih Kontemporer (Bahtsul Masail)">Fikih Kontemporer (Bahtsul Masail)</option>
               <option value="Amaliyah NU">Amaliyah NU</option>
+              <option value="Fikih Kontemporer (Bahtsul Masail)">Fikih Kontemporer (Bahtsul Masail)</option>
+              <option value="Fikih Ibadah">Fikih Ibadah</option>
               <option value="Ke-NU-an & Khittah">Ke-NU-an & Khittah</option>
-              <option value="Akidah & Tasawuf">Akidah & Tasawuf</option>
             </select>
           </div>
         </div>
@@ -326,7 +509,7 @@
 
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Kata Kunci Pencarian / Tags (pisahkan dengan koma) *</label>
-          <input type="text" id="refTags" required placeholder="Contoh: zakat profesi, zakat gaji, nisab, maal" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600" />
+          <input type="text" id="refTags" required placeholder="Contoh: wakaf tunai, wakaf uang, lwpnu" class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600" />
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -347,7 +530,7 @@
 
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Uraian Lengkap & Dalil Pembahasan *</label>
-          <textarea id="refContent" rows="5" required placeholder="Tuliskan penjelasan lengkap, rincian pendapat ulama, dan ketentuannya..." class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600"></textarea>
+          <textarea id="refContent" rows="4" required placeholder="Tuliskan penjelasan lengkap, rincian pendapat ulama, dan ketentuannya..." class="w-full px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:border-emerald-600"></textarea>
         </div>
 
         <div>
@@ -356,8 +539,8 @@
         </div>
 
         <div class="pt-2 flex justify-end gap-2">
-          <button type="button" onclick="closeAddReferenceModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium">Batal</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-sm">Simpan ke Database RAG</button>
+          <button type="button" onclick="closeAddReferenceModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium cursor-pointer">Batal</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold shadow-sm cursor-pointer">Simpan ke Database RAG</button>
         </div>
       </form>
     </div>
@@ -365,22 +548,22 @@
 
   <!-- MODAL 3: PENGATURAN AI & GEMINI API KEY -->
   <div id="settingsModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-    <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden">
-      <div class="px-6 py-4 bg-emerald-900 text-white flex items-center justify-between">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden">
+      <div class="px-6 py-4 hero-pattern text-white flex items-center justify-between">
         <div>
           <h3 class="font-bold text-base">⚙️ Pengaturan Mesin AI (Hybrid RAG)</h3>
           <p class="text-xs text-emerald-200">Konfigurasi model LLM & metode pencarian rujukan</p>
         </div>
-        <button onclick="closeSettingsModal()" class="text-emerald-200 hover:text-white text-xl font-bold px-2">&times;</button>
+        <button onclick="closeSettingsModal()" class="text-emerald-200 hover:text-white text-2xl font-bold px-2 cursor-pointer">&times;</button>
       </div>
       <div class="p-6 space-y-4 text-xs">
-        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1">
-          <div class="font-semibold">💡 Berjalan Otomatis Tanpa API Key (Mode RAG Lokal)</div>
+        <div class="p-3.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 space-y-1.5">
+          <div class="font-bold">💡 Berjalan Otomatis Tanpa API Key (Mode RAG Lokal)</div>
           <p class="leading-relaxed">
-            Secara bawaan, prototipe ini sudah dilengkapi <strong>Mesin Sintesis RAG Lokal</strong> yang merangkum jawaban langsung dari <em>Database Kitab & LBM NU</em> serta pencarian situs <code>nu.or.id</code>.
+            Secara bawaan, prototipe ini sudah dilengkapi <strong>Mesin Sintesis RAG Lokal</strong> yang merangkum jawaban langsung dari <em>23+ Database Kitab & LBM NU</em>.
           </p>
           <p class="leading-relaxed">
-            Jika Anda memasukkan <strong>Google Gemini API Key</strong> di bawah ini, sistem akan mengaktifkan <strong>Gemini 2.5 Flash</strong> dengan <em>System Prompt Aswaja An-Nahdliyah</em> untuk penalaran percakapan yang jauh lebih luwes.
+            Jika Anda memasukkan <strong>Google Gemini API Key</strong> di bawah ini, sistem akan mengaktifkan <strong>Gemini 2.5 Flash</strong> dengan <em>System Prompt Aswaja An-Nahdliyah</em> untuk menjawab pertanyaan bebas apa saja.
           </p>
         </div>
 
@@ -392,12 +575,12 @@
             placeholder="AIzaSy..."
             class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:border-emerald-600 font-mono"
           />
-          <p class="text-[11px] text-slate-400 mt-1">Disimpan secara lokal di browser Anda (LocalStorage). Dapatkan gratis di Google AI Studio.</p>
+          <p class="text-[11px] text-slate-400 mt-1">Disimpan secara aman di browser perangkat Anda (LocalStorage).</p>
         </div>
 
         <div class="pt-2 flex justify-end gap-2">
-          <button onclick="closeSettingsModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium">Tutup</button>
-          <button onclick="saveSettings()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold">Simpan Pengaturan</button>
+          <button onclick="closeSettingsModal()" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-600 hover:bg-slate-100 font-medium cursor-pointer">Tutup</button>
+          <button onclick="saveSettings()" class="px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold cursor-pointer">Simpan Pengaturan</button>
         </div>
       </div>
     </div>
@@ -406,4 +589,3 @@
   <script src="./app.js"></script>
 </body>
 </html>
-
