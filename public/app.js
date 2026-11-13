@@ -357,7 +357,7 @@ async function clientSideChatFallback(message, history = []) {
         ? retrieved.map((r, i) => `[DOKUMEN LOKAL #${i + 1}]\nJudul: ${r.item.title}\nKategori: ${r.item.category}\nKitab Rujukan: ${r.item.kitab_reference}\nLBM NU: ${r.item.bahtsul_masail}\nIbarah Arab: ${r.item.arabic_quote}\nTerjemah: ${r.item.arabic_translation}\nUraian: ${r.item.content}`).join('\n\n---\n\n')
         : 'Pertanyaan ini berada di luar daftar dokumen lokal. Jawablah secara mendalam berdasarkan khazanah Kutubul Mu\'tabarah Mazhab Syafi\'i, Akidah Asy\'ariyah-Maturidiyah, Tasawuf Al-Ghazali, serta keputusan Bahtsul Masail Nahdlatul Ulama.';
 
-      const systemInstruction = `Anda adalah "AswajaAI", sistem kecerdasan buatan keislaman yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
+      const systemInstruction = `Anda adalah "AiNUn", sistem kecerdasan buatan keislaman yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
 
 PEDOMAN KEILMUAN & ADAB MENJAWAB:
 1. Hierarki Sumber Hukum & Kerangka Keilmuan:
@@ -703,7 +703,7 @@ function appendMessageToDOM(role, content, sources = [], mode = 'local-rag', fol
       <div class="flex-1 bg-white border border-slate-200 rounded-2xl rounded-tl-xs p-5 shadow-xs">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-100">
           <div class="flex items-center gap-2">
-            <span class="text-xs font-extrabold text-emerald-950">AswajaAI • Majelis Ilmiah Nahdlatul Ulama</span>
+            <span class="text-xs font-extrabold text-emerald-950">AiNUn • Majelis Ilmiah Nahdlatul Ulama</span>
             <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">${modeLabel}</span>
           </div>
           <div class="flex items-center gap-1.5">
@@ -795,7 +795,7 @@ function stopSpeech() {
 
 function shareToWhatsApp(encodedText) {
   const raw = decodeURIComponent(encodedText).trim();
-  const shareText = `🕌 *Kajian AswajaAI (Bahtsul Masail & Keilmuan NU)*\n\n${raw.slice(0, 1200)}${raw.length > 1200 ? '...\n\n' : '\n\n'}🌐 _Diakses melalui AswajaAI_`;
+  const shareText = `🕌 *Kajian AiNUn (Bahtsul Masail & Keilmuan NU)*\n\n${raw.slice(0, 1200)}${raw.length > 1200 ? '...\n\n' : '\n\n'}🌐 _Diakses melalui AiNUn_`;
   window.open(`https://wa.me/?text=${encodeURIComponent(shareText)}`, '_blank');
 }
 
