@@ -1,0 +1,19 @@
+{
+  "name": "nu-ai-assistant",
+  "version": "1.0.0",
+  "description": "Prototipe Sistem AI Khusus Islam & Nahdlatul Ulama (Aswaja An-Nahdliyah) berbasis Hybrid RAG",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "islam",
+    "nahdlatul-ulama",
+    "aswaja",
+    "rag",
+    "bahtsul-masail",
+    "ai"
+  ],
+  "license": "MIT"
+}
+
