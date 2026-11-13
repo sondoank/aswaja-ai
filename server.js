@@ -42,13 +42,25 @@ function tokenize(text) {
     .filter(w => w.length >= 2);
 }
 
+// Check if message is just a simple greeting / chitchat
+function isGreetingOrChitchat(text) {
+  const clean = (text || '').toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const greetings = new Set([
+    'assalamualaikum', 'assalamualaikum wr wb', 'assalamualaikum warahmatullahi wabarakatuh',
+    'salam', 'halo', 'hai', 'hi', 'tes', 'test', 'ping', 'selamat pagi', 'selamat siang',
+    'selamat sore', 'selamat malam', 'terima kasih', 'makasih', 'syukron', 'oke', 'ok', 'siap'
+  ]);
+  return greetings.has(clean) || (clean.split(/\s+/).length <= 3 && /^(assalamu|waalaikum|halo|hai|terima kasih|makasih|syukron)/.test(clean));
+}
+
 // Retrieve relevant documents from Knowledge Base
-function searchKnowledgeBase(query, topK = 3) {
+function searchKnowledgeBase(query, topK = 2) {
+  if (isGreetingOrChitchat(query)) return [];
   const kb = loadKnowledgeBase();
   const rawTokens = tokenize(query);
   const queryTokens = rawTokens.filter(w => !STOP_WORDS.has(w));
-  const tokensToUse = queryTokens.length > 0 ? queryTokens : rawTokens;
-  const lowerQuery = (query || '').toLowerCase();
+  if (queryTokens.length === 0) return [];
+  const lowerQuery = ' ' + rawTokens.join(' ') + ' ';
 
   const scored = kb.map(item => {
     let score = 0;
@@ -60,30 +72,31 @@ function searchKnowledgeBase(query, topK = 3) {
     const bmLower = (item.bahtsul_masail || '').toLowerCase();
     const tagsLower = (item.tags || []).map(t => t.toLowerCase());
 
-    // Exact phrase match bonus in tags or title
+    // Whole-word / phrase match in tags
     for (const tag of tagsLower) {
-      if (lowerQuery.includes(tag)) {
-        score += 18;
+      if (lowerQuery.includes(' ' + tag + ' ')) {
+        score += 22;
       }
     }
 
-    for (const token of tokensToUse) {
-      if (tagsLower.some(t => t === token)) score += 12;
-      else if (tagsLower.some(t => t.includes(token) || token.includes(t))) score += 7;
+    for (const token of queryTokens) {
+      if (token.length < 3 && token !== 'nu' && token !== 'ai') continue;
+      if (tagsLower.some(t => t === token)) score += 14;
+      else if (token.length >= 4 && tagsLower.some(t => t.split(/\s+/).includes(token))) score += 10;
 
-      if (titleLower.includes(token)) score += 9;
-      if (categoryLower.includes(token)) score += 4;
-      if (summaryLower.includes(token)) score += 5;
+      if (titleLower.split(/[^a-z0-9]+/).includes(token)) score += 10;
+      if (categoryLower.includes(token)) score += 3;
+      if (summaryLower.split(/[^a-z0-9]+/).includes(token)) score += 4;
       if (kitabLower.includes(token)) score += 5;
       if (bmLower.includes(token)) score += 4;
-      if (contentLower.includes(token)) score += 3;
+      if (contentLower.split(/[^a-z0-9]+/).includes(token)) score += 2;
     }
 
     return { item, score };
   });
 
   scored.sort((a, b) => b.score - a.score);
-  return scored.filter(s => s.score > 0).slice(0, topK);
+  return scored.filter(s => s.score >= 16).slice(0, topK);
 }
 
 // Live search helper targeting nu.or.id via DuckDuckGo Lite HTML if needed
@@ -490,8 +503,15 @@ const server = http.createServer(async (req, res) => {
         }))
       ];
 
-      if (sources.length === 0 && aiMetaSource) {
-        sources.push(aiMetaSource);
+      if (!isGreetingOrChitchat(message) && sources.length === 0) {
+        sources.push(aiMetaSource || {
+          type: 'kitab_ai',
+          title: `Rujukan Kajian: ${message.slice(0, 60)}`,
+          category: 'Kutubul Mu\'tabarah & NU Online',
+          kitab: 'Khazanah Fikih Mazhab Syafi\'i & Aswaja An-Nahdliyah',
+          bahtsul_masail: 'Lembaga Bahtsul Masail (LBM) NU',
+          url: `https://www.google.com/search?q=${encodeURIComponent('site:nu.or.id ' + message)}`
+        });
       }
 
       const followUps = aiMetaFollowUps && aiMetaFollowUps.length > 0

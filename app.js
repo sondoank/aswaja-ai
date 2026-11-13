@@ -270,8 +270,20 @@ async function fetchKnowledgeBase() {
   if (heroCount) heroCount.textContent = knowledgeBaseItems.length + '+';
 }
 
+// Check if message is just a simple greeting / chitchat
+function isGreetingOrChitchat(text) {
+  const clean = (text || '').toLowerCase().replace(/[^a-z\s]/g, '').trim();
+  const greetings = new Set([
+    'assalamualaikum', 'assalamualaikum wr wb', 'assalamualaikum warahmatullahi wabarakatuh',
+    'salam', 'halo', 'hai', 'hi', 'tes', 'test', 'ping', 'selamat pagi', 'selamat siang',
+    'selamat sore', 'selamat malam', 'terima kasih', 'makasih', 'syukron', 'oke', 'ok', 'siap'
+  ]);
+  return greetings.has(clean) || (clean.split(/\s+/).length <= 3 && /^(assalamu|waalaikum|halo|hai|terima kasih|makasih|syukron)/.test(clean));
+}
+
 // Client-side RAG fallback when hosted on GitHub Pages (Static Hosting without Node backend)
-function clientSideSearchKB(query, topK = 3) {
+function clientSideSearchKB(query, topK = 2) {
+  if (isGreetingOrChitchat(query)) return [];
   const stopWords = new Set([
     'apa','apakah','bagaimana','mengapa','kenapa','siapa','kapan','dimana',
     'yang','dan','di','ke','dari','untuk','pada','dengan','dalam','atau',
@@ -281,9 +293,9 @@ function clientSideSearchKB(query, topK = 3) {
     'bolehkah','sah','sahkah','tidak','bukan','secara','bagi','oleh'
   ]);
   const rawTokens = (query || '').toLowerCase().replace(/['’`]/g, '').replace(/[^a-z0-9\s]/g, ' ').split(/\s+/).filter(w => w.length >= 2);
-  const filteredTokens = rawTokens.filter(w => !stopWords.has(w));
-  const tokens = filteredTokens.length > 0 ? filteredTokens : rawTokens;
-  const lowerQuery = (query || '').toLowerCase();
+  const tokens = rawTokens.filter(w => !stopWords.has(w));
+  if (tokens.length === 0) return [];
+  const lowerQuery = ' ' + rawTokens.join(' ') + ' ';
 
   const scored = knowledgeBaseItems.map(item => {
     let score = 0;
@@ -295,23 +307,26 @@ function clientSideSearchKB(query, topK = 3) {
     const kitabLower = (item.kitab_reference || '').toLowerCase();
     const bmLower = (item.bahtsul_masail || '').toLowerCase();
 
+    // Whole-word / phrase match in tags (prevents "ai" matching inside "assalamualaikum" or "bagaimana")
     for (const tag of tags) {
-      if (lowerQuery.includes(tag)) score += 18;
+      if (lowerQuery.includes(' ' + tag + ' ')) score += 22;
     }
     for (const token of tokens) {
-      if (tags.some(t => t === token)) score += 12;
-      else if (tags.some(t => t.includes(token) || token.includes(t))) score += 7;
-      if (titleLower.includes(token)) score += 9;
-      if (categoryLower.includes(token)) score += 4;
-      if (summaryLower.includes(token)) score += 5;
+      if (token.length < 3 && token !== 'nu' && token !== 'ai') continue;
+      if (tags.some(t => t === token)) score += 14;
+      else if (token.length >= 4 && tags.some(t => t.split(/\s+/).includes(token))) score += 10;
+
+      if (titleLower.split(/[^a-z0-9]+/).includes(token)) score += 10;
+      if (categoryLower.includes(token)) score += 3;
+      if (summaryLower.split(/[^a-z0-9]+/).includes(token)) score += 4;
       if (kitabLower.includes(token)) score += 5;
       if (bmLower.includes(token)) score += 4;
-      if (contentLower.includes(token)) score += 3;
+      if (contentLower.split(/[^a-z0-9]+/).includes(token)) score += 2;
     }
     return { item, score };
   });
   scored.sort((a, b) => b.score - a.score);
-  return scored.filter(s => s.score > 0).slice(0, topK);
+  return scored.filter(s => s.score >= 16).slice(0, topK);
 }
 
 async function clientSideChatFallback(message, history = []) {
@@ -388,10 +403,11 @@ PEDOMAN KEILMUAN & ADAB MENJAWAB:
       const gData = await gRes.json();
       let text = gData.candidates?.[0]?.content?.parts?.map(p => p.text).join('');
       if (text) {
+        const isChatGreeting = isGreetingOrChitchat(message);
         const rujukanMatch = text.match(/\[META_RUJUKAN:\s*([^\]]+)\]/i);
         if (rujukanMatch) {
           const parts = rujukanMatch[1].split('|').map(s => s.trim());
-          if (sources.length === 0) {
+          if (!isChatGreeting && sources.length === 0) {
             sources.push({
               type: 'kitab_ai',
               title: parts[0] || 'Kajian Fikih & Keislaman Aswaja',
@@ -402,6 +418,15 @@ PEDOMAN KEILMUAN & ADAB MENJAWAB:
             });
           }
           text = text.replace(rujukanMatch[0], '').trim();
+        } else if (!isChatGreeting && sources.length === 0) {
+          sources.push({
+            type: 'kitab_ai',
+            title: `Rujukan Kajian: ${message.slice(0, 60)}`,
+            category: 'Kutubul Mu\'tabarah & NU Online',
+            kitab: 'Khazanah Fikih Mazhab Syafi\'i & Aswaja An-Nahdliyah',
+            bahtsul_masail: 'Lembaga Bahtsul Masail (LBM) NU',
+            url: `https://www.google.com/search?q=${encodeURIComponent('site:nu.or.id ' + message)}`
+          });
         }
         const followUpMatch = text.match(/\[META_FOLLOWUP:\s*([^\]]+)\]/i);
         if (followUpMatch) {
@@ -409,7 +434,7 @@ PEDOMAN KEILMUAN & ADAB MENJAWAB:
           if (parsedFollowUps.length > 0) followUps = parsedFollowUps;
           text = text.replace(followUpMatch[0], '').trim();
         }
-        return { reply: text, sources, followUps, mode: 'gemini-rag' };
+        return { reply: text, sources: isChatGreeting ? [] : sources, followUps, mode: 'gemini-rag' };
       }
     } catch (e) {
       console.warn('Client Gemini fallback error:', e);
