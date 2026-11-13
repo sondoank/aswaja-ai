@@ -25,108 +25,108 @@ const STARTER_CARDS = [
     badge: '🕌 Amaliyah Populer',
     icon: '🤲',
     title: 'Hukum Tahlilan & Kirim Doa Mayit',
-    desc: 'Dalil sampainya pahala bacaan Al-Qur\'an, dzikir & sedekah menurut Mazhab Syafi\'i',
-    kitab: 'Al-Adzkar & I\'anatuth Thalibin',
-    question: 'Bagaimana hukum tahlilan dan kirim doa/pahala bacaan Al-Qur\'an kepada orang yang sudah meninggal dunia menurut ulama NU?'
+    desc: 'Dalil Al-Qur\'an, Hadis & Ulama tentang sampainya pahala bacaan & sedekah mayit',
+    kitab: 'QS. Al-Hasyr: 10, HR. Muslim & Al-Adzkar',
+    question: 'Bagaimana dalil Al-Qur\'an, Hadis, dan pandangan ulama NU mengenai hukum tahlilan serta kirim doa kepada orang yang sudah wafat?'
   },
   {
     category: 'Amaliyah NU',
     badge: '🕌 Amaliyah Populer',
     icon: '🕌',
     title: 'Ziarah Kubur & Tawassul Wali',
-    desc: 'Penjelasan akidah Aswaja tentang ziarah makam Walisongo dan hakikat tawassul',
-    kitab: 'Al-Majmu\' & Mafahim Yajibu An Tushahhah',
-    question: 'Apa dalil dan hukum ziarah kubur serta bertawassul kepada para wali/ulama menurut pandangan Aswaja?'
+    desc: 'Landasan Hadis Shahih ziarah kubur dan penjelasan akidah tentang tawassul',
+    kitab: 'HR. Muslim, HR. Bukhari & Al-Majmu\'',
+    question: 'Apa dalil Al-Qur\'an dan Hadis tentang ziarah kubur serta bertawassul kepada para wali/ulama menurut pandangan Aswaja?'
   },
   {
     category: 'Amaliyah NU',
     badge: '🕌 Amaliyah Populer',
     icon: '🌙',
     title: 'Peringatan Maulid Nabi & Mahallul Qiyam',
-    desc: 'Landasan bid\'ah hasanah peringatan Maulid Nabi dan berdiri saat Mahallul Qiyam',
-    kitab: 'Al-Hawi lil Fatawi (Imam As-Suyuthi)',
-    question: 'Bagaimana hukum memperingati Maulid Nabi Muhammad SAW dan berdiri saat Mahallul Qiyam menurut ulama Aswaja?'
+    desc: 'Dalil Al-Qur\'an, Hadis & penjelasan ulama tentang syukur kelahiran Nabi SAW',
+    kitab: 'QS. Yunus: 58, HR. Muslim & Al-Hawi',
+    question: 'Bagaimana dalil Al-Qur\'an, Hadis, dan penjelasan ulama mengenai peringatan Maulid Nabi Muhammad SAW serta Mahallul Qiyam?'
   },
   {
     category: 'Fikih Kontemporer (Bahtsul Masail)',
     badge: '⚖️ Bahtsul Masail Modern',
     icon: '📹',
     title: 'Akad Nikah Online (Video Call / Zoom)',
-    desc: 'Keputusan Bahtsul Masail tentang syarat ittihadul majelis & solusi Tawkil nikah',
-    kitab: 'Tuhfatul Muhtaj & LBM NU',
-    question: 'Bagaimana hukum akad nikah online melalui Video Call atau Zoom menurut Bahtsul Masail NU dan bagaimana solusi sahnya?'
+    desc: 'Keputusan Bahtsul Masail tentang syarat saksi nikah & solusi Tawkil',
+    kitab: 'HR. Ibnu Hibban, Tuhfatul Muhtaj & LBM NU',
+    question: 'Bagaimana hukum akad nikah online melalui Video Call atau Zoom menurut dalil syar\'i dan Bahtsul Masail NU?'
   },
   {
     category: 'Fikih Kontemporer (Bahtsul Masail)',
     badge: '⚖️ Bahtsul Masail Modern',
     icon: '💳',
     title: 'Hukum Paylater & Pinjaman Online',
-    desc: 'Rincian fikih perbedaan riba qardhi dengan jual beli kredit (bai\' bit taqsith)',
-    kitab: 'Fathul Wahhab & Bughyatul Mustarsyidin',
-    question: 'Bagaimana hukum menggunakan fitur Paylater dan Pinjaman Online (Pinjol) dalam fikih muamalah NU?'
+    desc: 'Dalil larangan riba vs kebolehan jual beli kredit/angsuran (bai\' bit taqsith)',
+    kitab: 'QS. Al-Baqarah: 275, HR. Bukhari & Fathul Wahhab',
+    question: 'Bagaimana hukum menggunakan fitur Paylater dan Pinjaman Online (Pinjol) ditinjau dari dalil Al-Qur\'an, Hadis, dan fikih muamalah?'
   },
   {
     category: 'Fikih Kontemporer (Bahtsul Masail)',
     badge: '⚖️ Bahtsul Masail Modern',
     icon: '🪙',
     title: 'Hukum Cryptocurrency (Bitcoin / Kripto)',
-    desc: 'Dinamika Bahtsul Masail antara spekulasi (gharar) dan komoditas digital (sil\'ah)',
-    kitab: 'Al-Majmu\' Juz 9 & LBM NU',
-    question: 'Bagaimana hukum transaksi Cryptocurrency (Bitcoin / aset kripto) menurut hasil Bahtsul Masail NU?'
+    desc: 'Tinjauan syariah antara larangan gharar/maysir dan syarat komoditas (sil\'ah)',
+    kitab: 'QS. An-Nisa: 29, HR. Muslim & LBM NU',
+    question: 'Bagaimana hukum transaksi Cryptocurrency (Bitcoin / aset kripto) menurut dalil syariah dan hasil Bahtsul Masail NU?'
   },
   {
     category: 'Fikih Kontemporer (Bahtsul Masail)',
     badge: '⚖️ Bahtsul Masail Modern',
     icon: '🛒',
     title: 'Jual Beli Online Sistem Dropship',
-    desc: 'Cara agar dropshipper & pre-order sah menggunakan akad Salam atau Samsarah',
-    kitab: 'Fathul Qarib & Raudhatuth Thalibin',
-    question: 'Bagaimana hukum jual beli online dengan sistem Dropship dan Pre-Order agar sah menurut fikih Mazhab Syafi\'i?'
+    desc: 'Hadis larangan menjual barang yang belum dimiliki & solusi akad Salam / Wakalah',
+    kitab: 'HR. Abu Dawud, Fathul Qarib & LBM NU',
+    question: 'Bagaimana hukum jual beli online sistem Dropship dan Pre-Order menurut Hadis Nabi dan fikih muamalah?'
   },
   {
     category: 'Fikih Kontemporer (Bahtsul Masail)',
     badge: '⚖️ Bahtsul Masail Modern',
     icon: '🤖',
     title: 'Hukum Meminta Fatwa Agama ke AI',
-    desc: 'Kedudukan AI sebagai alat bantu riset kitab vs syarat Mufti ber-sanad',
-    kitab: 'Adabul \'Alim wal Muta\'allim',
-    question: 'Bagaimana hukum memanfaatkan AI (Artificial Intelligence) untuk kajian keagamaan dan mengapa AI tidak boleh menjadi mufti?'
+    desc: 'Kedudukan AI sebagai wasilah riset keislaman vs syarat Mufti ber-sanad',
+    kitab: 'QS. An-Nahl: 43, Shahih Muslim & LBM NU',
+    question: 'Bagaimana pandangan Islam mengenai pemanfaatan AI (Artificial Intelligence) untuk kajian keagamaan?'
   },
   {
     category: 'Fikih Ibadah',
-    badge: '📖 Fikih Ibadah Syafi\'iyah',
+    badge: '📖 Fikih Ibadah',
     icon: '🌅',
     title: 'Doa Qunut pada Shalat Subuh',
-    desc: 'Kedudukan sunnah ab\'adh Qunut Subuh, sujud sahwi & adab bermakmum beda mazhab',
-    kitab: 'Al-Majmu\' Juz 3 & Fathul Mu\'in',
-    question: 'Bagaimana hukum membaca doa Qunut pada shalat Subuh dalam Mazhab Syafi\'i dan bagaimana jika lupa?'
+    desc: 'Landasan Hadis Qunut Subuh, sujud sahwi & sikap toleransi perbedaan mazhab',
+    kitab: 'HR. Ahmad, Ad-Daruquthni & Al-Majmu\'',
+    question: 'Apa dalil Hadis dan bagaimana hukum membaca doa Qunut pada shalat Subuh serta bagaimana jika lupa?'
   },
   {
     category: 'Fikih Ibadah',
-    badge: '📖 Fikih Ibadah Syafi\'iyah',
+    badge: '📖 Fikih Ibadah',
     icon: '🧳',
     title: 'Shalat Jamak & Qashar Saat Safar',
-    desc: 'Ketentuan jarak minimal 2 marhalah (82 km) dan batas hari musafir',
-    kitab: 'Fathul Mu\'in & Tanwirul Qulub',
-    question: 'Bagaimana syarat dan ketentuan menjamak serta mengqashar shalat saat perjalanan jauh (safar / mudik)?'
+    desc: 'Dalil Al-Qur\'an & Hadis rukhshah musafir serta ketentuan jarak minimal',
+    kitab: 'QS. An-Nisa: 101, HR. Muslim & Fathul Mu\'in',
+    question: 'Bagaimana dalil dan ketentuan menjamak serta mengqashar shalat saat perjalanan jauh (safar / mudik)?'
   },
   {
     category: 'Ke-NU-an & Khittah',
     badge: '🌿 Sejarah & Manhaj NU',
     icon: '📜',
-    title: 'Metode Bahtsul Masail: Qauli, Ilhaqi, Manhaji',
-    desc: 'Sistem pengambilan keputusan hukum Islam di lingkungan Nahdlatul Ulama',
-    kitab: 'Keputusan Munas Alim Ulama Lampung 1992',
-    question: 'Jelaskan 3 metodologi pengambilan hukum (istinbath) dalam Bahtsul Masail NU: Qauli, Ilhaqi, dan Manhaji!'
+    title: 'Metode Istinbath: Al-Qur\'an, Hadis & Mazhab',
+    desc: 'Bagaimana ulama menggali hukum dari Al-Qur\'an & Hadis (Qauli, Ilhaqi, Manhaji)',
+    kitab: 'QS. An-Nisa: 59 & Keputusan Munas NU 1992',
+    question: 'Bagaimana metodologi ulama NU dalam menggali hukum dari Al-Qur\'an, Hadis, Ijma\', dan Qiyas melalui Bahtsul Masail?'
   },
   {
     category: 'Ke-NU-an & Khittah',
     badge: '🌿 Sejarah & Manhaj NU',
     icon: '🇮🇩',
-    title: 'Islam, Pancasila & Fiqih Peradaban NU',
-    desc: 'Pandangan kebangsaan Hubbul Wathan Minal Iman, Resolusi Jihad & Satu Abad NU',
-    kitab: 'Muktamar Situbondo 1984 & Fiqih Peradaban',
-    question: 'Bagaimana pandangan Nahdlatul Ulama mengenai hubungan Islam, Pancasila, NKRI, serta konsep Fiqih Peradaban?'
+    title: 'Islam, Pancasila & Fiqih Peradaban',
+    desc: 'Landasan Al-Qur\'an & Hadis tentang ukhuwah, cinta tanah air & perdamaian',
+    kitab: 'QS. Al-Hujurat: 13, Piagam Madinah & Muktamar NU',
+    question: 'Bagaimana pandangan Islam dan Nahdlatul Ulama mengenai hubungan agama, Pancasila, NKRI, serta Fiqih Peradaban?'
   }
 ];
 
@@ -357,27 +357,26 @@ async function clientSideChatFallback(message, history = []) {
         ? retrieved.map((r, i) => `[DOKUMEN LOKAL #${i + 1}]\nJudul: ${r.item.title}\nKategori: ${r.item.category}\nKitab Rujukan: ${r.item.kitab_reference}\nLBM NU: ${r.item.bahtsul_masail}\nIbarah Arab: ${r.item.arabic_quote}\nTerjemah: ${r.item.arabic_translation}\nUraian: ${r.item.content}`).join('\n\n---\n\n')
         : 'Pertanyaan ini berada di luar daftar dokumen lokal. Jawablah secara mendalam berdasarkan khazanah Kutubul Mu\'tabarah Mazhab Syafi\'i, Akidah Asy\'ariyah-Maturidiyah, Tasawuf Al-Ghazali, serta keputusan Bahtsul Masail Nahdlatul Ulama.';
 
-      const systemInstruction = `Anda adalah "AswajaAI (Bahtsul Masail & Keilmuan NU Assistant)", sistem kecerdasan buatan khusus keislaman yang berhaluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
+      const systemInstruction = `Anda adalah "AswajaAI", sistem kecerdasan buatan keislaman yang berpijak pada Empat Sumber Hukum Islam (Al-Qur'an, Hadis, Ijma', dan Qiyas) dengan haluan Ahlussunnah wal Jama'ah An-Nahdliyah (Nahdlatul Ulama).
 
 PEDOMAN KEILMUAN & ADAB MENJAWAB:
-1. Kerangka Keilmuan:
+1. Hierarki Sumber Hukum & Kerangka Keilmuan:
+   - Sumber Utama: Al-Qur'an Al-Karim dan Hadis / Sunnah Rasulullah SAW, disertai Ijma' dan Qiyas ulama.
    - Akidah: Manhaj Imam Abu Hasan Al-Asy'ari & Imam Abu Manshur Al-Maturidi.
-   - Fikih: Empat Mazhab Mu'tabar (utamanya Mazhab Syafi'i dengan merujuk Kutubul Mu'tabarah seperti Fathul Qarib, Fathul Mu'in, I'anatuth Thalibin, Al-Majmu' Syarah Al-Muhadzdzab, Tuhfatul Muhtaj, Kifayatul Akhyar, Bughyatul Mustarsyidin, serta hasil Bahtsul Masail NU / Ahkamul Fuqaha).
+   - Fikih: Empat Mazhab Mu'tabar (utamanya Mazhab Syafi'i dengan merujuk kitab tafsir, syarah hadis, dan fikih seperti Tafsir Ibnu Katsir, Tafsir Al-Jalalain, Fathul Bari, Syarah Shahih Muslim, Al-Majmu', Fathul Qarib, Fathul Mu'in, I'anatuth Thalibin, Tuhfatul Muhtaj, serta hasil Bahtsul Masail NU / Ahkamul Fuqaha).
    - Tasawuf: Imam Junaid Al-Baghdadi & Hujjatul Islam Imam Al-Ghazali (Ihya' Ulumiddin).
 2. Sikap & Gaya Bahasa:
-   - Gunakan bahasa Indonesia yang santun, sejuk, edukatif, mudah dipahami masyarakat umum, serta mencerminkan prinsip Tawassuth (moderat), Tasamuh (toleran), Tawazun (seimbang), dan I'tidal.
-   - Strukturkan jawaban dengan rapi menggunakan subjudul Markdown:
+   - Gunakan bahasa Indonesia yang santun, inklusif, sejuk, edukatif, mudah dipahami masyarakat umum (tidak terkesan eksklusif/sempit), serta mencerminkan prinsip Tawassuth (moderat), Tasamuh (toleran), Tawazun (seimbang), dan I'tidal.
+   - Untuk pertanyaan keilmuan/fikih, strukturkan jawaban dengan rapi menggunakan subjudul Markdown:
      ### 📌 Ringkasan Hukum / Jawaban Inti
-     ### 📖 Penjelasan & Rincian Ulama
-     ### 📜 Ibarah Kitab / Dalil Rujukan
-     (Wajib sertakan kutipan dalil Al-Qur'an, Hadis, atau kaidah/ibarah kitab berbahasa Arab di dalam blok kutipan \`>\` diikuti terjemahannya, contoh:
-     > **النص العربي هنا**
-     > *Artinya: "Terjemahan bahasa Indonesia..."*
-     > — **(Nama Kitab / Dalil)**)
+     ### 📖 Landasan Dalil Al-Qur'an & Hadis
+     (Sertakan ayat Al-Qur'an dan/atau Hadis Nabi SAW yang menjadi pijakan utama lengkap dengan teks Arab di dalam blok kutipan \`>\` dan artinya)
+     ### 📜 Penjelasan Ulama, Kitab Turats & Bahtsul Masail
+     (Jelaskan bagaimana para ulama tafsir/fikih Mazhab Syafi'i & LBM NU menjabarkan dalil tersebut beserta kutipan ibarah kitabnya)
      ### 🌿 Hikmah & Sikap Bijak (Tasamuh)
 3. Metadata Rujukan & Pertanyaan Lanjutan:
    - Di baris PALING AKHIR jawaban Anda, selalu tambahkan 2 baris metadata ini (persis dengan format ini):
-     [META_RUJUKAN: Judul Topik | Nama Kitab Mu'tabarah yang Dirujuk | Referensi Bahtsul Masail / Ulama NU]
+     [META_RUJUKAN: Judul Topik | Dalil Al-Qur'an/Hadis & Nama Kitab Ulama yang Dirujuk | Keputusan Bahtsul Masail / Ulama NU]
      [META_FOLLOWUP: Pertanyaan lanjutan 1? | Pertanyaan lanjutan 2? | Pertanyaan lanjutan 3?]`;
 
       const contents = [
@@ -665,8 +664,8 @@ function appendMessageToDOM(role, content, sources = [], mode = 'local-rag', fol
                     ${s.category ? `<span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-200/70 text-emerald-900 font-semibold">${escapeHtml(s.category)}</span>` : ''}
                   </div>
                   <div class="text-[11px] text-emerald-800 mt-1">
-                    📖 <strong>Kitab / Sumber:</strong> ${escapeHtml(s.kitab || '-')}
-                    ${s.bahtsul_masail && s.bahtsul_masail !== '-' ? ` • ⚖️ <strong>LBM:</strong> ${escapeHtml(s.bahtsul_masail)}` : ''}
+                    📖 <strong>Dalil (Al-Qur'an / Hadis) & Kitab:</strong> ${escapeHtml(s.kitab || '-')}
+                    ${s.bahtsul_masail && s.bahtsul_masail !== '-' ? ` • ⚖️ <strong>Keputusan Ulama / LBM:</strong> ${escapeHtml(s.bahtsul_masail)}` : ''}
                   </div>
                 </div>
                 ${s.url ? `<a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl bg-white hover:bg-emerald-600 hover:text-white text-emerald-700 border border-emerald-300 text-[11px] font-bold shrink-0 transition self-start sm:self-center shadow-2xs">Buka Rujukan ↗</a>` : ''}

@@ -146,14 +146,14 @@
           <button onclick="openKnowledgeModal()" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-emerald-900/70 text-emerald-100 text-xs flex items-center justify-between transition cursor-pointer">
             <span class="flex items-center gap-2">
               <span>📚</span>
-              <span>Pustaka Kitab & LBM NU</span>
+              <span>Pustaka Dalil & Kitab</span>
             </span>
             <span id="kbCountBadge" class="px-2 py-0.5 rounded-full bg-emerald-800 text-amber-300 text-[10px] font-bold border border-emerald-700">23</span>
           </button>
 
           <button onclick="openAddReferenceModal()" class="w-full text-left px-3 py-2.5 rounded-xl hover:bg-emerald-900/70 text-emerald-200 text-xs flex items-center gap-2 transition font-medium cursor-pointer">
             <span>➕</span>
-            <span>Tambah Kitab / Referensi</span>
+            <span>Tambah Dalil / Referensi</span>
           </button>
         </div>
       </div>
@@ -162,7 +162,11 @@
       <div class="mx-1 p-3 rounded-xl bg-emerald-900/50 border border-emerald-800/80 space-y-2">
         <div class="text-[10px] font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
           <span>🛡️</span>
-          <span>Guardrail Sanad & Manhaj</span>
+          <span>Hierarki Sumber & Manhaj</span>
+        </div>
+        <div class="bg-emerald-950/90 px-2.5 py-2 rounded-lg text-[10px] text-amber-200 border border-amber-400/30">
+          <strong class="text-white block mb-0.5">4 Sumber Hukum Islam:</strong>
+          Al-Qur'an • Al-Hadits • Ijma' • Qiyas
         </div>
         <div class="grid grid-cols-2 gap-1.5 text-[10px]">
           <div class="bg-emerald-950/70 px-2 py-1.5 rounded-lg text-emerald-200 border border-emerald-800/60">
@@ -215,12 +219,12 @@
         </button>
         <div>
           <div class="flex items-center gap-2">
-            <span class="text-sm font-bold text-slate-800">Majelis Bahtsul Masail & Edukasi Islam</span>
+            <span class="text-sm font-bold text-slate-800">Asisten Keislaman, Fikih & Bahtsul Masail</span>
             <span id="activeModeBadge" class="hidden sm:inline-flex text-[11px] px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 font-semibold">
-              ⚡ Hybrid RAG Kitab + NU Online
+              ⚡ Hybrid RAG: Al-Qur'an, Hadis & Turats
             </span>
           </div>
-          <p class="text-[11px] text-slate-500 hidden sm:block">Berbasis Kutubul Mu'tabarah, Keputusan Muktamar NU, dan Fikrah Nahdliyah</p>
+          <p class="text-[11px] text-slate-500 hidden sm:block">Merujuk Al-Qur'an, Hadis Shahih, Ijma', Qiyas, Kitab Ulama Mu'tabarah & Keputusan NU</p>
         </div>
       </div>
 
@@ -232,7 +236,7 @@
 
         <button onclick="openKnowledgeModal()" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold flex items-center gap-1.5 transition cursor-pointer">
           <span>📚</span>
-          <span class="hidden sm:inline">Daftar Kitab</span>
+          <span class="hidden sm:inline">Pustaka Rujukan</span>
         </button>
 
         <label class="hidden lg:flex items-center gap-1.5 text-xs text-slate-600 cursor-pointer select-none bg-slate-100 px-2.5 py-1.5 rounded-xl hover:bg-slate-200/70 transition">
@@ -256,26 +260,26 @@
                 <span>Sistem AI Keislaman Ber-Sanad • Ahlussunnah wal Jama'ah An-Nahdliyah</span>
               </div>
               <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight text-white">
-                Tanya Jawab Fikih, Amaliyah & Ke-NU-an Berbasis Rujukan Kitab Kuning
+                Tanya Jawab Keislaman, Fikih & Ke-NU-an Berbasis Al-Qur'an, Hadis & Turats Ulama
               </h2>
               <p class="text-xs md:text-sm text-emerald-100/90 leading-relaxed">
-                Berbeda dengan AI umum yang sering mencampuradukkan mazhab atau mengarang dalil, <strong>AswajaAI</strong> menjawab setiap persoalan menggunakan arsitektur <strong>Hybrid RAG</strong> yang merujuk langsung pada <em>Kutubul Mu'tabarah</em>, hasil <em>Bahtsul Masail NU</em>, dan portal resmi <em>NU Online</em>.
+                Menjawab berbagai persoalan keislaman masyarakat secara sejuk dan komprehensif dengan berpijak pada <strong>Al-Qur'an, Hadis Shahih, Ijma', dan Qiyas</strong> yang dijelaskan melalui sanad keilmuan <em>Kitab Ulama Mu'tabarah</em>, hasil <em>Bahtsul Masail NU</em>, serta portal resmi <em>NU Online</em>.
               </p>
             </div>
 
             <!-- Live Stats Box -->
             <div class="grid grid-cols-2 gap-2.5 shrink-0">
               <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3.5 text-center">
-                <div id="heroKbCount" class="text-2xl font-extrabold text-amber-400">23+</div>
-                <div class="text-[11px] text-emerald-100 font-medium">Topik & Ibarah Kitab</div>
+                <div class="text-lg font-extrabold text-amber-400">Al-Qur'an & Hadis</div>
+                <div class="text-[11px] text-emerald-100 font-medium">+ Ijma' & Qiyas Ulama</div>
               </div>
               <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3.5 text-center">
-                <div class="text-2xl font-extrabold text-emerald-300">100%</div>
-                <div class="text-[11px] text-emerald-100 font-medium">Wajib Sitasi Rujukan</div>
+                <div id="heroKbCount" class="text-2xl font-extrabold text-emerald-300">23+</div>
+                <div class="text-[11px] text-emerald-100 font-medium">Pustaka Inti & LBM NU</div>
               </div>
               <div class="bg-white/10 backdrop-blur-xs border border-white/15 rounded-2xl p-3 text-center col-span-2">
-                <div class="text-xs font-bold text-amber-300">Metode Qauli • Ilhaqi • Manhaji</div>
-                <div class="text-[10px] text-emerald-200">Sesuai Munas Alim Ulama NU 1992</div>
+                <div class="text-xs font-bold text-amber-300">Dalil Naqli • Kitab Mu'tabarah • Bahtsul Masail</div>
+                <div class="text-[10px] text-emerald-200">Komprehensif untuk Masyarakat Umum & Santri</div>
               </div>
             </div>
           </div>
@@ -338,7 +342,7 @@
           </button>
         </form>
         <div class="text-[11px] text-slate-400 text-center mt-2">
-          ⚖️ <strong>Adab Keilmuan:</strong> Jawaban AI dilengkapi kutipan <em>Kutubul Mu'tabarah</em> & keputusan <em>Bahtsul Masail</em> sebagai rujukan edukasi. Untuk fatwa kasus khusus, tetaplah bermusyawarah dengan Kiai / LBM NU setempat.
+          ⚖️ <strong>Adab Keilmuan:</strong> Jawaban AI menyertakan dalil <em>Al-Qur'an, Hadis, penjelasan Ulama (Kitab Mu'tabarah) & Bahtsul Masail</em> sebagai rujukan edukasi. Untuk fatwa kasus khusus, tetaplah bermusyawarah dengan Ulama / Kiai setempat.
         </div>
       </div>
     </div>
@@ -359,20 +363,20 @@
         <!-- 1. Masalah vs Solusi -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="p-4 rounded-2xl bg-red-50 border border-red-200 space-y-2">
-            <div class="font-bold text-sm text-red-900 flex items-center gap-2">⚠️ Kelemahan AI Umum (ChatGPT Standar)</div>
+            <div class="font-bold text-sm text-red-900 flex items-center gap-2">⚠️ Kelemahan AI Umum (Tanpa Sanad Keilmuan)</div>
             <ul class="list-disc pl-4 text-red-800 space-y-1">
-              <li><strong>Mencampuradukkan Mazhab:</strong> Sering menjawab fikih tanpa kejelasan mazhab sehingga membingungkan masyarakat awam di Indonesia.</li>
-              <li><strong>Risiko Halusinasi Dalil:</strong> Berpotensi mengarang teks Arab atau mencantumkan nama kitab yang tidak pernah ada.</li>
-              <li><strong>Kurang Memahami Amaliyah Lokal:</strong> Sering gagal memahami konteks tradisi pesantren dan keputusan <em>Bahtsul Masail NU</em>.</li>
+              <li><strong>Menafsirkan Ayat/Hadis Tanpa Metodologi:</strong> Sering mengambil ayat atau hadis secara tekstual tanpa merujuk penjelasan ulama tafsir dan fikih yang mu'tabar.</li>
+              <li><strong>Risiko Halusinasi Dalil:</strong> Berpotensi mengarang teks Arab atau mencampuradukkan pendapat mazhab sehingga membingungkan masyarakat umum.</li>
+              <li><strong>Kurang Memahami Konteks Keislaman Indonesia:</strong> Sering gagal memahami kearifan amaliyah umat Islam di Indonesia dan keputusan <em>Bahtsul Masail NU</em>.</li>
             </ul>
           </div>
 
           <div class="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
-            <div class="font-bold text-sm text-emerald-900 flex items-center gap-2">✅ Solusi Arsitektur AswajaAI (NU RAG)</div>
+            <div class="font-bold text-sm text-emerald-900 flex items-center gap-2">✅ Keunggulan AswajaAI (4 Sumber Hukum + Turats Ulama)</div>
             <ul class="list-disc pl-4 text-emerald-800 space-y-1">
-              <li><strong>Terkunci pada Kutubul Mu'tabarah:</strong> Jawaban diambil dari database kitab Mazhab Syafi'i & keputusan Muktamar/LBM NU.</li>
-              <li><strong>Wajib Menampilkan Ibarah & Kartu Sumber:</strong> Setiap jawaban menyertakan kutipan teks Arab, terjemah, nama kitab, dan tautan <code>nu.or.id</code>.</li>
-              <li><strong>Karakter Tawassuth & Tasamuh:</strong> Bahasa yang sejuk, moderat, dan menghargai perbedaan pendapat (*ikhtilaf*).</li>
+              <li><strong>Berpijak pada Al-Qur'an, Hadis, Ijma' & Qiyas:</strong> Menjawab dengan dalil Al-Qur'an dan Hadis Shahih yang diterangkan melalui kitab tafsir dan fikih ulama Ahlussunnah wal Jama'ah.</li>
+              <li><strong>Rujukan Transparan & Terverifikasi:</strong> Setiap jawaban menyertakan kutipan dalil Arab, terjemah, penjelasan kitab ulama, serta keputusan LBM NU / <code>nu.or.id</code>.</li>
+              <li><strong>Bahasa Inklusif, Sejuk & Moderat:</strong> Mudah dipahami masyarakat umum (*awam*) sekaligus mendalam bagi kalangan santri/akademisi.</li>
             </ul>
           </div>
         </div>
